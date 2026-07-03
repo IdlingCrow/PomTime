@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Timers;
+using System.Diagnostics;
+using System.Threading;
 
 namespace prototype
 {
@@ -7,12 +8,19 @@ namespace prototype
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.Write("What is your name?: ");
-
-            string userName = Console.ReadLine();
-
-            Console.WriteLine("Hello " + userName + "!");
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            Console.WriteLine("It will measure the time between start and stop or when you press the enter key");
+            // Stop timing
+            while(stopwatch.ElapsedMilliseconds < 5000)
+            {
+                if(Console.KeyAvailable && Console.ReadKey().Key == ConsoleKey.Backspace)
+                {
+                    break;
+                }
+            }
+            stopwatch.Stop();
+            Console.WriteLine($"I have slept for {stopwatch.ElapsedMilliseconds} miliseconds");
         }
     }
 }
