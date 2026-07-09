@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PomTime.Tests/PomTime.Tests.csproj" />
+  <Project Path="PomTime/PomTime.csproj" />
+</Solution>

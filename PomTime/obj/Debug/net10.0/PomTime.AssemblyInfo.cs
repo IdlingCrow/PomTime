@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PomTime")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9b6251251f52ebd5f0beb818dcfea8522bcf239")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceeba42b438aed030b42125f518bc3e2f4331c33")]
 [assembly: System.Reflection.AssemblyProductAttribute("PomTime")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PomTime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
