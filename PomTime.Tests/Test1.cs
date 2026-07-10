@@ -26,7 +26,7 @@ public sealed class Test1
         TimerTestTooLate.Start();
 
         Assert.IsGreaterThan(16000, TimerTestTooEarly.ElapsedMilliseconds);
-        Assert.IsLessThan(15500, TimerTestTooEarly.ElapsedMilliseconds);
+        Assert.IsLessThan(16500, TimerTestTooEarly.ElapsedMilliseconds);
 
     }
 }
