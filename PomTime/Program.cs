@@ -14,11 +14,11 @@ namespace prototype
             string? stickyNotes = null;
 
             Console.Write("Please enter work time: ");
-            workTime = Convert.ToInt32(Console.ReadLine()) * 1000;
+            workTime = getInputTimeInMiliseconds();
             Console.Write("Please enter break time: ");
-            breakTime = Convert.ToInt32(Console.ReadLine()) * 1000;
+            breakTime = getInputTimeInMiliseconds();
             Console.Write("Please enter how many repeats: ");
-            repeat = Convert.ToInt32(Console.ReadLine());
+            repeat = getRepeatTime();
 
             Stopwatch timer = new Stopwatch();
 
@@ -86,6 +86,16 @@ namespace prototype
             timer.Reset();
 
             return stickyNotes;
+        }
+
+        public static int getInputTimeInMiliseconds()
+        {
+            return Convert.ToInt32(Console.ReadLine()) * 1000;
+        }
+
+        public static int getRepeatTime()
+        {
+            return Convert.ToInt32(Console.ReadLine());
         }
 
     }

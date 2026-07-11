@@ -1,0 +1,15 @@
+namespace PomTime.Tests;
+
+[TestClass]
+public sealed class {className}
+{
+
+    [TestMethod]
+    public void {Method Name}()
+    {
+        {test content}
+        # ex, test comparasion:
+        #  Assert.IsTrue({boolean statement})
+        #  Assert.IsGreaterThan({value that is expected to be greater then},{actual result})
+    }
+}
