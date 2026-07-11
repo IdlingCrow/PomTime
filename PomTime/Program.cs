@@ -8,29 +8,26 @@ namespace prototype
     {
         public static void Main(string[] args)
         {
+            int defaultWork = 10000;
+            int defaultBreak = 10000;
+            int defaultRepeat = 1;
             int workTime;
             int breakTime;
             int repeat;
             string? stickyNotes = null;
 
             Console.Write("Please enter work time: ");
-            workTime = getInputTimeInMiliseconds();
+            workTime = getInputTimeInMiliseconds(defaultWork);
             Console.Write("Please enter break time: ");
-            breakTime = getInputTimeInMiliseconds();
+            breakTime = getInputTimeInMiliseconds(defaultBreak);
             Console.Write("Please enter how many repeats: ");
-            repeat = getRepeatTime();
+            repeat = getRepeatTime(defaultRepeat);
 
             Stopwatch timer = new Stopwatch();
 
             for(int i = 0; i < repeat; i++)
             {
-                if(i < repeat - 1)
-                {
-                    workTimeMethod(workTime, stickyNotes, timer, false);
-                } else
-                {
-                    workTimeMethod(workTime, stickyNotes, timer, true);
-                }
+                workTimeMethod(workTime, stickyNotes, timer);
 
                 if(i < repeat - 1)
                 {
@@ -40,9 +37,9 @@ namespace prototype
             } 
         }
 
-        public static void workTimeMethod(int workTime, string ? stickyNotes, Stopwatch timer, bool lastSession) {
+        public static void workTimeMethod(int workTime, string ? stickyNotes, Stopwatch timer) {
             Console.WriteLine("time to get to work");
-            if (stickyNotes != null && !lastSession)
+            if (stickyNotes != null)
             {
                 Console.WriteLine($"here is the notes you left for yourself: {stickyNotes}");
             }
@@ -57,7 +54,7 @@ namespace prototype
             Console.WriteLine("WorkTime has comes to an end");
         }
 
-        public static String breakTimeMethod(int breakTime, Stopwatch timer)
+        public static string breakTimeMethod(int breakTime, Stopwatch timer)
         {
             int activityStopTime = breakTime - (breakTime % 16000);
             Console.Write("Please write down what you are thinking: ");
@@ -88,14 +85,26 @@ namespace prototype
             return stickyNotes;
         }
 
-        public static int getInputTimeInMiliseconds()
+        public static int getInputTimeInMiliseconds(int defaultTime)
         {
-            return Convert.ToInt32(Console.ReadLine()) * 1000;
+            string ? userInput = Console.ReadLine();
+
+            if(userInput == null || userInput.Equals(""))
+            {
+                return defaultTime;
+            }
+            return Convert.ToInt32(userInput) * 1000;
         }
 
-        public static int getRepeatTime()
+        public static int getRepeatTime(int defaultTime)
         {
-            return Convert.ToInt32(Console.ReadLine());
+            string ? userInput = Console.ReadLine();
+
+            if(userInput == null || userInput.Equals(""))
+            {
+                return defaultTime;
+            }
+            return Convert.ToInt32(userInput);
         }
 
     }

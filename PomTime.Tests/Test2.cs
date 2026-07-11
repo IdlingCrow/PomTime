@@ -14,7 +14,7 @@ public sealed class Test2
     public void TestMethod3()
     {
         Console.SetIn(new StringReader("15"));
-        int millisecondsTime = pomPrototype.getInputTimeInMiliseconds();
+        int millisecondsTime = pomPrototype.getInputTimeInMiliseconds(15000);
         Assert.AreEqual(15000, millisecondsTime, $"Expected: 15000 \t Got:{millisecondsTime}");
     }
 
@@ -38,7 +38,7 @@ public sealed class Test2
     public void TestMethod5()
     {
         Console.SetIn(new StringReader("3"));
-        int session = pomPrototype.getRepeatTime();
+        int session = pomPrototype.getRepeatTime(15000);
         int expected = 3;
         Assert.AreEqual(expected, session, $"Expected: {expected} \t Got:{session}");
     }
