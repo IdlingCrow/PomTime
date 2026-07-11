@@ -42,7 +42,7 @@ public sealed class Test1
         TimerTestTooEarly.Start();
         TimerTestTooLate.Start();
 
-        pomPrototype.workTimeMethod(5 * 1000, null, timer, false);
+        pomPrototype.workTimeMethod(5 * 1000, null, timer);
         TimerTestTooEarly.Start();
         TimerTestTooLate.Start();
 
