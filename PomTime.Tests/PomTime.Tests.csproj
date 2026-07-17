@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PomTime\PomTime.csproj" />
+    <ProjectReference Include="..\PomTimeConsole\PomTime.csproj" />
   </ItemGroup>
 
 </Project>
