@@ -2280,8 +2280,8 @@
     },
     "PomTime/1.0.0": {
       "type": "project",
-      "path": "../PomTime/PomTime.csproj",
-      "msbuildProject": "../PomTime/PomTime.csproj"
+      "path": "../PomTimeConsole/PomTime.csproj",
+      "msbuildProject": "../PomTimeConsole/PomTime.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2296,19 +2296,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\PomTime.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\PomTime.Tests.csproj",
       "projectName": "PomTime.Tests",
-      "projectPath": "c:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\PomTime.Tests.csproj",
+      "projectPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\PomTime.Tests.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\obj\\",
+      "outputPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2316,8 +2318,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime\\PomTime.csproj": {
-              "projectPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTime\\PomTime.csproj"
+            "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeConsole\\PomTime.csproj": {
+              "projectPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeConsole\\PomTime.csproj"
             }
           }
         }
@@ -2360,7 +2362,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
