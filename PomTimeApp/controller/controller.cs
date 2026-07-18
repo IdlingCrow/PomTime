@@ -48,6 +48,8 @@ public class Controller
                 await runWorkTime(workMinutes, workSeconds);
                 BreakTimeDispalyed();
                 await runBreakTime(breakMinutes, breakSeconds);
+
+                SessionComplete();
             }
             SettingUpDispalyed();
             view.changeDisplayedTime("00:00");
@@ -109,26 +111,35 @@ public class Controller
 	
 	private void WorkTimeDispalyed()
 	{
-		if(view.InvokeRequired)
-		{
-			view.Invoke(() => view.changeTitleToWork);
+        if (view.InvokeRequired)
+        {
+            view.Invoke(() => 
+            { 
+                view.changeTitleToWork();
+                view.switchToBreakScreen();
+            }); 
 		} else
 		{
 			view.changeTitleToWork();
-
+            view.switchToWorkScreen();
         }
+
+
 	}
 
     private void BreakTimeDispalyed()
     {
         if (view.InvokeRequired)
         {
-            view.Invoke(() => view.changeTitleToBreak);
+            view.Invoke(() => {
+                view.changeTitleToBreak();
+                view.switchToBreakScreen();
+             });
         }
         else
         {
             view.changeTitleToBreak();
-
+            view.switchToBreakScreen();
         }
     }
 
@@ -167,5 +178,18 @@ public class Controller
             view.disableOneminutesWarning();
         }
     }
+
+    public void SessionComplete()
+    {
+        if(view.InvokeRequired)
+        {
+            view.Invoke(() => view.switchToSettingUpScreen);
+        }
+        else
+        {
+            view.switchToSettingUpScreen();
+        }
+    }
+    
 
 }

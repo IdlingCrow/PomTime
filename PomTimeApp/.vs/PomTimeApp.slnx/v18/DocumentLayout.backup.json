@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:controller\\controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\startingui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\startingui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,88 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StartingUI.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUI.cs",
-              "RelativeDocumentMoniker": "view\\StartingUI.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUI.cs [Design]",
-              "RelativeToolTip": "view\\StartingUI.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T21:05:00.477Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Model.cs",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\model\\Model.cs",
-              "RelativeDocumentMoniker": "model\\Model.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\model\\Model.cs",
-              "RelativeToolTip": "model\\Model.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAgwB4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T15:54:06.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T16:00:28.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "controller.cs",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\controller\\controller.cs",
-              "RelativeDocumentMoniker": "controller\\controller.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\controller\\controller.cs",
-              "RelativeToolTip": "controller\\controller.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBIAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-16T15:59:42.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StartingUI.cs",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUI.cs",
-              "RelativeDocumentMoniker": "view\\StartingUI.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUI.cs",
-              "RelativeToolTip": "view\\StartingUI.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAADwv0UAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T22:38:58.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StartingUi.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUi.Designer.cs",
-              "RelativeDocumentMoniker": "view\\StartingUi.Designer.cs",
-              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUi.Designer.cs",
-              "RelativeToolTip": "view\\StartingUi.Designer.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAuwKEAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T22:43:10.101Z",
-              "EditorCaption": ""
             }
           ]
         }

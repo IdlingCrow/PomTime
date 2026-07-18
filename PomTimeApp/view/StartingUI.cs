@@ -8,6 +8,8 @@ public partial class StartingUI : Form
     public EventHandler? userPressedStart;
     public StartingUI()
     {
+        this.MaximizeBox = false;
+        this.FormBorderStyle = FormBorderStyle.FixedSingle;
         InitializeComponent();
     }
 
@@ -73,5 +75,20 @@ public partial class StartingUI : Form
     private void startBtn_Click(object sender, EventArgs e)
     {
         userPressedStart?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void switchToWorkScreen()
+    {
+        this.BackColor = Color.GhostWhite;
+    }
+
+    public void switchToBreakScreen()
+    {
+        this.BackColor = Color.CadetBlue;
+    }
+
+    public void switchToSettingUpScreen()
+    {
+        this.BackColor = Color.White;
     }
 }
