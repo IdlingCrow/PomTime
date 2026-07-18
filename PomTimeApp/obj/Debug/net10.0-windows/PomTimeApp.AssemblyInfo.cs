@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PomTimeApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbf0cbc6774922f545b8ee308728628574ad1217")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8db1ce370611a3c302fd0842d1bd3beca3879024")]
 [assembly: System.Reflection.AssemblyProductAttribute("PomTimeApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PomTimeApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
