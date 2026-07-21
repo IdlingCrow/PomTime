@@ -91,16 +91,6 @@ public class TimeModel
 		return breakTime;
 	}
 
-	public int getSeconds()
-	{
-		return seconds;
-	}
-
-	public bool getOneMinAlert()
-	{
-		return oneMinAlert;
-	}
-
 
 
 }
