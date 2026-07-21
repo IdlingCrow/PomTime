@@ -81,6 +81,25 @@ public class TimeModel
         timer = new System.Timers.Timer(1000);
     }
 
+	public int getWorkTime()
+	{
+		return workTime;
+	}
+
+	public int getBreakTime()
+	{
+		return breakTime;
+	}
+
+	public int getSeconds()
+	{
+		return seconds;
+	}
+
+	public bool getOneMinAlert()
+	{
+		return oneMinAlert;
+	}
 
 
 
