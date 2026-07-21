@@ -104,8 +104,18 @@ public partial class StartingUI : Form
         return oneMinutesWarner.Text;
     }
 
+    public string getDisplayed_timer()
+    {
+        return Displayed_Timer.Text;
+    }
+
     public Color getBackColor()
     {
         return this.BackColor;
+    }
+
+    public void performClick()
+    {
+        this.startBtn_Click(this, EventArgs.Empty);
     }
 }
