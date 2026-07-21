@@ -1,6 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics;
 using PomTimeApp;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 
 namespace PomTime.Tests;
 
@@ -64,6 +65,7 @@ public sealed class modelTest
         int totalTime = 0;
         int intendedTime = 1000;
         bool workSessionEnd = false;
+        bool workSessionOneMinutesAlert = false;
 
         timer.workSessionDone += (sender, e) => {
             workSessionEnd = true;
@@ -76,11 +78,17 @@ public sealed class modelTest
             intendedTime += 1000;
         };
 
+        timer.sendOneMinutesAlert += (sender, e) =>
+        {
+            workSessionOneMinutesAlert = true;
+        };
+
         stopWatch.Start();
         timer.startWorkTime();
         while(!workSessionEnd && stopWatch.ElapsedMilliseconds < 6500)
         {
         }
+        Assert.IsTrue(workSessionOneMinutesAlert);
         Assert.IsTrue(workSessionEnd);
         Assert.IsGreaterThan(4000, stopWatch.ElapsedMilliseconds, "timer stop significant earlier at 5 seconds work input");
         Assert.IsLessThan(6500, stopWatch.ElapsedMilliseconds, $"timer did not stop at 5 seconds work input it stop at {stopWatch.ElapsedMilliseconds}");
@@ -93,18 +101,17 @@ public sealed class modelTest
     // these test are here for test coverage
     [TestMethod]
     [DoNotParallelize]
-    public void testIfNoInvoke()
+    public void testIfForWorkNoInvoke()
     {
-        TimeModel timer = new TimeModel(0, 1, 0, 1);
+        TimeModel timer = new TimeModel(0, 2, 0, 1);
 
         Stopwatch stopWatch = new Stopwatch();
         bool workSessionEnd = false;
-        bool breakSessionEnd = false;
         bool TimerActivated = false;
 
         timer.startWorkTime();
         stopWatch.Start();
-        while(stopWatch.ElapsedMilliseconds < 3000)
+        while(stopWatch.ElapsedMilliseconds < 4000)
         {
         }
 
@@ -116,15 +123,25 @@ public sealed class modelTest
         {
             TimerActivated = true;
         };
-
         Assert.IsFalse(workSessionEnd);
         Assert.IsFalse(TimerActivated);
 
-        stopWatch.Reset();
+    }
 
-        timer.startWorkTime();
+    // these test are here for test coverage
+    [TestMethod]
+    [DoNotParallelize]
+    public void testIfForBreakNoInvoke()
+    {
+        TimeModel timer = new TimeModel(0, 1, 0, 1);
+
+        Stopwatch stopWatch = new Stopwatch();
+        bool breakSessionEnd = false;
+        bool TimerActivated = false;
+
+        timer.startBreakTime();
         stopWatch.Start();
-        while(!breakSessionEnd  && stopWatch.ElapsedMilliseconds < 3000)
+        while(stopWatch.ElapsedMilliseconds < 4000)
         {
         }
 
@@ -132,9 +149,39 @@ public sealed class modelTest
             breakSessionEnd = true;
         };
 
+        timer.decreaseByASecond += (sender, e) =>
+        {
+            TimerActivated = true;
+        };
+
         Assert.IsFalse(breakSessionEnd);
+        Assert.IsFalse(TimerActivated);
 
     }
+
+    [TestMethod]
+    [DoNotParallelize]
+    public void testForOneMinutesAlert()
+    {
+        TimeModel timer = new TimeModel(1, 5, 0, 1);
+        Stopwatch stopWatch = new Stopwatch();
+        bool oneMinAlert = false;
+
+        timer.sendOneMinutesAlert += (sender, e) =>
+        {
+            oneMinAlert = true;
+        };
+
+        stopWatch.Start();
+        timer.startWorkTime();
+        Assert.IsFalse(oneMinAlert);
+
+        while(stopWatch.ElapsedMilliseconds < 6500)
+        {
+        }
+        Assert.IsTrue(oneMinAlert);
+    }
+
 
 
 
