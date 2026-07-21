@@ -1,12 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading;
-using PomTimeApp;
+﻿using PomTimeApp;
 
 namespace PomTime.Tests;
 
 [TestClass]
-public sealed class Test1
+public sealed class startingUITest
 {
 
     [TestMethod]
