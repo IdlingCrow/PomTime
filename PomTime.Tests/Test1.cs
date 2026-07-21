@@ -26,4 +26,34 @@ public sealed class Test1
         Assert.AreEqual(0, workSeconds, $"Number that was recived was: {workSeconds}");
         Assert.AreEqual(0, SessionsInput, $"Number that was recived was: {SessionsInput}");
     }
+
+    [TestMethod]
+    public void changingUi()
+    {
+        StartingUI newUi = new StartingUI();
+
+        newUi.changeTitleToBreak();
+        Assert.AreEqual("Break", newUi.getBreakOrWorkTimeDispalyed(), $"the title is {newUi.getBreakOrWorkTimeDispalyed()}");
+
+        newUi.changeTitleToWork();
+        Assert.AreEqual("Work", newUi.getBreakOrWorkTimeDispalyed(), $"the title is {newUi.getBreakOrWorkTimeDispalyed()}");
+
+        newUi.changeTitleToSettingUp();
+        Assert.AreEqual("Setting up", newUi.getBreakOrWorkTimeDispalyed(), $"the title is {newUi.getBreakOrWorkTimeDispalyed()}");
+
+        newUi.enableOneMinutesWarning();
+        Assert.AreNotEqual(String.Empty, newUi.getOneMinutesWarner(), "there is no one minutes warning");
+
+        newUi.disableOneminutesWarning();
+        Assert.AreEqual(String.Empty, newUi.getOneMinutesWarner(), "there is warning message didn't go away");
+
+        newUi.switchToBreakScreen();
+        Assert.AreEqual(Color.CadetBlue, newUi.getBackColor(), "incorrect screen for break time");
+
+        newUi.switchToWorkScreen();
+        Assert.AreEqual(Color.GhostWhite, newUi.getBackColor(), "incorrect screen for work time");
+
+        newUi.switchToSettingUpScreen();
+        Assert.AreEqual(Color.White, newUi.getBackColor(), "incorrect screen for setting up");
+    }
 }

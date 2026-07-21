@@ -91,4 +91,21 @@ public partial class StartingUI : Form
     {
         this.BackColor = Color.White;
     }
+
+    //these function is exculsively created for test purposes
+    public string getBreakOrWorkTimeDispalyed()
+    {
+        string result = BreakOrWorkTimeDispalyed.Text;
+        return result;
+    }
+
+    public string getOneMinutesWarner()
+    {
+        return oneMinutesWarner.Text;
+    }
+
+    public Color getBackColor()
+    {
+        return this.BackColor;
+    }
 }
