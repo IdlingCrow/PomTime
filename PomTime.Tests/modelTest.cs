@@ -1,5 +1,4 @@
 using System.Security.Cryptography.X509Certificates;
-using System.Diagnostics;
 using PomTimeApp;
 using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 
@@ -20,6 +19,7 @@ public sealed class modelTest
 
         Assert.AreEqual(60, timer.getBreakTime(), $"change break timer is suppose to be 50 is but is {timer.getBreakTime()}");
         Assert.AreEqual(50, timer.getWorkTime(), $"change work timer is suppose to be 60 is but is {timer.getWorkTime()}");
+<<<<<<< HEAD
     }
 
     [TestMethod]
@@ -185,4 +185,7 @@ public sealed class modelTest
 
 
 
+=======
+    }   
+>>>>>>> parent of 7e19517 (added more test)
 }
