@@ -66,7 +66,11 @@ public sealed class Test1
     {
         StartingUI newUi = new StartingUI();
         bool boolButtonWasClicked = false;
+        newUi.performClick();
+
         newUi.userPressedStart += (sender, e) => boolButtonWasClicked = true;
+        Assert.IsFalse(boolButtonWasClicked, "nothing should happend yet");
+
         newUi.performClick();
         Assert.IsTrue(boolButtonWasClicked, "start button was not detected");
 
