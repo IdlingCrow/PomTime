@@ -118,4 +118,15 @@ public partial class StartingUI : Form
     {
         this.startBtn_Click(this, EventArgs.Empty);
     }
+
+    public void performClickWithInput(int workTimeMinutes, int workTimeSeconds, int breakTimeMinutes, int breakTimeSeconds, int sessions)
+    {
+        this.WorkTimeMinutesInput.Text = Convert.ToString(workTimeMinutes);
+        this.WorkTimeSecondsInput.Text = Convert.ToString(workTimeSeconds);
+        this.BreakTimeMinutesInput.Text = Convert.ToString(breakTimeMinutes);
+        this.BreakTimeSecondsInput.Text = Convert.ToString(breakTimeSeconds);
+        this.SessionsInput.Text = Convert.ToString(sessions);
+        this.startBtn_Click(this, EventArgs.Empty);
+    }
+
 }
