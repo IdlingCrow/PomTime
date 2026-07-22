@@ -26,12 +26,13 @@ public class Controller
         timerModel.workSessionDone += workSessionTimerDone;
     }
 
-	public async void startCycle(object? sender, EventArgs e)
+
+    public async void startCycle(object? sender, EventArgs e) => await startCycleInner();
+	private async Task startCycleInner()
 	{
         if(!timerHasStarted)
         {
             timerHasStarted = true;
-            Debug.WriteLine("got to here");
             int breakMinutes = view.getBreakMinutes();
             int breakSeconds = view.getBreakSeconds();
             int workMinutes = view.getWorkMinutes();
@@ -48,6 +49,8 @@ public class Controller
                 await runWorkTime(workMinutes, workSeconds);
                 BreakTimeDispalyed();
                 await runBreakTime(breakMinutes, breakSeconds);
+
+                SessionComplete();
             }
             SettingUpDispalyed();
             view.changeDisplayedTime("00:00");
@@ -77,6 +80,7 @@ public class Controller
             view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}");
         }
     }
+
 
 	public void enableOneMinutesWarning(object? sender, EventArgs e)
 	{
@@ -109,26 +113,35 @@ public class Controller
 	
 	private void WorkTimeDispalyed()
 	{
-		if(view.InvokeRequired)
-		{
-			view.Invoke(() => view.changeTitleToWork);
+        if (view.InvokeRequired)
+        {
+            view.Invoke(() => 
+            { 
+                view.changeTitleToWork();
+                view.switchToBreakScreen();
+            }); 
 		} else
 		{
 			view.changeTitleToWork();
-
+            view.switchToWorkScreen();
         }
+
+
 	}
 
     private void BreakTimeDispalyed()
     {
         if (view.InvokeRequired)
         {
-            view.Invoke(() => view.changeTitleToBreak);
+            view.Invoke(() => {
+                view.changeTitleToBreak();
+                view.switchToBreakScreen();
+             });
         }
         else
         {
             view.changeTitleToBreak();
-
+            view.switchToBreakScreen();
         }
     }
 
@@ -147,13 +160,13 @@ public class Controller
 
     private void breakSessionTimerDone(object? sender, EventArgs e)
 	{
-        breakTimeCompletionsSource?.SetResult(true);
+        breakTimeCompletionsSource.SetResult(true);
     }
 
     private void workSessionTimerDone(object? sender, EventArgs e)
     {
         disableOneMinutesWarning();
-        workTimeCompletionsSource?.SetResult(true);
+        workTimeCompletionsSource.SetResult(true);
     }
 
     public void disableOneMinutesWarning()
@@ -167,5 +180,26 @@ public class Controller
             view.disableOneminutesWarning();
         }
     }
+
+    public void SessionComplete()
+    {
+        if(view.InvokeRequired)
+        {
+            view.Invoke(() => view.switchToSettingUpScreen());
+        }
+        else
+        {
+            view.switchToSettingUpScreen();
+        }
+    }
+
+    //for test purposes
+    public void changeBreakTime(int minutes, int seconds)
+    {
+        minutesInd = minutes;
+        secondsInd = seconds;
+    }
+    
+    
 
 }
