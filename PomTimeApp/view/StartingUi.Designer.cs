@@ -160,7 +160,6 @@ partial class StartingUI
         startBtn.TabIndex = 9;
         startBtn.Text = "start";
         startBtn.UseVisualStyleBackColor = true;
-        startBtn.Click += startBtn_Click;
         // 
         // pauseBtn
         // 
