@@ -13,8 +13,9 @@ static class Program
         ApplicationConfiguration.Initialize();
 
         StartingUI startingUI = new StartingUI();
+        SoundModel musicModel = new SoundModel();
         TimeModel timer = new TimeModel(0, 0, 0, 0);
-        Controller controller = new Controller(startingUI, timer);
+        Controller controller = new Controller(startingUI, timer, musicModel);
 
         Application.Run(startingUI);
     }    

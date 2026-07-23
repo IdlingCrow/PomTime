@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace PomTimeApp.view
 {
-    public partial class workTimeScreen : UserControl
+    public partial class WorkTimeScreen : UserControl
     {
-        public workTimeScreen()
+        public WorkTimeScreen()
         {
             InitializeComponent();
         }
@@ -19,5 +19,30 @@ namespace PomTimeApp.view
         {
             timerOnWorkScreen.Text = time;
         }
+
+        public void enableOneminutesWarning()
+        {
+            oneMinutesWarner.Text = "One Minutes Warning";
+        }
+
+        public void disableOneminutesWarning()
+        {
+            oneMinutesWarner.Text = "";
+        }
+        public string getTitle()
+        {
+            return screenTitle.Text;
+        }
+
+        public string getOneMinutesWarner()
+        {
+            return oneMinutesWarner.Text;
+        }
+
+        public string getDisplayed_timer()
+        {
+            return timerOnWorkScreen.Text;
+        }
+
     }
 }

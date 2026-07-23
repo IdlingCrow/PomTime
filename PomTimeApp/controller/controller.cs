@@ -7,6 +7,7 @@ public class Controller
 {
 	private StartingUI view;
     private TimeModel timerModel;
+    private SoundModel musicModel;
     private int minutesInd;
     private int secondsInd;
     private bool timerHasStarted;
@@ -14,7 +15,7 @@ public class Controller
 
 	private TaskCompletionSource<bool>? workTimeCompletionsSource;
 	private TaskCompletionSource<bool>? breakTimeCompletionsSource;
-	public Controller(StartingUI startingUI, TimeModel timerModel)
+	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel)
 	{
         timerHasStarted = false;
         view = startingUI;
@@ -24,6 +25,7 @@ public class Controller
         timerModel.sendOneMinutesAlert += enableOneMinutesWarning;
 		timerModel.breakSessionDone += breakSessionTimerDone;
         timerModel.workSessionDone += workSessionTimerDone;
+        this.musicModel = musicModel;
     }
 
 
@@ -38,6 +40,7 @@ public class Controller
             int workMinutes = view.getWorkMinutes();
             int workSeconds = view.getWorkSeconds();
             int session = view.getSession();
+            Debug.WriteLine($"recived: {workMinutes}:{workSeconds} work, {breakMinutes}: {breakSeconds} break, {session} session");
 
             timerModel.changeTime(workMinutes, workSeconds, breakMinutes, breakSeconds);
 
@@ -45,15 +48,17 @@ public class Controller
             {
                 breakTimeCompletionsSource = new TaskCompletionSource<bool>();
 
-                WorkTimeDispalyed();
+                musicModel.playSound();
+                musicModel.playMusic();
                 await runWorkTime(workMinutes, workSeconds);
-                BreakTimeDispalyed();
+                musicModel.stopMusic();
+                musicModel.playSound();
                 await runBreakTime(breakMinutes, breakSeconds);
 
                 SessionComplete();
             }
+            musicModel.playDoubleSound();
             SettingUpDispalyed();
-            view.changeDisplayedTime("00:00");
             timerHasStarted = false;
 
         }
@@ -74,10 +79,10 @@ public class Controller
 
 		if(view.InvokeRequired)
 		{
-			view.Invoke(() => view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}"));
+			view.Invoke(() => updateTimer());
 		} else
 		{
-            view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}");
+            updateTimer();
         }
     }
 
@@ -98,6 +103,8 @@ public class Controller
         workTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = workMinutes;
         secondsInd = workSeconds;
+        WorkTimeDispalyed();
+        updateTimer();
         timerModel.startWorkTime();
 		return workTimeCompletionsSource.Task;
     }
@@ -107,6 +114,8 @@ public class Controller
         breakTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = breakMinutes;
         secondsInd = breakSeconds;
+        BreakTimeDispalyed();
+        updateTimer();
         timerModel.startBreakTime();
 		return breakTimeCompletionsSource.Task;
     }
@@ -117,12 +126,11 @@ public class Controller
         {
             view.Invoke(() => 
             { 
-                view.changeTitleToWork();
-                view.switchToBreakScreen();
+                view.switchToWorkScreen();
+
             }); 
 		} else
 		{
-			view.changeTitleToWork();
             view.switchToWorkScreen();
         }
 
@@ -134,13 +142,11 @@ public class Controller
         if (view.InvokeRequired)
         {
             view.Invoke(() => {
-                view.changeTitleToBreak();
                 view.switchToBreakScreen();
-             });
+            });
         }
         else
         {
-            view.changeTitleToBreak();
             view.switchToBreakScreen();
         }
     }
@@ -167,6 +173,20 @@ public class Controller
     {
         disableOneMinutesWarning();
         workTimeCompletionsSource.SetResult(true);
+    }
+
+    private void updateTimer()
+    {
+
+        if (view.InvokeRequired)
+        {
+            view.Invoke(() => view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}"));
+        }
+        else
+        {
+            view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}");
+
+        }
     }
 
     public void disableOneMinutesWarning()

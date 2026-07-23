@@ -19,5 +19,16 @@ namespace PomTimeApp.view
         {
             timerOnBreakScreen.Text = time;
         }
+
+        public string getTitle()
+        {
+            return screenTitle.Text;
+        }
+
+        public string getDisplayed_timer()
+        {
+            return timerOnBreakScreen.Text;
+        }
+
     }
 }
