@@ -3,15 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.302\\Sdks\\Microsoft.SourceLink.Common\\build\\Microsoft.SourceLink.Common.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\startingui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\model\\Model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:model\\Model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.302\\Sdks\\Microsoft.SourceLink.Common\\build\\Microsoft.SourceLink.Common.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\pomtimeapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:pomtimeapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:properties\\resources.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\worktimescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\worktimescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|c:\\users\\hoang\\desktop\\pomtime\\pomtime\\pomtimeapp\\view\\breaktimescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EEAE1487-A484-0033-48A4-53F9DC02671E}|PomTimeApp.csproj|solutionrelative:view\\breaktimescreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,7 +37,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -29,7 +45,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "breakTimeScreen.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\breakTimeScreen.cs",
+              "RelativeDocumentMoniker": "view\\breakTimeScreen.cs",
+              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\breakTimeScreen.cs",
+              "RelativeToolTip": "view\\breakTimeScreen.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-23T22:51:41.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "workTimeScreen.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\workTimeScreen.cs",
+              "RelativeDocumentMoniker": "view\\workTimeScreen.cs",
+              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\workTimeScreen.cs [Design]",
+              "RelativeToolTip": "view\\workTimeScreen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-23T22:51:23.321Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Properties\\Resources.resx",
+              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\Properties\\Resources.resx",
+              "RelativeToolTip": "Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2026-07-23T22:50:47.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PomTimeApp",
+              "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\PomTimeApp.csproj",
+              "RelativeDocumentMoniker": "PomTimeApp.csproj",
+              "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\PomTimeApp.csproj",
+              "RelativeToolTip": "PomTimeApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-23T22:50:43.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Microsoft.SourceLink.Common.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\Sdks\\Microsoft.SourceLink.Common\\build\\Microsoft.SourceLink.Common.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.302\\Sdks\\Microsoft.SourceLink.Common\\build\\Microsoft.SourceLink.Common.targets",
@@ -42,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StartingUI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\view\\StartingUI.cs",
               "RelativeDocumentMoniker": "view\\StartingUI.cs",
@@ -54,16 +119,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\model\\Model.cs",
               "RelativeDocumentMoniker": "model\\Model.cs",
               "ToolTip": "C:\\Users\\hoang\\Desktop\\PomTime\\PomTime\\PomTimeApp\\model\\Model.cs",
               "RelativeToolTip": "model\\Model.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-17T23:44:17.804Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-17T23:44:17.804Z"
             }
           ]
         }
