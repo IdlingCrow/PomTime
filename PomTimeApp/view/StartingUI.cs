@@ -1,44 +1,70 @@
+using PomTimeApp.view;
 using System.Diagnostics;
 
 namespace PomTimeApp;
 
+
 public partial class StartingUI : Form
 {
+    screenState currScreen;
+    private breakTimeScreen breakTimeScreen = new breakTimeScreen();
+    private WorkTimeScreen workTimeScreen = new WorkTimeScreen();
+    private settingUpScreen settingUpScreen = new settingUpScreen();
 
     public EventHandler? userPressedStart;
+    public EventHandler? userPressedPause;
     public StartingUI()
     {
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
         InitializeComponent();
+        switchScreen(settingUpScreen);
+        settingUpScreen.userPressedStart = startBtn_Click;
+        currScreen = screenState.settingUp;
+    }
+
+    private enum screenState
+    {
+        workTime,
+        breakTime,
+        settingUp
+    }
+
+    private void switchScreen(UserControl control)
+    {
+        Controls.Clear();
+        ClientSize = control.Size;
+        control.Dock = DockStyle.Fill;
+        Controls.Add(control);
     }
 
     public int getWorkMinutes()
     {
-        int workMinutes = Convert.ToInt32(WorkTimeMinutesInput.Text);
+        int workMinutes = settingUpScreen.getWorkMinutes();
         return workMinutes;
     }
     public int getWorkSeconds()
     {
-        int workSeconds = Convert.ToInt32(WorkTimeSecondsInput.Text);
+        int workSeconds = settingUpScreen.getWorkSeconds();
         return workSeconds;
     }
 
     public int getBreakMinutes()
     {
-        int breakMinutes = Convert.ToInt32(BreakTimeMinutesInput.Text);
+        int breakMinutes = settingUpScreen.getBreakMinutes();
         return breakMinutes;
     }
 
     public int getBreakSeconds()
     {
-        int breakSeconds = Convert.ToInt32(BreakTimeSecondsInput.Text);
+        int breakSeconds = settingUpScreen.getBreakSeconds();
         return breakSeconds;
     }
 
     public int getSession()
     {
-        int session = Convert.ToInt32(SessionsInput.Text);
+        int session = settingUpScreen.getSession();
+        Debug.WriteLine($"getting {session} session");
         return session;
     }
 
@@ -59,54 +85,64 @@ public partial class StartingUI : Form
 
     public void changeDisplayedTime(string time)
     {
-        Displayed_Timer.Text = time;
+        if(currScreen == screenState.breakTime)
+        {
+            breakTimeScreen.changeDisplayedTime(time);
+        } else if (currScreen == screenState.workTime)
+        {
+            workTimeScreen.changeDisplayedTime(time);
+        } else
+        {
+            Debug.WriteLine("cannot change time when in setting up");
+        }
     }
 
     public void enableOneMinutesWarning()
     {
-        oneMinutesWarner.Text = "there is one minutes left until break time";
+        workTimeScreen.enableOneminutesWarning();
     }
 
     public void disableOneminutesWarning()
     {
-        oneMinutesWarner.Text = string.Empty;
+        workTimeScreen.disableOneminutesWarning();
     }
 
-    private void startBtn_Click(object sender, EventArgs e)
+    public void startBtn_Click(object? sender, EventArgs e)
     {
         userPressedStart?.Invoke(this, EventArgs.Empty);
     }
 
     public void switchToWorkScreen()
     {
-        this.BackColor = Color.GhostWhite;
+        switchScreen(workTimeScreen);
+        currScreen = screenState.workTime;
     }
 
     public void switchToBreakScreen()
     {
-        this.BackColor = Color.CadetBlue;
+        switchScreen(breakTimeScreen);
+        currScreen = screenState.breakTime;
     }
 
     public void switchToSettingUpScreen()
     {
-        this.BackColor = Color.White;
+        switchScreen(settingUpScreen);
+        currScreen = screenState.settingUp;
     }
 
     //these function is exculsively created for test purposes
     public string getBreakOrWorkTimeDispalyed()
     {
-        string result = BreakOrWorkTimeDispalyed.Text;
-        return result;
-    }
-
-    public string getOneMinutesWarner()
-    {
-        return oneMinutesWarner.Text;
-    }
-
-    public string getDisplayed_timer()
-    {
-        return Displayed_Timer.Text;
+        if(currScreen == screenState.settingUp)
+        {
+            return settingUpScreen.getTitle();
+        } else if (currScreen == screenState.breakTime)
+        {
+            return breakTimeScreen.getTitle();
+        } else //if (currScreen == screenState.workTime)
+        {
+            return workTimeScreen.getTitle();
+        }
     }
 
     public Color getBackColor()
@@ -116,17 +152,53 @@ public partial class StartingUI : Form
 
     public void performClick()
     {
-        this.startBtn_Click(this, EventArgs.Empty);
+        startBtn_Click(this, EventArgs.Empty);
     }
 
     public void performClickWithInput(int workTimeMinutes, int workTimeSeconds, int breakTimeMinutes, int breakTimeSeconds, int sessions)
     {
-        this.WorkTimeMinutesInput.Text = Convert.ToString(workTimeMinutes);
-        this.WorkTimeSecondsInput.Text = Convert.ToString(workTimeSeconds);
-        this.BreakTimeMinutesInput.Text = Convert.ToString(breakTimeMinutes);
-        this.BreakTimeSecondsInput.Text = Convert.ToString(breakTimeSeconds);
-        this.SessionsInput.Text = Convert.ToString(sessions);
-        this.startBtn_Click(this, EventArgs.Empty);
+        settingUpScreen.performClickWithInput(workTimeMinutes, workTimeSeconds, breakTimeMinutes, breakTimeSeconds, sessions);
+    }
+
+    private void pauseBtn_Click(object sender, EventArgs e)
+    {
+        this.Controls.Clear();
+        ClientSize = workTimeScreen.Size;
+        workTimeScreen.Dock = DockStyle.Fill;
+        this.Controls.Add(workTimeScreen);
+    }
+
+    public string getScreenState()
+    {
+        if(currScreen == screenState.breakTime)
+        {
+            return "Break";
+        } else if (currScreen == screenState.workTime)
+        {
+            return "Work";
+        } else
+        {
+            return "Setting up";
+        }
+    }
+
+    public string getOneMinutesWarner()
+    {
+        return workTimeScreen.getOneMinutesWarner();
+    }
+
+    public string getDisplayed_timer()
+    {
+        if(currScreen == screenState.workTime)
+        {
+            return workTimeScreen.getDisplayed_timer();
+        } else if (currScreen == screenState.breakTime)
+        {
+            return breakTimeScreen.getDisplayed_timer();
+        } else
+        {
+            return settingUpScreen.getDisplayed_timer();
+        }
     }
 
 }

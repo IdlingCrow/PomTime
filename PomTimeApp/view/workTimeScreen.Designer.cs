@@ -1,6 +1,6 @@
 ﻿namespace PomTimeApp.view
 {
-    partial class workTimeScreen
+    partial class WorkTimeScreen
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,35 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            WarkLableOnWorkScreen = new Label();
+            screenTitle = new Label();
             timerOnWorkScreen = new Label();
+            oneMinutesWarner = new Label();
             SuspendLayout();
             // 
-            // WarkLableOnWorkScreen
+            // screenTitle
             // 
-            WarkLableOnWorkScreen.AutoSize = true;
-            WarkLableOnWorkScreen.Location = new Point(149, 84);
-            WarkLableOnWorkScreen.Name = "WarkLableOnWorkScreen";
-            WarkLableOnWorkScreen.Size = new Size(69, 32);
-            WarkLableOnWorkScreen.TabIndex = 0;
-            WarkLableOnWorkScreen.Text = "Work";
+            screenTitle.AutoSize = true;
+            screenTitle.Font = new Font("Segoe UI", 15F);
+            screenTitle.Location = new Point(123, 85);
+            screenTitle.Name = "screenTitle";
+            screenTitle.Size = new Size(115, 54);
+            screenTitle.TabIndex = 0;
+            screenTitle.Text = "Work";
             // 
             // timerOnWorkScreen
             // 
             timerOnWorkScreen.AutoSize = true;
-            timerOnWorkScreen.Location = new Point(147, 218);
+            timerOnWorkScreen.Font = new Font("Segoe UI", 20F);
+            timerOnWorkScreen.Location = new Point(105, 170);
             timerOnWorkScreen.Name = "timerOnWorkScreen";
-            timerOnWorkScreen.Size = new Size(71, 32);
+            timerOnWorkScreen.Size = new Size(158, 72);
             timerOnWorkScreen.TabIndex = 1;
             timerOnWorkScreen.Text = "00:00";
             // 
-            // workTimeScreen
+            // oneMinutesWarner
+            // 
+            oneMinutesWarner.AutoSize = true;
+            oneMinutesWarner.Location = new Point(123, 295);
+            oneMinutesWarner.Name = "oneMinutesWarner";
+            oneMinutesWarner.Size = new Size(0, 32);
+            oneMinutesWarner.TabIndex = 2;
+            // 
+            // WorkTimeScreen
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(oneMinutesWarner);
             Controls.Add(timerOnWorkScreen);
-            Controls.Add(WarkLableOnWorkScreen);
-            Name = "workTimeScreen";
+            Controls.Add(screenTitle);
+            Name = "WorkTimeScreen";
             Size = new Size(374, 396);
             ResumeLayout(false);
             PerformLayout();
@@ -64,7 +76,8 @@
 
         #endregion
 
-        private Label WarkLableOnWorkScreen;
+        private Label screenTitle;
         private Label timerOnWorkScreen;
+        private Label oneMinutesWarner;
     }
 }
