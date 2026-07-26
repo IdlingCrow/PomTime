@@ -10,6 +10,7 @@ public partial class StartingUI : Form
     private breakTimeScreen breakTimeScreen = new breakTimeScreen();
     private WorkTimeScreen workTimeScreen = new WorkTimeScreen();
     private settingUpScreen settingUpScreen = new settingUpScreen();
+    private boxBreathingAnimation box = new boxBreathingAnimation();
 
     public EventHandler? userPressedStart;
     public EventHandler? userPressedPause;

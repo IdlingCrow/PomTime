@@ -166,13 +166,13 @@ public class Controller
 
     private void breakSessionTimerDone(object? sender, EventArgs e)
 	{
-        breakTimeCompletionsSource.SetResult(true);
+        breakTimeCompletionsSource?.SetResult(true);
     }
 
     private void workSessionTimerDone(object? sender, EventArgs e)
     {
         disableOneMinutesWarning();
-        workTimeCompletionsSource.SetResult(true);
+        workTimeCompletionsSource?.SetResult(true);
     }
 
     private void updateTimer()

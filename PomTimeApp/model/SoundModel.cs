@@ -18,7 +18,7 @@ public class SoundModel
 
     public void playMusic()
     {
-        music.Play();
+        music.PlayLooping();
     }
 
     public void stopMusic()
