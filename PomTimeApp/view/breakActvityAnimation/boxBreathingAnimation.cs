@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PomTimeApp.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace PomTimeApp.view
         int spacingFromEdge;
         int dotSize;
         int squareOutLineSize;
+
+        boxBreathingModel boxModel;
 
         TravelDirection travelDirection;
         PointF currDotCord;
@@ -50,6 +53,9 @@ namespace PomTimeApp.view
             currDotCord = topLeft;
             this.Paint += DrawRectangleUsingFourCord;
             this.Paint += DrawDot;
+
+            boxModel = new boxBreathingModel(this);
+            this.DoubleBuffered = true;
         }
 
         public enum TravelDirection
@@ -77,63 +83,37 @@ namespace PomTimeApp.view
             }
         }
 
-        public void advanceDot(int pixels)
+        public void advanceDot(PointF dot)
         {
-            if (travelDirection == TravelDirection.right)
-            {
-                if (currDotCord.X + pixels >= topRight.X)
-                {
-                    currDotCord.X = topRight.X;
-                    travelDirection = TravelDirection.down;
-                }
-                else
-                {
-                    currDotCord.X += pixels;
-                }
-            }
-            else if (travelDirection == TravelDirection.down)
-            {
-                if (currDotCord.Y + pixels >= bottomRight.Y)
-                {
-                    currDotCord.Y = bottomRight.Y;
-                    travelDirection = TravelDirection.left;
-                }
-                else
-                {
-                    currDotCord.Y += pixels;
-                }
-            }
-            else if (travelDirection == TravelDirection.left)
-            {
-                if (currDotCord.X - pixels <= bottomLeft.X)
-                {
-                    currDotCord.X = bottomLeft.X;
-                    travelDirection = TravelDirection.up;
-                }
-                else
-                {
-                    currDotCord.X -= pixels;
-                }
-            }
-            else
-            {
-                if (currDotCord.Y - pixels <= topRight.Y)
-                {
-                    currDotCord.Y = topRight.Y;
-                    travelDirection = TravelDirection.right;
-                }
-                else
-                {
-                    currDotCord.Y -= pixels;
-                }
-            }
+            currDotCord = dot;
             Refresh();
+        }
+
+        public PointF getCurrDot()
+        {
+            return currDotCord;
+        }
+
+        public PointF[] getCorners()
+        {
+            PointF[] sentCorner = (PointF[])corners.Clone();
+            return sentCorner;
+        }
+
+        public void setCurrDotToTopLeft()
+        {
+            currDotCord = topLeft;
+        }
+
+        public int getSideLength()
+        {
+            return Convert.ToInt32(topRight.X - topLeft.X);
         }
 
 
         private void tester_Click(object sender, EventArgs e)
         {
-            advanceDot(100);
+            boxModel.startAnimation();
         }
     }
 }

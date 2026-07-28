@@ -30,9 +30,9 @@
         {
             screenTitle = new Label();
             timerOnBreakScreen = new Label();
-            pictureBox1 = new PictureBox();
+            breakTimeActivity = new PictureBox();
             exersizeLabel = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)breakTimeActivity).BeginInit();
             SuspendLayout();
             // 
             // screenTitle
@@ -55,15 +55,14 @@
             timerOnBreakScreen.TabIndex = 1;
             timerOnBreakScreen.Text = "00:00";
             // 
-            // pictureBox1
+            // breakTimeActivity
             // 
-            pictureBox1.Image = Properties.Resources.boxBreathingTechnique;
-            pictureBox1.Location = new Point(393, 177);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(540, 540);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            breakTimeActivity.Location = new Point(393, 177);
+            breakTimeActivity.Name = "breakTimeActivity";
+            breakTimeActivity.Size = new Size(540, 540);
+            breakTimeActivity.SizeMode = PictureBoxSizeMode.StretchImage;
+            breakTimeActivity.TabIndex = 2;
+            breakTimeActivity.TabStop = false;
             // 
             // exersizeLabel
             // 
@@ -79,12 +78,12 @@
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(exersizeLabel);
-            Controls.Add(pictureBox1);
+            Controls.Add(breakTimeActivity);
             Controls.Add(timerOnBreakScreen);
             Controls.Add(screenTitle);
             Name = "breakTimeScreen";
             Size = new Size(1283, 789);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)breakTimeActivity).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -93,7 +92,7 @@
 
         private Label screenTitle;
         private Label timerOnBreakScreen;
-        private PictureBox pictureBox1;
+        private PictureBox breakTimeActivity;
         private Label exersizeLabel;
     }
 }

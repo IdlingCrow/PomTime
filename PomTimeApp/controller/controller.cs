@@ -58,7 +58,6 @@ public class Controller
                 SessionComplete();
             }
             musicModel.playDoubleSound();
-            SettingUpDispalyed();
             timerHasStarted = false;
 
         }
@@ -148,19 +147,6 @@ public class Controller
         else
         {
             view.switchToBreakScreen();
-        }
-    }
-
-    private void SettingUpDispalyed()
-    {
-        if (view.InvokeRequired)
-        {
-            view.Invoke(() => view.changeTitleToSettingUp);
-        }
-        else
-        {
-            view.changeTitleToSettingUp();
-
         }
     }
 

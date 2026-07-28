@@ -69,21 +69,6 @@ public partial class StartingUI : Form
         return session;
     }
 
-    public void changeTitleToBreak()
-    {
-        BreakOrWorkTimeDispalyed.Text = "Break";
-    }
-
-    public void changeTitleToWork()
-    {
-        BreakOrWorkTimeDispalyed.Text = "Work";
-    }
-
-    public void changeTitleToSettingUp()
-    {
-        BreakOrWorkTimeDispalyed.Text = "Setting up";
-    }
-
     public void changeDisplayedTime(string time)
     {
         if(currScreen == screenState.breakTime)
@@ -122,6 +107,7 @@ public partial class StartingUI : Form
     public void switchToBreakScreen()
     {
         switchScreen(breakTimeScreen);
+        breakTimeScreen.startAnActivity();
         currScreen = screenState.breakTime;
     }
 

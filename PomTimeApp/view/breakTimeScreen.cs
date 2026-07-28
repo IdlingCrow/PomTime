@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PomTimeApp.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,12 @@ namespace PomTimeApp.view
 {
     public partial class breakTimeScreen : UserControl
     {
+        activityModel activityModel;
         public breakTimeScreen()
         {
             InitializeComponent();
+            activityModel = new activityModel();
+
         }
 
         public void changeDisplayedTime(string time)
@@ -30,5 +34,14 @@ namespace PomTimeApp.view
             return timerOnBreakScreen.Text;
         }
 
+        public void startAnActivity()
+        {
+            changeBreakActvity(activityModel.getBreakActivity());
+        }
+
+        private void changeBreakActvity(Image newImage)
+        {
+            breakTimeActivity.Image = newImage;
+        }
     }
 }
