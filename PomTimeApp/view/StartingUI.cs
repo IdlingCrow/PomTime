@@ -10,18 +10,32 @@ public partial class StartingUI : Form
     private breakTimeScreen breakTimeScreen = new breakTimeScreen();
     private WorkTimeScreen workTimeScreen = new WorkTimeScreen();
     private settingUpScreen settingUpScreen = new settingUpScreen();
-    private boxBreathingAnimation box = new boxBreathingAnimation();
 
     public EventHandler? userPressedStart;
     public EventHandler? userPressedPause;
+    public EventHandler? userPressedResume;
+    public EventHandler? userPressedReset;
+    public EventHandler? resumeMusic;
+    public EventHandler? pauseMusic;
     public StartingUI()
     {
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
         InitializeComponent();
         switchScreen(settingUpScreen);
+
         settingUpScreen.userPressedStart = startBtn_Click;
+        workTimeScreen.UserPressedPause = pauseBtn_Click;
+        workTimeScreen.UserPressedResume = resumeButtonClick;
+        workTimeScreen.UserPressedReset = resetButtonClick;
+        workTimeScreen.PauseMusic = userPressedPauseMusic;
+        workTimeScreen.PlayMusic = userPressedResumeMusic;
+
+        breakTimeScreen.UserPressedPause = pauseBtn_Click;
+        breakTimeScreen.UserPressedResume = resumeButtonClick;
+        breakTimeScreen.UserPressedReset = resetButtonClick;
         currScreen = screenState.settingUp;
+        this.AutoScaleMode = AutoScaleMode.Dpi;
     }
 
     private enum screenState
@@ -69,6 +83,17 @@ public partial class StartingUI : Form
         return session;
     }
 
+    public void userPressedResumeMusic(object? sender, EventArgs e)
+    {
+        Debug.WriteLine("resume button have been pressed");
+        resumeMusic?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void userPressedPauseMusic(object? sender, EventArgs e)
+    {
+        Debug.WriteLine("pause button have been pressed");
+        pauseMusic?.Invoke(this, EventArgs.Empty);
+    }
     public void changeDisplayedTime(string time)
     {
         if(currScreen == screenState.breakTime)
@@ -97,7 +122,10 @@ public partial class StartingUI : Form
     {
         userPressedStart?.Invoke(this, EventArgs.Empty);
     }
-
+    public void resumeButtonClick(object? sender, EventArgs e)
+    {
+        userPressedResume?.Invoke(this, EventArgs.Empty);
+    }
     public void switchToWorkScreen()
     {
         switchScreen(workTimeScreen);
@@ -147,12 +175,14 @@ public partial class StartingUI : Form
         settingUpScreen.performClickWithInput(workTimeMinutes, workTimeSeconds, breakTimeMinutes, breakTimeSeconds, sessions);
     }
 
-    private void pauseBtn_Click(object sender, EventArgs e)
+    private void pauseBtn_Click(object? sender, EventArgs e)
     {
-        this.Controls.Clear();
-        ClientSize = workTimeScreen.Size;
-        workTimeScreen.Dock = DockStyle.Fill;
-        this.Controls.Add(workTimeScreen);
+        userPressedPause?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void resetButtonClick(object? sender, EventArgs e)
+    {
+        userPressedReset?.Invoke(this, EventArgs.Empty);
     }
 
     public string getScreenState()

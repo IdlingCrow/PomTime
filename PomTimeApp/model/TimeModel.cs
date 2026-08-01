@@ -24,8 +24,22 @@ public class TimeModel
 		timer = new System.Timers.Timer(1000);
 		oneMinAlert = false;
 	}
+	public void startTime()
+	{
+		Debug.WriteLine(seconds);
+		timer.Start();
+	}
 
+	public void resetTime()
+	{
+        timer.Elapsed -= workTimer;
+		timer.Elapsed -= breakTimer;
+    }
 
+	public void pauseTime()
+	{
+		timer.Stop();
+	}
 
 	public void startWorkTime()
 	{
@@ -36,6 +50,7 @@ public class TimeModel
 
 	private void workTimer(object? sender, ElapsedEventArgs e)
 	{
+		
 		if(seconds > 0)
 		{
 			if(seconds <= 60 && !oneMinAlert) {

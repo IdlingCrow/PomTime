@@ -28,179 +28,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SessionsInput = new MaskedTextBox();
-            SessionsTitle = new Label();
-            startBtn = new Button();
-            BreakTimeSecondsInput = new MaskedTextBox();
-            label2 = new Label();
-            BreakTimeMinutesInput = new MaskedTextBox();
-            WorkTimeSecondsInput = new MaskedTextBox();
-            label1 = new Label();
-            WorkTimeMinutesInput = new MaskedTextBox();
-            Break_Time_Title = new Label();
-            Work_Time_Title = new Label();
-            screenTitle = new Label();
+            workTimeButton = new themeButton();
+            BreakTimeButton = new themeButton();
+            SessionButton = new themeButton();
+            SessionLabel = new Label();
+            secondsLabel = new Label();
+            IncreaseMinutesBtn = new Button();
+            DecreaseMinutesBtn = new Button();
+            IncreaseSessionBtn = new Button();
+            DecreaseSessionBtn = new Button();
+            IncreaseSecondsBtn = new Button();
+            DecreaseSecondsBtn = new Button();
+            startBtn = new themeButton();
+            MinutesLabel = new Label();
             SuspendLayout();
             // 
-            // SessionsInput
+            // workTimeButton
             // 
-            SessionsInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SessionsInput.AsciiOnly = true;
-            SessionsInput.Location = new Point(873, 392);
-            SessionsInput.Mask = "00";
-            SessionsInput.Name = "SessionsInput";
-            SessionsInput.PromptChar = ' ';
-            SessionsInput.Size = new Size(129, 39);
-            SessionsInput.TabIndex = 25;
-            SessionsInput.Text = "00";
-            SessionsInput.TextAlign = HorizontalAlignment.Center;
-            SessionsInput.ValidatingType = typeof(int);
+            workTimeButton.BackColor = Color.White;
+            workTimeButton.FlatAppearance.BorderColor = Color.White;
+            workTimeButton.FlatAppearance.BorderSize = 3;
+            workTimeButton.FlatStyle = FlatStyle.Flat;
+            workTimeButton.Font = new Font("Segoe UI", 25.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            workTimeButton.ForeColor = Color.FromArgb(167, 199, 231);
+            workTimeButton.Location = new Point(65, 46);
+            workTimeButton.Name = "workTimeButton";
+            workTimeButton.Size = new Size(339, 104);
+            workTimeButton.TabIndex = 0;
+            workTimeButton.Text = "Work";
+            workTimeButton.UseVisualStyleBackColor = false;
+            workTimeButton.Click += workTimeButton_Click;
             // 
-            // SessionsTitle
+            // BreakTimeButton
             // 
-            SessionsTitle.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SessionsTitle.AutoSize = true;
-            SessionsTitle.Location = new Point(884, 335);
-            SessionsTitle.Name = "SessionsTitle";
-            SessionsTitle.Size = new Size(104, 32);
-            SessionsTitle.TabIndex = 24;
-            SessionsTitle.Text = "Sessions";
-            SessionsTitle.TextAlign = ContentAlignment.MiddleCenter;
+            BreakTimeButton.BackColor = Color.White;
+            BreakTimeButton.FlatAppearance.BorderColor = Color.White;
+            BreakTimeButton.FlatAppearance.BorderSize = 3;
+            BreakTimeButton.FlatStyle = FlatStyle.Flat;
+            BreakTimeButton.Font = new Font("Segoe UI", 25.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BreakTimeButton.ForeColor = Color.FromArgb(167, 199, 231);
+            BreakTimeButton.Location = new Point(484, 46);
+            BreakTimeButton.Name = "BreakTimeButton";
+            BreakTimeButton.Size = new Size(339, 104);
+            BreakTimeButton.TabIndex = 1;
+            BreakTimeButton.Text = "Break";
+            BreakTimeButton.UseVisualStyleBackColor = false;
+            BreakTimeButton.Click += BreakTimeButton_Click;
+            // 
+            // SessionButton
+            // 
+            SessionButton.BackColor = Color.White;
+            SessionButton.FlatAppearance.BorderColor = Color.White;
+            SessionButton.FlatAppearance.BorderSize = 3;
+            SessionButton.FlatStyle = FlatStyle.Flat;
+            SessionButton.Font = new Font("Segoe UI", 25.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SessionButton.ForeColor = Color.FromArgb(167, 199, 231);
+            SessionButton.Location = new Point(898, 46);
+            SessionButton.Name = "SessionButton";
+            SessionButton.Size = new Size(339, 104);
+            SessionButton.TabIndex = 2;
+            SessionButton.Text = "Session";
+            SessionButton.UseVisualStyleBackColor = false;
+            SessionButton.Click += SessionButton_Click;
+            // 
+            // SessionLabel
+            // 
+            SessionLabel.AutoSize = true;
+            SessionLabel.BackColor = Color.Transparent;
+            SessionLabel.Font = new Font("Segoe UI", 40F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SessionLabel.ForeColor = Color.White;
+            SessionLabel.Location = new Point(590, 344);
+            SessionLabel.MinimumSize = new Size(90, 142);
+            SessionLabel.Name = "SessionLabel";
+            SessionLabel.Size = new Size(90, 142);
+            SessionLabel.TabIndex = 4;
+            SessionLabel.Text = ":";
+            SessionLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // secondsLabel
+            // 
+            secondsLabel.Font = new Font("Segoe UI", 40F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            secondsLabel.ForeColor = Color.White;
+            secondsLabel.Location = new Point(652, 344);
+            secondsLabel.Name = "secondsLabel";
+            secondsLabel.Size = new Size(193, 142);
+            secondsLabel.TabIndex = 5;
+            secondsLabel.Text = "00";
+            secondsLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // IncreaseMinutesBtn
+            // 
+            IncreaseMinutesBtn.BackColor = Color.FromArgb(167, 199, 231);
+            IncreaseMinutesBtn.FlatAppearance.BorderSize = 0;
+            IncreaseMinutesBtn.FlatStyle = FlatStyle.Flat;
+            IncreaseMinutesBtn.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            IncreaseMinutesBtn.ForeColor = Color.White;
+            IncreaseMinutesBtn.Location = new Point(484, 243);
+            IncreaseMinutesBtn.Name = "IncreaseMinutesBtn";
+            IncreaseMinutesBtn.Size = new Size(100, 98);
+            IncreaseMinutesBtn.TabIndex = 6;
+            IncreaseMinutesBtn.Text = "▲";
+            IncreaseMinutesBtn.TextAlign = ContentAlignment.TopCenter;
+            IncreaseMinutesBtn.UseVisualStyleBackColor = false;
+            IncreaseMinutesBtn.Click += IncreaseMinutesBtn_Click;
+            // 
+            // DecreaseMinutesBtn
+            // 
+            DecreaseMinutesBtn.BackColor = Color.FromArgb(167, 199, 231);
+            DecreaseMinutesBtn.FlatAppearance.BorderSize = 0;
+            DecreaseMinutesBtn.FlatStyle = FlatStyle.Flat;
+            DecreaseMinutesBtn.Font = new Font("Segoe UI", 30F, FontStyle.Bold);
+            DecreaseMinutesBtn.ForeColor = Color.White;
+            DecreaseMinutesBtn.Location = new Point(484, 478);
+            DecreaseMinutesBtn.Name = "DecreaseMinutesBtn";
+            DecreaseMinutesBtn.Size = new Size(100, 98);
+            DecreaseMinutesBtn.TabIndex = 7;
+            DecreaseMinutesBtn.Text = "▼";
+            DecreaseMinutesBtn.UseVisualStyleBackColor = false;
+            DecreaseMinutesBtn.Click += DecreaseMinutesBtn_Click;
+            // 
+            // IncreaseSessionBtn
+            // 
+            IncreaseSessionBtn.BackColor = Color.FromArgb(167, 199, 231);
+            IncreaseSessionBtn.FlatAppearance.BorderSize = 0;
+            IncreaseSessionBtn.FlatStyle = FlatStyle.Flat;
+            IncreaseSessionBtn.Font = new Font("Segoe UI", 30F);
+            IncreaseSessionBtn.ForeColor = Color.White;
+            IncreaseSessionBtn.Location = new Point(590, 243);
+            IncreaseSessionBtn.Name = "IncreaseSessionBtn";
+            IncreaseSessionBtn.Size = new Size(100, 98);
+            IncreaseSessionBtn.TabIndex = 8;
+            IncreaseSessionBtn.Text = "▲";
+            IncreaseSessionBtn.UseVisualStyleBackColor = false;
+            IncreaseSessionBtn.Click += IncreaseSessionBtn_Click;
+            // 
+            // DecreaseSessionBtn
+            // 
+            DecreaseSessionBtn.BackColor = Color.FromArgb(167, 199, 231);
+            DecreaseSessionBtn.FlatAppearance.BorderSize = 0;
+            DecreaseSessionBtn.FlatStyle = FlatStyle.Flat;
+            DecreaseSessionBtn.Font = new Font("Segoe UI", 30F);
+            DecreaseSessionBtn.ForeColor = Color.White;
+            DecreaseSessionBtn.Location = new Point(590, 478);
+            DecreaseSessionBtn.Name = "DecreaseSessionBtn";
+            DecreaseSessionBtn.Size = new Size(100, 98);
+            DecreaseSessionBtn.TabIndex = 9;
+            DecreaseSessionBtn.Text = "▼";
+            DecreaseSessionBtn.UseVisualStyleBackColor = false;
+            DecreaseSessionBtn.Click += DecreaseSessionBtn_Click;
+            // 
+            // IncreaseSecondsBtn
+            // 
+            IncreaseSecondsBtn.BackColor = Color.FromArgb(167, 199, 231);
+            IncreaseSecondsBtn.FlatAppearance.BorderSize = 0;
+            IncreaseSecondsBtn.FlatStyle = FlatStyle.Flat;
+            IncreaseSecondsBtn.Font = new Font("Segoe UI", 30F);
+            IncreaseSecondsBtn.ForeColor = Color.White;
+            IncreaseSecondsBtn.Location = new Point(696, 243);
+            IncreaseSecondsBtn.Name = "IncreaseSecondsBtn";
+            IncreaseSecondsBtn.Size = new Size(100, 98);
+            IncreaseSecondsBtn.TabIndex = 10;
+            IncreaseSecondsBtn.Text = "▲";
+            IncreaseSecondsBtn.UseVisualStyleBackColor = false;
+            IncreaseSecondsBtn.Click += IncreaseSecondsBtn_Click;
+            // 
+            // DecreaseSecondsBtn
+            // 
+            DecreaseSecondsBtn.BackColor = Color.FromArgb(167, 199, 231);
+            DecreaseSecondsBtn.FlatAppearance.BorderSize = 0;
+            DecreaseSecondsBtn.FlatStyle = FlatStyle.Flat;
+            DecreaseSecondsBtn.Font = new Font("Segoe UI", 30F);
+            DecreaseSecondsBtn.ForeColor = Color.White;
+            DecreaseSecondsBtn.Location = new Point(696, 478);
+            DecreaseSecondsBtn.Name = "DecreaseSecondsBtn";
+            DecreaseSecondsBtn.Size = new Size(100, 98);
+            DecreaseSecondsBtn.TabIndex = 11;
+            DecreaseSecondsBtn.Text = "▼";
+            DecreaseSecondsBtn.UseVisualStyleBackColor = false;
+            DecreaseSecondsBtn.Click += DecreaseSecondsBtn_Click;
             // 
             // startBtn
             // 
-            startBtn.Location = new Point(552, 559);
+            startBtn.BackColor = Color.White;
+            startBtn.FlatAppearance.BorderColor = Color.White;
+            startBtn.FlatAppearance.BorderSize = 3;
+            startBtn.FlatStyle = FlatStyle.Flat;
+            startBtn.Font = new Font("Segoe UI", 25.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            startBtn.ForeColor = Color.FromArgb(167, 199, 231);
+            startBtn.Location = new Point(432, 635);
             startBtn.Name = "startBtn";
-            startBtn.Size = new Size(150, 46);
-            startBtn.TabIndex = 22;
-            startBtn.Text = "start";
-            startBtn.UseVisualStyleBackColor = true;
+            startBtn.Size = new Size(413, 104);
+            startBtn.TabIndex = 12;
+            startBtn.Text = "Start";
+            startBtn.UseVisualStyleBackColor = false;
             startBtn.Click += startBtn_Click;
             // 
-            // BreakTimeSecondsInput
+            // MinutesLabel
             // 
-            BreakTimeSecondsInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            BreakTimeSecondsInput.Location = new Point(645, 392);
-            BreakTimeSecondsInput.Mask = "00";
-            BreakTimeSecondsInput.Name = "BreakTimeSecondsInput";
-            BreakTimeSecondsInput.PromptChar = ' ';
-            BreakTimeSecondsInput.Size = new Size(48, 39);
-            BreakTimeSecondsInput.TabIndex = 21;
-            BreakTimeSecondsInput.Text = "00";
-            BreakTimeSecondsInput.TextAlign = HorizontalAlignment.Center;
-            BreakTimeSecondsInput.ValidatingType = typeof(int);
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F);
-            label2.Location = new Point(620, 392);
-            label2.Name = "label2";
-            label2.Size = new Size(19, 32);
-            label2.TabIndex = 20;
-            label2.Text = ":";
-            // 
-            // BreakTimeMinutesInput
-            // 
-            BreakTimeMinutesInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            BreakTimeMinutesInput.Location = new Point(566, 390);
-            BreakTimeMinutesInput.Mask = "00";
-            BreakTimeMinutesInput.Name = "BreakTimeMinutesInput";
-            BreakTimeMinutesInput.PromptChar = ' ';
-            BreakTimeMinutesInput.Size = new Size(48, 39);
-            BreakTimeMinutesInput.TabIndex = 19;
-            BreakTimeMinutesInput.Text = "00";
-            BreakTimeMinutesInput.TextAlign = HorizontalAlignment.Center;
-            BreakTimeMinutesInput.ValidatingType = typeof(int);
-            // 
-            // WorkTimeSecondsInput
-            // 
-            WorkTimeSecondsInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            WorkTimeSecondsInput.Location = new Point(331, 392);
-            WorkTimeSecondsInput.Mask = "00";
-            WorkTimeSecondsInput.Name = "WorkTimeSecondsInput";
-            WorkTimeSecondsInput.PromptChar = ' ';
-            WorkTimeSecondsInput.Size = new Size(48, 39);
-            WorkTimeSecondsInput.TabIndex = 18;
-            WorkTimeSecondsInput.Text = "00";
-            WorkTimeSecondsInput.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F);
-            label1.Location = new Point(306, 390);
-            label1.Name = "label1";
-            label1.Size = new Size(19, 32);
-            label1.TabIndex = 17;
-            label1.Text = ":";
-            // 
-            // WorkTimeMinutesInput
-            // 
-            WorkTimeMinutesInput.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            WorkTimeMinutesInput.AsciiOnly = true;
-            WorkTimeMinutesInput.Location = new Point(252, 392);
-            WorkTimeMinutesInput.Mask = "00";
-            WorkTimeMinutesInput.Name = "WorkTimeMinutesInput";
-            WorkTimeMinutesInput.PromptChar = ' ';
-            WorkTimeMinutesInput.Size = new Size(48, 39);
-            WorkTimeMinutesInput.TabIndex = 16;
-            WorkTimeMinutesInput.Text = "00";
-            WorkTimeMinutesInput.TextAlign = HorizontalAlignment.Center;
-            WorkTimeMinutesInput.ValidatingType = typeof(int);
-            // 
-            // Break_Time_Title
-            // 
-            Break_Time_Title.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Break_Time_Title.AutoSize = true;
-            Break_Time_Title.Location = new Point(568, 335);
-            Break_Time_Title.Name = "Break_Time_Title";
-            Break_Time_Title.Size = new Size(133, 32);
-            Break_Time_Title.TabIndex = 15;
-            Break_Time_Title.Text = "Break Time";
-            Break_Time_Title.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Work_Time_Title
-            // 
-            Work_Time_Title.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            Work_Time_Title.AutoSize = true;
-            Work_Time_Title.Location = new Point(252, 335);
-            Work_Time_Title.Name = "Work_Time_Title";
-            Work_Time_Title.Size = new Size(129, 32);
-            Work_Time_Title.TabIndex = 14;
-            Work_Time_Title.Text = "Work Time";
-            Work_Time_Title.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // screenTitle
-            // 
-            screenTitle.AutoSize = true;
-            screenTitle.Font = new Font("Segoe UI", 15F);
-            screenTitle.Location = new Point(523, 123);
-            screenTitle.MaximumSize = new Size(208, 54);
-            screenTitle.MinimumSize = new Size(208, 54);
-            screenTitle.Name = "screenTitle";
-            screenTitle.Size = new Size(208, 54);
-            screenTitle.TabIndex = 26;
-            screenTitle.Text = "Setting up";
+            MinutesLabel.BackColor = Color.Transparent;
+            MinutesLabel.Font = new Font("Segoe UI", 40.125F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MinutesLabel.ForeColor = Color.White;
+            MinutesLabel.Location = new Point(432, 344);
+            MinutesLabel.Name = "MinutesLabel";
+            MinutesLabel.Size = new Size(195, 142);
+            MinutesLabel.TabIndex = 14;
+            MinutesLabel.Text = "25";
+            MinutesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // settingUpScreen
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(screenTitle);
-            Controls.Add(SessionsInput);
-            Controls.Add(SessionsTitle);
+            BackColor = Color.FromArgb(167, 199, 231);
+            Controls.Add(secondsLabel);
+            Controls.Add(SessionLabel);
+            Controls.Add(MinutesLabel);
             Controls.Add(startBtn);
-            Controls.Add(BreakTimeSecondsInput);
-            Controls.Add(label2);
-            Controls.Add(BreakTimeMinutesInput);
-            Controls.Add(WorkTimeSecondsInput);
-            Controls.Add(label1);
-            Controls.Add(WorkTimeMinutesInput);
-            Controls.Add(Break_Time_Title);
-            Controls.Add(Work_Time_Title);
+            Controls.Add(DecreaseSecondsBtn);
+            Controls.Add(IncreaseSecondsBtn);
+            Controls.Add(DecreaseSessionBtn);
+            Controls.Add(IncreaseSessionBtn);
+            Controls.Add(DecreaseMinutesBtn);
+            Controls.Add(IncreaseMinutesBtn);
+            Controls.Add(SessionButton);
+            Controls.Add(BreakTimeButton);
+            Controls.Add(workTimeButton);
+            ForeColor = Color.White;
             Name = "settingUpScreen";
             Size = new Size(1283, 789);
             ResumeLayout(false);
@@ -208,18 +261,18 @@
         }
 
         #endregion
-
-        private MaskedTextBox SessionsInput;
-        private Label SessionsTitle;
-        private Button startBtn;
-        private MaskedTextBox BreakTimeSecondsInput;
-        private Label label2;
-        private MaskedTextBox BreakTimeMinutesInput;
-        private MaskedTextBox WorkTimeSecondsInput;
-        private Label label1;
-        private MaskedTextBox WorkTimeMinutesInput;
-        private Label Break_Time_Title;
-        private Label Work_Time_Title;
-        private Label screenTitle;
+        private Label SessionLabel;
+        private Label secondsLabel;
+        private Button IncreaseMinutesBtn;
+        private Button DecreaseMinutesBtn;
+        private Button IncreaseSessionBtn;
+        private Button DecreaseSessionBtn;
+        private Button IncreaseSecondsBtn;
+        private Button DecreaseSecondsBtn;
+        private Label MinutesLabel;
+        private themeButton workTimeButton;
+        private themeButton BreakTimeButton;
+        private themeButton SessionButton;
+        private themeButton startBtn;
     }
 }

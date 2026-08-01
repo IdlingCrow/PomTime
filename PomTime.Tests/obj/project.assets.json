@@ -1085,7 +1085,7 @@
           "bin/placeholder/PomTimeApp.dll": {}
         },
         "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WindowsForms"
+          "Microsoft.WindowsDesktop.App"
         ]
       }
     }

@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic.ApplicationServices;
+using PomTimeApp.view;
 using System;
 using System.Diagnostics;
 namespace PomTimeApp;
@@ -11,21 +12,32 @@ public class Controller
     private int minutesInd;
     private int secondsInd;
     private bool timerHasStarted;
-    
+    private CancellationTokenSource resetToken;
+    private bool musicHasBeenPause;
+    private stickyNotes reminderNotes;
 
-	private TaskCompletionSource<bool>? workTimeCompletionsSource;
+    private TaskCompletionSource<bool>? workTimeCompletionsSource;
 	private TaskCompletionSource<bool>? breakTimeCompletionsSource;
-	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel)
+	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel, stickyNotes reminderNotes)
 	{
         timerHasStarted = false;
         view = startingUI;
 		this.timerModel = timerModel;
+        this.reminderNotes = reminderNotes;
 		view.userPressedStart += startCycle;
+        view.userPressedPause += pauseTimer;
+        view.userPressedResume += resumeTimer;
+        view.userPressedReset += resetTimer;
+        view.resumeMusic += resumeMusic;
+        view.pauseMusic += pauseMusic;
+
         timerModel.decreaseByASecond += decreaseByASecond;
         timerModel.sendOneMinutesAlert += enableOneMinutesWarning;
 		timerModel.breakSessionDone += breakSessionTimerDone;
         timerModel.workSessionDone += workSessionTimerDone;
+
         this.musicModel = musicModel;
+        musicHasBeenPause = false;
     }
 
 
@@ -44,26 +56,57 @@ public class Controller
 
             timerModel.changeTime(workMinutes, workSeconds, breakMinutes, breakSeconds);
 
-            for (int i = 0; i < session; i++)
+            resetToken = new CancellationTokenSource();
+            
+            try
             {
-                breakTimeCompletionsSource = new TaskCompletionSource<bool>();
+                for (int i = 0; i < session; i++)
+                {
+                    breakTimeCompletionsSource = new TaskCompletionSource<bool>();
 
-                musicModel.playSound();
-                musicModel.playMusic();
-                await runWorkTime(workMinutes, workSeconds);
-                musicModel.stopMusic();
-                musicModel.playSound();
-                await runBreakTime(breakMinutes, breakSeconds);
-
+                    musicModel.playSound();
+                    if(!musicHasBeenPause)
+                    {
+                        musicModel.playMusic();
+                    }
+                    await runWorkTime(workMinutes, workSeconds, resetToken.Token);
+                    musicModel.stopMusic();
+                    musicModel.playSound();
+                    await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
+                }
                 SessionComplete();
+                musicModel.playDoubleSound();
+                timerHasStarted = false;
+            } catch (OperationCanceledException)
+            {
+                timerModel.resetTime();
+                SessionComplete();
+                musicModel.stopMusic();
+                timerHasStarted = false;
             }
-            musicModel.playDoubleSound();
-            timerHasStarted = false;
+
 
         }
     }
 
-	public void decreaseByASecond(object? sender, EventArgs e)
+    public void resumeMusic(object? sender, EventArgs e)
+    {
+        if (!musicModel.isPlayingMusic()) {
+            musicModel.playMusic();
+        }
+        musicHasBeenPause = false;
+    }
+
+    public void pauseMusic(object? sender, EventArgs e)
+    {
+        if (musicModel.isPlayingMusic())
+        {
+            musicModel.stopMusic();
+        }
+        musicHasBeenPause = true;
+    }
+
+    public void decreaseByASecond(object? sender, EventArgs e)
 	{
 		if(secondsInd == 0 && minutesInd == 0)
 		{
@@ -85,34 +128,59 @@ public class Controller
         }
     }
 
+    public void resetTimer(object? sender, EventArgs e)
+    {
+        Debug.WriteLine($"resetToken called");
+        resetToken.Cancel();
+    }
 
-	public void enableOneMinutesWarning(object? sender, EventArgs e)
+
+    public void enableOneMinutesWarning(object? sender, EventArgs e)
 	{
 		if(view.InvokeRequired)
 		{
-			view.Invoke(() => view.enableOneMinutesWarning());
+			view.Invoke(() => {
+                view.enableOneMinutesWarning();
+                reminderNotes.openNotes();
+            });
 		} else
 		{
-          view.enableOneMinutesWarning();
+            view.enableOneMinutesWarning();
+            reminderNotes.openNotes();
         }
     }
 
-	private Task runWorkTime(int workMinutes, int workSeconds)
+    
+
+	private Task runWorkTime(int workMinutes, int workSeconds, CancellationToken token)
 	{
+        if (view.InvokeRequired)
+        {
+            view.Invoke(() => {
+
+                reminderNotes.openNotes();
+            });
+        }
+        else
+        {
+            reminderNotes.openNotes();
+        }
         workTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = workMinutes;
         secondsInd = workSeconds;
         WorkTimeDispalyed();
+        token.Register(() => workTimeCompletionsSource.TrySetCanceled());
         updateTimer();
         timerModel.startWorkTime();
 		return workTimeCompletionsSource.Task;
     }
 
-	private Task runBreakTime(int breakMinutes, int breakSeconds)
+	private Task runBreakTime(int breakMinutes, int breakSeconds, CancellationToken token)
 	{
         breakTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = breakMinutes;
         secondsInd = breakSeconds;
+        token.Register(() => breakTimeCompletionsSource.TrySetCanceled());
         BreakTimeDispalyed();
         updateTimer();
         timerModel.startBreakTime();
@@ -141,13 +209,13 @@ public class Controller
         if (view.InvokeRequired)
         {
             view.Invoke(() => {
-                view.switchToBreakScreen();
+                  view.switchToBreakScreen();
             });
         }
         else
         {
             view.switchToBreakScreen();
-        }
+        } 
     }
 
     private void breakSessionTimerDone(object? sender, EventArgs e)
@@ -197,6 +265,18 @@ public class Controller
         {
             view.switchToSettingUpScreen();
         }
+    }
+
+    public void resumeTimer(object? sender, EventArgs e)
+    {
+        timerModel.startTime();
+        musicModel.playMusic();
+    }
+
+    public void pauseTimer(object? sender, EventArgs e)
+    {
+        timerModel.pauseTime();
+        musicModel.stopMusic();
     }
 
     //for test purposes
