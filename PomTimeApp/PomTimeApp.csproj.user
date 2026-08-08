@@ -7,6 +7,9 @@
     <Compile Update="view\breakTimeScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="view\settingScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="view\settingUpScreen.cs">
       <SubType>UserControl</SubType>
     </Compile>

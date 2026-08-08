@@ -13,6 +13,7 @@ namespace PomTimeApp.view
     public partial class settingUpScreen : UserControl
     {
         public EventHandler? userPressedStart;
+        public EventHandler? userPressedSetting;
 
         InputState inputState;
         int breakMinutes;
@@ -260,5 +261,68 @@ namespace PomTimeApp.view
             secondsLabel.Text = $"{secondInd:D2}";
         }
 
+        public void setTheme(Color backgroundColor, Color foregroundColor)
+        {
+            //background
+            this.ForeColor = foregroundColor;
+            this.BackColor = backgroundColor;
+
+            //input option button
+            workTimeButton.BackColor = ForeColor;
+            workTimeButton.ForeColor = BackColor;
+            workTimeButton.FlatAppearance.BorderColor = ForeColor;
+
+            BreakTimeButton.BackColor = ForeColor;
+            BreakTimeButton.ForeColor = BackColor;
+            BreakTimeButton.FlatAppearance.BorderColor = ForeColor;
+
+            SessionButton.BackColor = ForeColor;
+            SessionButton.ForeColor = BackColor;
+            SessionButton.FlatAppearance.BorderColor = ForeColor;
+
+            // incrementing input option
+            IncreaseMinutesBtn.BackColor = BackColor;
+            IncreaseMinutesBtn.ForeColor = ForeColor;
+
+            DecreaseMinutesBtn.BackColor = BackColor;
+            DecreaseMinutesBtn.ForeColor = ForeColor;
+
+            IncreaseSessionBtn.BackColor = BackColor;
+            IncreaseSessionBtn.ForeColor = ForeColor;
+
+            DecreaseSessionBtn.BackColor = BackColor;
+            DecreaseSessionBtn.ForeColor = ForeColor;
+
+            IncreaseSecondsBtn.BackColor = BackColor;
+            IncreaseSecondsBtn.ForeColor = ForeColor;
+
+            DecreaseSecondsBtn.BackColor = BackColor;
+            DecreaseSecondsBtn.ForeColor = ForeColor;
+
+            //start button
+            startBtn.BackColor = ForeColor;
+            startBtn.ForeColor = BackColor;
+            startBtn.FlatAppearance.BorderColor = ForeColor;
+
+            //setting button 
+            settingButton.BackColor = BackColor;
+            settingButton.ForeColor = ForeColor;
+
+            //input display
+            MinutesLabel.BackColor = BackColor;
+            MinutesLabel.ForeColor = ForeColor;
+
+            SessionLabel.BackColor = BackColor;
+            SessionLabel.ForeColor = ForeColor;
+
+            secondsLabel.BackColor = BackColor;
+            secondsLabel.ForeColor = ForeColor;
+
+        }
+
+        private void settingButton_Click(object sender, EventArgs e)
+        {
+            userPressedSetting?.Invoke(sender, e);
+        }
     }
 }

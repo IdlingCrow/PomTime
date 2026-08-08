@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic.ApplicationServices;
+using PomTimeApp.model;
 using PomTimeApp.view;
 using System;
 using System.Diagnostics;
@@ -9,41 +10,56 @@ public class Controller
 	private StartingUI view;
     private TimeModel timerModel;
     private SoundModel musicModel;
+    private ThemeModel themeModel;
     private int minutesInd;
     private int secondsInd;
     private bool timerHasStarted;
     private CancellationTokenSource resetToken;
     private bool musicHasBeenPause;
     private stickyNotes reminderNotes;
+    private bool isFirstWorkTime;
 
     private TaskCompletionSource<bool>? workTimeCompletionsSource;
 	private TaskCompletionSource<bool>? breakTimeCompletionsSource;
-	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel, stickyNotes reminderNotes)
+	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel, stickyNotes reminderNotes, ThemeModel themeModel)
 	{
-        timerHasStarted = false;
+
+        this.musicModel = musicModel;
         view = startingUI;
 		this.timerModel = timerModel;
         this.reminderNotes = reminderNotes;
+        this.themeModel = themeModel;
+        isFirstWorkTime = true;
+
 		view.userPressedStart += startCycle;
         view.userPressedPause += pauseTimer;
         view.userPressedResume += resumeTimer;
         view.userPressedReset += resetTimer;
         view.resumeMusic += resumeMusic;
         view.pauseMusic += pauseMusic;
+        view.skipMusic += skipMusic;
+        view.playPreviousMusic += playPreviousMusic;
+        view.theme1Pressed += changeToTheme1;
+        view.theme2Pressed += changeToTheme2;
+        view.theme3Pressed += changeToTheme3;
+        view.manageMusicPressed += manageMusic;
+        resetToken = new CancellationTokenSource();
 
         timerModel.decreaseByASecond += decreaseByASecond;
         timerModel.sendOneMinutesAlert += enableOneMinutesWarning;
 		timerModel.breakSessionDone += breakSessionTimerDone;
         timerModel.workSessionDone += workSessionTimerDone;
 
-        this.musicModel = musicModel;
+        timerHasStarted = false;
         musicHasBeenPause = false;
     }
 
 
     public async void startCycle(object? sender, EventArgs e) => await startCycleInner();
+
 	private async Task startCycleInner()
 	{
+        isFirstWorkTime = true;
         if(!timerHasStarted)
         {
             timerHasStarted = true;
@@ -70,9 +86,13 @@ public class Controller
                         musicModel.playMusic();
                     }
                     await runWorkTime(workMinutes, workSeconds, resetToken.Token);
+                    isFirstWorkTime = false;
                     musicModel.stopMusic();
+                    bool storedMusicState = musicHasBeenPause;
+                    musicHasBeenPause = true;
                     musicModel.playSound();
                     await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
+                    musicHasBeenPause = storedMusicState;
                 }
                 SessionComplete();
                 musicModel.playDoubleSound();
@@ -87,6 +107,47 @@ public class Controller
 
 
         }
+    }
+
+    public void manageMusic(object? sender, EventArgs e)
+    {
+        musicModel.manageMusic();
+    }
+
+    public void changeToTheme1(object? sender, EventArgs e)
+    {
+        setAndSaveTheme(1);
+    }
+
+    public void changeToTheme2(object? sender, EventArgs e)
+    {
+        setAndSaveTheme(2);
+    }
+
+    public void changeToTheme3(object? sender, EventArgs e)
+    {
+        setAndSaveTheme(3);
+    }
+
+    private void setAndSaveTheme(int theme)
+    {
+        view.setTheme(themeModel.selectTheme(theme));
+        Properties.Settings.Default.Theme = theme;
+        Properties.Settings.Default.Save();
+    }
+
+    public void skipMusic(object? sender, EventArgs e)
+    {
+        musicModel.playNext();
+        musicHasBeenPause = false;
+        view.setButtonToPauseMusic();
+    }
+
+    public void playPreviousMusic(object? sender, EventArgs e)
+    {
+        musicModel.playPreviousMusic();
+        musicHasBeenPause = false;
+        view.setButtonToPauseMusic();
     }
 
     public void resumeMusic(object? sender, EventArgs e)
@@ -154,16 +215,19 @@ public class Controller
 
 	private Task runWorkTime(int workMinutes, int workSeconds, CancellationToken token)
 	{
-        if (view.InvokeRequired)
+        if(!isFirstWorkTime)
         {
-            view.Invoke(() => {
+            if (view.InvokeRequired)
+            {
+                view.Invoke(() => {
 
+                    reminderNotes.openNotes();
+                });
+            }
+            else
+            {
                 reminderNotes.openNotes();
-            });
-        }
-        else
-        {
-            reminderNotes.openNotes();
+            }
         }
         workTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = workMinutes;
@@ -270,7 +334,10 @@ public class Controller
     public void resumeTimer(object? sender, EventArgs e)
     {
         timerModel.startTime();
-        musicModel.playMusic();
+        if(!musicHasBeenPause)
+        {
+            resumeMusic(sender, e);
+        }
     }
 
     public void pauseTimer(object? sender, EventArgs e)

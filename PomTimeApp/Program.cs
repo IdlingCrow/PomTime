@@ -1,3 +1,4 @@
+using PomTimeApp.model;
 using PomTimeApp.view;
 
 namespace PomTimeApp;
@@ -18,7 +19,9 @@ static class Program
         SoundModel musicModel = new SoundModel();
         TimeModel timer = new TimeModel(0, 0, 0, 0);
         stickyNotes reminderNotes = new stickyNotes();
-        Controller controller = new Controller(startingUI, timer, musicModel, reminderNotes);
+        ThemeModel themeModel = new ThemeModel();
+        Controller controller = new Controller(startingUI, timer, musicModel, reminderNotes, themeModel);
+        startingUI.setTheme(themeModel.selectTheme(Properties.Settings.Default.Theme));
 
         Application.Run(startingUI);
     }    

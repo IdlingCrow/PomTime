@@ -13,12 +13,17 @@ namespace PomTimeApp.view
         public stickyNotes()
         {
             InitializeComponent();
+            this.TopMost = true;
             this.FormClosing += closeNotes;
         }
 
 
         public void openNotes()
         {
+            if(WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+            }
             Show();
         }
 

@@ -6,10 +6,13 @@ namespace PomTimeApp;
 
 public partial class StartingUI : Form
 {
+    Point workTimeFormLocation;
+    Point regularFormLocation;
     screenState currScreen;
     private breakTimeScreen breakTimeScreen = new breakTimeScreen();
     private WorkTimeScreen workTimeScreen = new WorkTimeScreen();
     private settingUpScreen settingUpScreen = new settingUpScreen();
+    private settingScreen settingScreen = new settingScreen();
 
     public EventHandler? userPressedStart;
     public EventHandler? userPressedPause;
@@ -17,32 +20,114 @@ public partial class StartingUI : Form
     public EventHandler? userPressedReset;
     public EventHandler? resumeMusic;
     public EventHandler? pauseMusic;
+    public EventHandler? skipMusic;
+    public EventHandler? playPreviousMusic;
+    public EventHandler? theme1Pressed;
+    public EventHandler? theme2Pressed;
+    public EventHandler? theme3Pressed;
+    public EventHandler? manageMusicPressed;
     public StartingUI()
     {
+        StartPosition = FormStartPosition.CenterScreen;
+        regularFormLocation = Location;
+
+        int userScreenWidth = Screen.PrimaryScreen?.Bounds.Width ?? 0;
+        int userScreenHeight = Screen.PrimaryScreen?.Bounds.Height ?? 0;
+
+        workTimeFormLocation = new Point((userScreenWidth - (userScreenWidth / 6)), userScreenHeight / 25);
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
         InitializeComponent();
         switchScreen(settingUpScreen);
 
+        settingScreen.backButtonPressed = goingBackToSettingUp;
+        settingScreen.userPressedTheme1 = changeToTheme1;
+        settingScreen.userPressedTheme2 = changeToTheme2;
+        settingScreen.userPressedTheme3 = changeToTheme3;
+        settingScreen.userPressedManageMusic = ManageMusicPressed;
+
         settingUpScreen.userPressedStart = startBtn_Click;
+        settingUpScreen.userPressedSetting = settingButtonClick;
+
         workTimeScreen.UserPressedPause = pauseBtn_Click;
         workTimeScreen.UserPressedResume = resumeButtonClick;
         workTimeScreen.UserPressedReset = resetButtonClick;
         workTimeScreen.PauseMusic = userPressedPauseMusic;
         workTimeScreen.PlayMusic = userPressedResumeMusic;
+        workTimeScreen.SkipMusic = handleSkipMusic;
+        workTimeScreen.backMusic = handlePlayPreviousMusic;
 
         breakTimeScreen.UserPressedPause = pauseBtn_Click;
         breakTimeScreen.UserPressedResume = resumeButtonClick;
         breakTimeScreen.UserPressedReset = resetButtonClick;
         currScreen = screenState.settingUp;
         this.AutoScaleMode = AutoScaleMode.Dpi;
+
+    }
+
+    private void ManageMusicPressed(object? sender, EventArgs e) {
+        manageMusicPressed?.Invoke(sender, e);
+    }
+
+
+    private void changeToTheme1(object? sender, EventArgs e)
+    {
+        theme1Pressed?.Invoke(sender, e);
+    }
+
+    private void changeToTheme2(object? sender, EventArgs e)
+    {
+        theme2Pressed?.Invoke(sender, e);
+    }
+
+    private void changeToTheme3(object? sender, EventArgs e)
+    {
+        theme3Pressed?.Invoke(sender, e);
+    }
+
+    private void goingBackToSettingUp(object? sender, EventArgs e)
+    {
+        switchScreen(settingUpScreen);
+    }
+    public void setTheme(Color[] themeColor)
+    {
+        if(themeColor.Length != 2)
+        {
+            throw new ArgumentException("setTheme needed array with two colors");
+        }
+        workTimeScreen.setTheme(themeColor[0], themeColor[1]);
+        breakTimeScreen.setTheme(themeColor[0], themeColor[1]);
+        settingUpScreen.setTheme(themeColor[0], themeColor[1]);
+        settingScreen.setTheme(themeColor[0], themeColor[1]);
+
+    }
+
+    public void settingButtonClick(object? sender, EventArgs e)
+    {
+        switchToSettingsScreen();
     }
 
     private enum screenState
     {
         workTime,
         breakTime,
-        settingUp
+        settingUp,
+        settings
+    }
+
+    public void setButtonToPauseMusic()
+    {
+        workTimeScreen.setButtonToPauseMusic();
+    }
+
+    public void handleSkipMusic(object? sender, EventArgs e)
+    {
+        skipMusic?.Invoke(this, e);
+    }
+
+    public void handlePlayPreviousMusic(object? sender, EventArgs e)
+    {
+        playPreviousMusic?.Invoke(this, e);
     }
 
     private void switchScreen(UserControl control)
@@ -128,21 +213,54 @@ public partial class StartingUI : Form
     }
     public void switchToWorkScreen()
     {
+        switchToWorkTimeFormLocation();
         switchScreen(workTimeScreen);
         currScreen = screenState.workTime;
     }
 
     public void switchToBreakScreen()
     {
-        switchScreen(breakTimeScreen);
+        switchToRegularFormLocation();
         breakTimeScreen.startAnActivity();
         currScreen = screenState.breakTime;
     }
 
     public void switchToSettingUpScreen()
     {
+        switchToRegularFormLocation();
         switchScreen(settingUpScreen);
         currScreen = screenState.settingUp;
+    }
+
+    public void switchToSettingsScreen()
+    {
+        switchToRegularFormLocation();
+        switchScreen(settingScreen);
+        currScreen = screenState.settings;
+    }
+
+    private void switchToWorkTimeFormLocation()
+    {
+        if(currScreen != screenState.workTime)
+        {
+            regularFormLocation = Location;
+        } else
+        {
+            workTimeFormLocation = Location;
+        }
+        Location = workTimeFormLocation;
+    }
+
+    private void switchToRegularFormLocation()
+    {
+        if (currScreen == screenState.workTime)
+        {
+            workTimeFormLocation = Location;
+        } else
+        {
+            regularFormLocation = Location;
+        }
+        Location = regularFormLocation;
     }
 
     //these function is exculsively created for test purposes
@@ -154,9 +272,12 @@ public partial class StartingUI : Form
         } else if (currScreen == screenState.breakTime)
         {
             return breakTimeScreen.getTitle();
-        } else //if (currScreen == screenState.workTime)
+        } else if (currScreen == screenState.workTime)
         {
             return workTimeScreen.getTitle();
+        } else
+        {
+            return "settings";
         }
     }
 
@@ -193,9 +314,12 @@ public partial class StartingUI : Form
         } else if (currScreen == screenState.workTime)
         {
             return "Work";
-        } else
+        } else if (currScreen == screenState.settingUp)
         {
             return "Setting up";
+        } else
+        {
+            return "settings";
         }
     }
 

@@ -41,6 +41,7 @@
             DecreaseSecondsBtn = new Button();
             startBtn = new themeButton();
             MinutesLabel = new Label();
+            settingButton = new themeButton();
             SuspendLayout();
             // 
             // workTimeButton
@@ -235,11 +236,25 @@
             MinutesLabel.Text = "25";
             MinutesLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // settingButton
+            // 
+            settingButton.BackColor = Color.FromArgb(167, 199, 231);
+            settingButton.Font = new Font("Segoe UI", 20F);
+            settingButton.ForeColor = Color.White;
+            settingButton.Location = new Point(1158, 654);
+            settingButton.Name = "settingButton";
+            settingButton.Size = new Size(79, 79);
+            settingButton.TabIndex = 15;
+            settingButton.Text = "⚙";
+            settingButton.UseVisualStyleBackColor = false;
+            settingButton.Click += settingButton_Click;
+            // 
             // settingUpScreen
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(167, 199, 231);
+            Controls.Add(settingButton);
             Controls.Add(secondsLabel);
             Controls.Add(SessionLabel);
             Controls.Add(MinutesLabel);
@@ -274,5 +289,6 @@
         private themeButton BreakTimeButton;
         private themeButton SessionButton;
         private themeButton startBtn;
+        private themeButton settingButton;
     }
 }

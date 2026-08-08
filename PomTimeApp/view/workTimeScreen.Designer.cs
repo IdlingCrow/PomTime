@@ -35,6 +35,8 @@
             ResumeButton = new themeButton();
             ResetButton = new themeButton();
             pauseMusicButton = new themeButton();
+            SkipButton = new themeButton();
+            backButton = new themeButton();
             SuspendLayout();
             // 
             // screenTitle
@@ -70,6 +72,8 @@
             // PauseButton
             // 
             PauseButton.BackColor = Color.White;
+            PauseButton.FlatAppearance.BorderColor = Color.White;
+            PauseButton.FlatAppearance.BorderSize = 3;
             PauseButton.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             PauseButton.ForeColor = Color.FromArgb(167, 199, 231);
             PauseButton.Location = new Point(81, 347);
@@ -83,6 +87,8 @@
             // ResumeButton
             // 
             ResumeButton.BackColor = Color.White;
+            ResumeButton.FlatAppearance.BorderColor = Color.White;
+            ResumeButton.FlatAppearance.BorderSize = 3;
             ResumeButton.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             ResumeButton.ForeColor = Color.FromArgb(167, 199, 231);
             ResumeButton.Location = new Point(13, 347);
@@ -96,6 +102,8 @@
             // ResetButton
             // 
             ResetButton.BackColor = Color.White;
+            ResetButton.FlatAppearance.BorderColor = Color.White;
+            ResetButton.FlatAppearance.BorderSize = 3;
             ResetButton.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             ResetButton.ForeColor = Color.FromArgb(167, 199, 231);
             ResetButton.Location = new Point(203, 347);
@@ -109,9 +117,11 @@
             // pauseMusicButton
             // 
             pauseMusicButton.BackColor = Color.White;
+            pauseMusicButton.FlatAppearance.BorderColor = Color.White;
+            pauseMusicButton.FlatAppearance.BorderSize = 3;
             pauseMusicButton.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
             pauseMusicButton.ForeColor = Color.FromArgb(167, 199, 231);
-            pauseMusicButton.Location = new Point(123, 446);
+            pauseMusicButton.Location = new Point(137, 446);
             pauseMusicButton.Name = "pauseMusicButton";
             pauseMusicButton.Size = new Size(101, 95);
             pauseMusicButton.TabIndex = 6;
@@ -119,11 +129,43 @@
             pauseMusicButton.UseVisualStyleBackColor = false;
             pauseMusicButton.Click += pauseMusicButton_Click;
             // 
+            // SkipButton
+            // 
+            SkipButton.BackColor = Color.White;
+            SkipButton.FlatAppearance.BorderColor = Color.White;
+            SkipButton.FlatAppearance.BorderSize = 3;
+            SkipButton.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            SkipButton.ForeColor = Color.FromArgb(167, 199, 231);
+            SkipButton.Location = new Point(255, 446);
+            SkipButton.Name = "SkipButton";
+            SkipButton.Size = new Size(101, 95);
+            SkipButton.TabIndex = 7;
+            SkipButton.Text = "▶I";
+            SkipButton.UseVisualStyleBackColor = false;
+            SkipButton.Click += SkipButton_Click;
+            // 
+            // backButton
+            // 
+            backButton.BackColor = Color.White;
+            backButton.FlatAppearance.BorderColor = Color.White;
+            backButton.FlatAppearance.BorderSize = 3;
+            backButton.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            backButton.ForeColor = Color.FromArgb(167, 199, 231);
+            backButton.Location = new Point(13, 446);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(101, 95);
+            backButton.TabIndex = 8;
+            backButton.Text = "I◀";
+            backButton.UseVisualStyleBackColor = false;
+            backButton.Click += backButton_Click;
+            // 
             // WorkTimeScreen
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(167, 199, 231);
+            Controls.Add(backButton);
+            Controls.Add(SkipButton);
             Controls.Add(pauseMusicButton);
             Controls.Add(ResetButton);
             Controls.Add(ResumeButton);
@@ -146,5 +188,7 @@
         private themeButton ResumeButton;
         private themeButton ResetButton;
         private themeButton pauseMusicButton;
+        private themeButton SkipButton;
+        private themeButton backButton;
     }
 }

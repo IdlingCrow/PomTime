@@ -74,5 +74,32 @@ namespace PomTimeApp.view
             ResumeButton.Hide();
             PauseButton.Show();
         }
+
+        public void setTheme(Color backgroundColor, Color foregroundColor)
+        {
+            this.ForeColor = foregroundColor;
+            this.BackColor = backgroundColor;
+
+            //The "Break" text
+            screenTitle.ForeColor = ForeColor;
+            screenTitle.BackColor = BackColor;
+
+            //The buttons 
+            PauseButton.ForeColor = BackColor;
+            PauseButton.BackColor = ForeColor;
+            PauseButton.FlatAppearance.BorderColor = ForeColor;
+
+            ResumeButton.ForeColor = BackColor;
+            ResumeButton.BackColor = ForeColor;
+            ResumeButton.FlatAppearance.BorderColor = ForeColor;
+
+            ResetButton.ForeColor = BackColor;
+            ResetButton.BackColor = ForeColor;
+            ResetButton.FlatAppearance.BorderColor = ForeColor;
+
+            //The timer
+            timerOnBreakScreen.ForeColor = ForeColor;
+            timerOnBreakScreen.BackColor = BackColor;
+        }
     }
 }

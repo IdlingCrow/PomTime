@@ -16,6 +16,8 @@ namespace PomTimeApp.view
         public EventHandler? UserPressedReset;
         public EventHandler? PauseMusic;
         public EventHandler? PlayMusic;
+        public EventHandler? SkipMusic;
+        public EventHandler? backMusic;
         bool MusicPlaying;
 
 
@@ -63,6 +65,9 @@ namespace PomTimeApp.view
             ResetButton.Hide();
             ResumeButton.Hide();
             PauseButton.Show();
+            backButton.Show();
+            SkipButton.Show();
+            pauseMusicButton.Show();
         }
 
         private void PauseButton_Click(object sender, EventArgs e)
@@ -71,6 +76,9 @@ namespace PomTimeApp.view
             ResetButton.Show();
             ResumeButton.Show();
             PauseButton.Hide();
+            backButton.Hide();
+            SkipButton.Hide();
+            pauseMusicButton.Hide();
 
         }
 
@@ -80,20 +88,25 @@ namespace PomTimeApp.view
             ResetButton.Hide();
             ResumeButton.Hide();
             PauseButton.Show();
+            PauseButton.Show();
+            backButton.Show();
+            SkipButton.Show();
+            pauseMusicButton.Show();
         }
 
         private void pauseMusicButton_Click(object sender, EventArgs e)
         {
-            if(MusicPlaying)
+            if (MusicPlaying)
             {
                 PauseMusic?.Invoke(this, EventArgs.Empty);
                 setButtonToPlayMusic();
-            } else
+            }
+            else
             {
                 PlayMusic?.Invoke(this, EventArgs.Empty);
                 setButtonToPauseMusic();
             }
-            
+
         }
 
         public void setButtonToPlayMusic()
@@ -106,6 +119,57 @@ namespace PomTimeApp.view
         {
             pauseMusicButton.Text = "▶";
             MusicPlaying = true;
+        }
+
+        private void SkipButton_Click(object sender, EventArgs e)
+        {
+            SkipMusic?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            backMusic?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void setTheme(Color backgroundColor, Color foregroundColor)
+        {
+            this.ForeColor = foregroundColor;
+            this.BackColor = backgroundColor;
+
+            // The "Work" text
+            screenTitle.BackColor = backgroundColor;
+            screenTitle.ForeColor = foregroundColor;
+
+            // The timer
+            timerOnWorkScreen.BackColor = backgroundColor;
+            timerOnWorkScreen.ForeColor = foregroundColor;
+
+            // The button for timer
+            ResumeButton.BackColor = foregroundColor;
+            ResumeButton.ForeColor = backgroundColor;
+            ResumeButton.FlatAppearance.BorderColor = ForeColor;
+
+            PauseButton.BackColor = foregroundColor;
+            PauseButton.ForeColor = backgroundColor;
+            PauseButton.FlatAppearance.BorderColor = ForeColor;
+
+            ResetButton.BackColor = foregroundColor;
+            ResetButton.ForeColor = backgroundColor;
+            ResetButton.FlatAppearance.BorderColor = ForeColor;
+
+            // the music button
+            backButton.BackColor = foregroundColor;
+            backButton.ForeColor = backgroundColor;
+            backButton.FlatAppearance.BorderColor = ForeColor;
+
+            pauseMusicButton.BackColor = foregroundColor;
+            pauseMusicButton.ForeColor = backgroundColor;
+            pauseMusicButton.FlatAppearance.BorderColor = ForeColor;
+
+            SkipButton.BackColor = foregroundColor;
+            SkipButton.ForeColor = backgroundColor;
+            SkipButton.FlatAppearance.BorderColor = ForeColor;
+
         }
     }
 }

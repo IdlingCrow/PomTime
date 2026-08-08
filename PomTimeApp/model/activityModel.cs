@@ -6,10 +6,20 @@ using System.IO;
 namespace PomTimeApp.model;
 public class activityModel
 {
+    string breakActivtiesFolder;
+    string[] breakActivities;
     Image boxBreathingActivity;
     public activityModel()
     {
-        boxBreathingActivity = Image.FromFile(Path.Combine(Application.StartupPath, "model", "breakActivity", "boxBreathing.gif"));
+        String[] imageFormat = {".gif",".jpeg",".png",".jpg", ".bmp"};
+        breakActivtiesFolder = Path.Combine(Application.StartupPath, "model", "breakActivity");
+        breakActivities = [];
+        for(int i = 0; i < imageFormat.Length; i++)
+        {
+            breakActivities = breakActivities.Concat(Directory.GetFiles(breakActivtiesFolder, $"*{imageFormat[i]}")).ToArray();
+        }
+        Random randomActvity = new Random();
+        boxBreathingActivity = Image.FromFile(breakActivities[randomActvity.NextInt64(0, breakActivities.Length)]);
     }
 
     public Image getBreakActivity()
