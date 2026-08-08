@@ -12,6 +12,10 @@ namespace PomTimeApp.view
     {
         public stickyNotes()
         {
+            int userScreenWidth = Screen.PrimaryScreen?.Bounds.Width ?? 0;
+            int userScreenHeight = Screen.PrimaryScreen?.Bounds.Height ?? 0;
+
+            Location = new Point(userScreenWidth / 6, userScreenHeight / 25);
             InitializeComponent();
             this.TopMost = true;
             this.FormClosing += closeNotes;

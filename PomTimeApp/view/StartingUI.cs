@@ -221,6 +221,7 @@ public partial class StartingUI : Form
     public void switchToBreakScreen()
     {
         switchToRegularFormLocation();
+        switchScreen(breakTimeScreen);
         breakTimeScreen.startAnActivity();
         currScreen = screenState.breakTime;
     }

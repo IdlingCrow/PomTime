@@ -73,7 +73,7 @@ public class Controller
             timerModel.changeTime(workMinutes, workSeconds, breakMinutes, breakSeconds);
 
             resetToken = new CancellationTokenSource();
-            
+            bool storedMusicState = musicHasBeenPause;
             try
             {
                 for (int i = 0; i < session; i++)
@@ -88,7 +88,7 @@ public class Controller
                     await runWorkTime(workMinutes, workSeconds, resetToken.Token);
                     isFirstWorkTime = false;
                     musicModel.stopMusic();
-                    bool storedMusicState = musicHasBeenPause;
+                    storedMusicState = musicHasBeenPause;
                     musicHasBeenPause = true;
                     musicModel.playSound();
                     await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
@@ -102,6 +102,7 @@ public class Controller
                 timerModel.resetTime();
                 SessionComplete();
                 musicModel.stopMusic();
+                musicHasBeenPause = storedMusicState;
                 timerHasStarted = false;
             }
 

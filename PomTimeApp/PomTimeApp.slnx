@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="PomTimeApp.csproj" />
+  <Project Path="PomTimeApp.csproj">
+    <BuildType Project="Release" />
+  </Project>
 </Solution>
