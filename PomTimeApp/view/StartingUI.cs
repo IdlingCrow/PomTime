@@ -3,7 +3,8 @@ using System.Diagnostics;
 
 namespace PomTimeApp;
 
-
+// this class is what most of the other view have to talk
+// to in order to talk to the control
 public partial class StartingUI : Form
 {
     Point workTimeFormLocation;
@@ -26,50 +27,58 @@ public partial class StartingUI : Form
     public EventHandler? theme2Pressed;
     public EventHandler? theme3Pressed;
     public EventHandler? manageMusicPressed;
+    public EventHandler? manageBreakPressed;
     public StartingUI()
     {
+        //setting the default location of the app being the center of the screen
         StartPosition = FormStartPosition.CenterScreen;
         regularFormLocation = Location;
 
+        //getting the user screens dimension
         int userScreenWidth = Screen.PrimaryScreen?.Bounds.Width ?? 0;
         int userScreenHeight = Screen.PrimaryScreen?.Bounds.Height ?? 0;
 
+        //setting a default position for the work timer
         workTimeFormLocation = new Point((userScreenWidth - (userScreenWidth / 6)), userScreenHeight / 25);
+
+        //stops user from resizing a screen a maximizing the screen
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
         InitializeComponent();
         switchScreen(settingUpScreen);
-
-        settingScreen.backButtonPressed = goingBackToSettingUp;
-        settingScreen.userPressedTheme1 = changeToTheme1;
-        settingScreen.userPressedTheme2 = changeToTheme2;
-        settingScreen.userPressedTheme3 = changeToTheme3;
-        settingScreen.userPressedManageMusic = ManageMusicPressed;
-
-        settingUpScreen.userPressedStart = startBtn_Click;
-        settingUpScreen.userPressedSetting = settingButtonClick;
-
-        workTimeScreen.UserPressedPause = pauseBtn_Click;
-        workTimeScreen.UserPressedResume = resumeButtonClick;
-        workTimeScreen.UserPressedReset = resetButtonClick;
-        workTimeScreen.PauseMusic = userPressedPauseMusic;
-        workTimeScreen.PlayMusic = userPressedResumeMusic;
-        workTimeScreen.SkipMusic = handleSkipMusic;
-        workTimeScreen.backMusic = handlePlayPreviousMusic;
-
-        breakTimeScreen.UserPressedPause = pauseBtn_Click;
-        breakTimeScreen.UserPressedResume = resumeButtonClick;
-        breakTimeScreen.UserPressedReset = resetButtonClick;
         currScreen = screenState.settingUp;
-        this.AutoScaleMode = AutoScaleMode.Dpi;
+
+        //assigning all of the button pressed event for the setting screen
+        settingScreen.backButtonPressed += goingBackToSettingUp;
+        settingScreen.userPressedTheme1 += changeToTheme1;
+        settingScreen.userPressedTheme2 += changeToTheme2;
+        settingScreen.userPressedTheme3 += changeToTheme3;
+        settingScreen.userPressedManageMusic += ManageMusicPressed;
+
+        //assigning all of the button pressed event for the input screen
+        settingUpScreen.userPressedStart += startBtn_Click;
+        settingUpScreen.userPressedSetting += settingButtonClick;
+
+        //assigning all of the button pressed event for the work screen
+        workTimeScreen.UserPressedPause += pauseBtn_Click;
+        workTimeScreen.UserPressedResume += resumeButtonClick;
+        workTimeScreen.UserPressedReset += resetButtonClick;
+        workTimeScreen.PauseMusic += userPressedPauseMusic;
+        workTimeScreen.PlayMusic += userPressedResumeMusic;
+        workTimeScreen.SkipMusic += handleSkipMusic;
+        workTimeScreen.backMusic += handlePlayPreviousMusic;
+
+        //assigning all of the button pressed event for the break screen
+        breakTimeScreen.UserPressedPause += pauseBtn_Click;
+        breakTimeScreen.UserPressedResume += resumeButtonClick;
+        breakTimeScreen.UserPressedReset += resetButtonClick;
 
     }
 
     private void ManageMusicPressed(object? sender, EventArgs e) {
         manageMusicPressed?.Invoke(sender, e);
     }
-
-
     private void changeToTheme1(object? sender, EventArgs e)
     {
         theme1Pressed?.Invoke(sender, e);
@@ -89,6 +98,12 @@ public partial class StartingUI : Form
     {
         switchScreen(settingUpScreen);
     }
+    
+    // Input: 2 Color in a array
+    // output: none
+    // purpose: notify all the other winform the switch
+    // its current two color theme to the input two
+    // color theme
     public void setTheme(Color[] themeColor)
     {
         if(themeColor.Length != 2)
@@ -107,6 +122,8 @@ public partial class StartingUI : Form
         switchToSettingsScreen();
     }
 
+    // essentially this is varible for redabilty, I used this to
+    // keep track of the screen state
     private enum screenState
     {
         workTime,
@@ -130,6 +147,11 @@ public partial class StartingUI : Form
         playPreviousMusic?.Invoke(this, e);
     }
 
+    // Input: one of the view that is classified as
+    // a user control
+    // Output: None
+    // Purpose: Changes what the application is
+    // presenting to one of the other view
     private void switchScreen(UserControl control)
     {
         Controls.Clear();
@@ -164,21 +186,24 @@ public partial class StartingUI : Form
     public int getSession()
     {
         int session = settingUpScreen.getSession();
-        Debug.WriteLine($"getting {session} session");
         return session;
     }
 
     public void userPressedResumeMusic(object? sender, EventArgs e)
     {
-        Debug.WriteLine("resume button have been pressed");
         resumeMusic?.Invoke(this, EventArgs.Empty);
     }
 
     public void userPressedPauseMusic(object? sender, EventArgs e)
     {
-        Debug.WriteLine("pause button have been pressed");
         pauseMusic?.Invoke(this, EventArgs.Empty);
     }
+
+    // Input: any string
+    // Output: none
+    // Purpose: this allows for the controller
+    // to project the text that display the time
+    // in worKTimeScreen and breakTimeScreen
     public void changeDisplayedTime(string time)
     {
         if(currScreen == screenState.breakTime)
@@ -215,6 +240,7 @@ public partial class StartingUI : Form
     {
         switchToWorkTimeFormLocation();
         switchScreen(workTimeScreen);
+        WindowState = FormWindowState.Normal;
         currScreen = screenState.workTime;
     }
 
@@ -222,6 +248,7 @@ public partial class StartingUI : Form
     {
         switchToRegularFormLocation();
         switchScreen(breakTimeScreen);
+        WindowState = FormWindowState.Maximized;
         breakTimeScreen.startAnActivity();
         currScreen = screenState.breakTime;
     }
@@ -230,6 +257,7 @@ public partial class StartingUI : Form
     {
         switchToRegularFormLocation();
         switchScreen(settingUpScreen);
+        WindowState = FormWindowState.Normal;
         currScreen = screenState.settingUp;
     }
 
@@ -237,9 +265,14 @@ public partial class StartingUI : Form
     {
         switchToRegularFormLocation();
         switchScreen(settingScreen);
+        WindowState = FormWindowState.Normal;
         currScreen = screenState.settings;
     }
 
+    //This is used to to save the current position
+    //of the workTimeScreen or the regular screen
+    //before moving the current application to 
+    //the saved location for the workTimeScreen
     private void switchToWorkTimeFormLocation()
     {
         if(currScreen != screenState.workTime)
@@ -252,6 +285,10 @@ public partial class StartingUI : Form
         Location = workTimeFormLocation;
     }
 
+    //This is used to to save the current position
+    //of the workTimeScreen or the regular screen
+    //before moving the current application to 
+    //the saved location for aplication
     private void switchToRegularFormLocation()
     {
         if (currScreen == screenState.workTime)
@@ -262,6 +299,11 @@ public partial class StartingUI : Form
             regularFormLocation = Location;
         }
         Location = regularFormLocation;
+    }
+
+    public void deMaximizeBox()
+    {
+        WindowState = FormWindowState.Normal;
     }
 
     //these function is exculsively created for test purposes

@@ -8,13 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 
+//Reminder: sessionLable is doubled and the Colon for the timer
 namespace PomTimeApp.view
 {
     public partial class settingUpScreen : UserControl
     {
         public EventHandler? userPressedStart;
         public EventHandler? userPressedSetting;
-
+        Point ColonForTimerPosition;
         InputState inputState;
         int breakMinutes;
         int breakSeconds;
@@ -24,15 +25,21 @@ namespace PomTimeApp.view
         public settingUpScreen()
         {
             InitializeComponent();
-            breakMinutes = 5;
-            breakSeconds = 0;
-            workMinutes = 25;
-            workSeconds = 0;
-            session = 4;
+            breakMinutes = Properties.Settings.Default.breakMinutes;
+            breakSeconds = Properties.Settings.Default.breakSeconds;
+            workMinutes = Properties.Settings.Default.workMinutes;
+            workSeconds = Properties.Settings.Default.workSeconds;
+            session = Properties.Settings.Default.sessions;
+            ColonForTimerPosition = SessionLabel.Location;
             inputtingWork();
 
         }
 
+        //Tell the user control that the
+        //user is now inputting for work
+        //time and adjust the button
+        //to make it look like the work
+        //button is selected
         public void inputtingWork()
         {
             showTimeInput();
@@ -44,6 +51,11 @@ namespace PomTimeApp.view
             changeMinutes(workMinutes);
         }
 
+        //Tell the user control that the
+        //user is now inputting for break
+        //time and adjust the button
+        //to make it look like the break
+        //button is selected
         public void inputtingBreak()
         {
             showTimeInput();
@@ -55,6 +67,11 @@ namespace PomTimeApp.view
             changeSeconds(breakSeconds);
         }
 
+        //Tell the user control that the
+        //user is now inputting for number
+        //of session and adjust the button
+        //to make it look like the session
+        //button is selected
         public void inputtingSession()
         {
             inputState = InputState.Session;
@@ -64,6 +81,7 @@ namespace PomTimeApp.view
             MinutesLabel.Hide();
             secondsLabel.Hide();
             SessionLabel.Text = session.ToString();
+            SessionLabel.Location = new Point(Size.Width / 2 - SessionLabel.Width / 2, SessionLabel.Location.Y);
             IncreaseMinutesBtn.Enabled = false;
             DecreaseMinutesBtn.Enabled = false;
             IncreaseSecondsBtn.Enabled = false;
@@ -79,14 +97,16 @@ namespace PomTimeApp.view
             DecreaseSessionBtn.Show();
         }
 
-
-
-
+        //Have the 4 incrementation of time
+        //be shown, and have the 3 textbox
+        //that in the middle of the screen
+        //display the inputted time
         private void showTimeInput()
         {
             MinutesLabel.Show();
             secondsLabel.Show();
             SessionLabel.Text = ":";
+            SessionLabel.Location = ColonForTimerPosition;
             IncreaseMinutesBtn.Enabled = true;
             DecreaseMinutesBtn.Enabled = true;
             IncreaseSecondsBtn.Enabled = true;
@@ -102,6 +122,8 @@ namespace PomTimeApp.view
             DecreaseSessionBtn.Hide();
         }
 
+        //varible used to indicate what the user
+        //is inputting for
         public enum InputState
         {
             Work,
@@ -174,6 +196,9 @@ namespace PomTimeApp.view
             inputtingSession();
         }
 
+        //This makes it so the input loops around fromm 99 to 0 instead
+        //of increasing to 100 and also increment the breakMinutes or
+        //workMintutes input based on the inputState
         private void IncreaseMinutesBtn_Click(object sender, EventArgs e)
         {
             if (inputState == InputState.Break)
@@ -189,6 +214,9 @@ namespace PomTimeApp.view
 
         }
 
+        //This makes it so the input loops around fromm 0 to 99 instead
+        //of decreasing to -1 also decrement the breakMinutes or
+        //workMintutes input based on the inputState
         private void DecreaseMinutesBtn_Click(object sender, EventArgs e)
         {
             if (inputState == InputState.Break)
@@ -203,6 +231,9 @@ namespace PomTimeApp.view
             }
         }
 
+        //This makes it so the input loops around fromm 59 to 0 instead
+        //of increasing to 60 also increment the breakSeconds or
+        //workSeconds input based on the inputState
         private void IncreaseSecondsBtn_Click(object sender, EventArgs e)
         {
             if (inputState == InputState.Break)
@@ -217,6 +248,9 @@ namespace PomTimeApp.view
             }
         }
 
+        //This makes it so the input loops around fromm 0 to 59 instead
+        //of decreasing to -1 also decrement the breakSeconds or
+        //workSeconds input based on the inputState
         private void DecreaseSecondsBtn_Click(object sender, EventArgs e)
         {
             if (inputState == InputState.Break)
@@ -235,13 +269,16 @@ namespace PomTimeApp.view
         {
             session++;
             SessionLabel.Text = session.ToString();
+            SessionLabel.Location = new Point(Size.Width / 2 - SessionLabel.Width / 2, SessionLabel.Location.Y);
         }
 
+        //this stops the number of sessions from going below 1 and also
+        //displayed the number of session
         private void DecreaseSessionBtn_Click(object sender, EventArgs e)
         {
-            if (session < 1)
+            if (session <= 1)
             {
-                session = 0;
+                session = 1;
 
             }
             else
@@ -249,6 +286,7 @@ namespace PomTimeApp.view
                 session--;
             }
             SessionLabel.Text = session.ToString();
+            SessionLabel.Location = new Point(Size.Width / 2 - SessionLabel.Width / 2, SessionLabel.Location.Y);
         }
 
         private void changeMinutes(int minutesInd)
@@ -261,6 +299,10 @@ namespace PomTimeApp.view
             secondsLabel.Text = $"{secondInd:D2}";
         }
 
+        //Input: Two Color
+        //OutPut: None
+        //Purpose: switch the theme of this userControl
+        //to that of the two inputted color
         public void setTheme(Color backgroundColor, Color foregroundColor)
         {
             //background

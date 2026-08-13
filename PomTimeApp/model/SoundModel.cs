@@ -43,6 +43,7 @@ public class SoundModel
 
     public void playMusic()
     {
+        Debug.WriteLine("commandFired");
         music.Volume = 0.5;
         music.Play();
         playingMusic = true;
@@ -50,7 +51,6 @@ public class SoundModel
 
     public void manageMusic()
     {
-        Debug.WriteLine("message Recived");
         Process.Start(new ProcessStartInfo
         {
             FileName = musicPath,
@@ -78,7 +78,8 @@ public class SoundModel
 
     public void playNext()
     {
-        if(currSong + 1 >= musics.Length)
+        refreshList();
+        if (currSong + 1 >= musics.Length)
         {
             currSong = 0;
         } else
@@ -92,6 +93,7 @@ public class SoundModel
 
     public void playPreviousMusic()
     {
+        refreshList();
         if (currSong - 1 < 0)
         {
             currSong = musics.Length - 1;
@@ -102,5 +104,10 @@ public class SoundModel
         }
         music.Open(new Uri(musics[currSong]));
         playMusic();
+    }
+
+    public void refreshList()
+    {
+        musics = Directory.GetFiles(musicPath, "*.mp3");
     }
 }

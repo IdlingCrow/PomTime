@@ -5,6 +5,8 @@ using System;
 using System.Diagnostics;
 namespace PomTimeApp;
 
+//This class faccilitate the talking between the model and view
+//This class also do a little bit of the logic of the application too
 public class Controller
 {
 	private StartingUI view;
@@ -23,13 +25,12 @@ public class Controller
 	private TaskCompletionSource<bool>? breakTimeCompletionsSource;
 	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel, stickyNotes reminderNotes, ThemeModel themeModel)
 	{
-
         this.musicModel = musicModel;
         view = startingUI;
 		this.timerModel = timerModel;
         this.reminderNotes = reminderNotes;
         this.themeModel = themeModel;
-        isFirstWorkTime = true;
+        resetToken = new CancellationTokenSource();
 
 		view.userPressedStart += startCycle;
         view.userPressedPause += pauseTimer;
@@ -43,6 +44,7 @@ public class Controller
         view.theme2Pressed += changeToTheme2;
         view.theme3Pressed += changeToTheme3;
         view.manageMusicPressed += manageMusic;
+
         resetToken = new CancellationTokenSource();
 
         timerModel.decreaseByASecond += decreaseByASecond;
@@ -50,30 +52,43 @@ public class Controller
 		timerModel.breakSessionDone += breakSessionTimerDone;
         timerModel.workSessionDone += workSessionTimerDone;
 
+        isFirstWorkTime = true;
         timerHasStarted = false;
         musicHasBeenPause = false;
     }
 
-
+    // a wrapper class so this can be put in the EventHandler of view.userPressedStart
     public async void startCycle(object? sender, EventArgs e) => await startCycleInner();
 
+    // This start the the sessions
+    // it dictate which screen is switched 
+    // and when based on the input it recived from
+    // the view
 	private async Task startCycleInner()
 	{
         isFirstWorkTime = true;
         if(!timerHasStarted)
         {
             timerHasStarted = true;
+            // getting the input form the view
             int breakMinutes = view.getBreakMinutes();
             int breakSeconds = view.getBreakSeconds();
             int workMinutes = view.getWorkMinutes();
             int workSeconds = view.getWorkSeconds();
             int session = view.getSession();
-            Debug.WriteLine($"recived: {workMinutes}:{workSeconds} work, {breakMinutes}: {breakSeconds} break, {session} session");
+
+            saveTimePreset(workMinutes, workSeconds, breakMinutes, breakSeconds, session);
 
             timerModel.changeTime(workMinutes, workSeconds, breakMinutes, breakSeconds);
 
             resetToken = new CancellationTokenSource();
+
+            //this is used to keep track of whether music should
+            //be playing during work time
             bool storedMusicState = musicHasBeenPause;
+
+            //This whole chunk under try is how the the the program
+            //will act when you press start
             try
             {
                 for (int i = 0; i < session; i++)
@@ -85,26 +100,38 @@ public class Controller
                     {
                         musicModel.playMusic();
                     }
+
                     await runWorkTime(workMinutes, workSeconds, resetToken.Token);
+
                     isFirstWorkTime = false;
                     musicModel.stopMusic();
                     storedMusicState = musicHasBeenPause;
                     musicHasBeenPause = true;
                     musicModel.playSound();
+
                     await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
+
                     musicHasBeenPause = storedMusicState;
                 }
                 SessionComplete();
                 musicModel.playDoubleSound();
-                timerHasStarted = false;
-            } catch (OperationCanceledException)
+
+            } 
+            //This chunk under catch is for then the user
+            //press reset to exit out to the Input menu
+            //or the SettingUpScreen
+            catch (OperationCanceledException)
             {
                 timerModel.resetTime();
                 SessionComplete();
                 musicModel.stopMusic();
                 musicHasBeenPause = storedMusicState;
-                timerHasStarted = false;
+                disableOneMinutesWarning();
             }
+            reminderNotes.resetNotes();
+            timerHasStarted = false;
+
+
 
 
         }
@@ -130,10 +157,25 @@ public class Controller
         setAndSaveTheme(3);
     }
 
+    //Input: The theme number
+    //Purpose: call another function to set theme an save
+    //it for the next time the user open this applcation
     private void setAndSaveTheme(int theme)
     {
         view.setTheme(themeModel.selectTheme(theme));
         Properties.Settings.Default.Theme = theme;
+        Properties.Settings.Default.Save();
+    }
+
+    //Save the current as user default for the next time the user
+    //open the application
+    private void saveTimePreset(int workMinutes, int workSeconds, int BreakMinutes, int breakSeconds, int sessions)
+    {
+        Properties.Settings.Default.workMinutes = workMinutes;
+        Properties.Settings.Default.workSeconds = workSeconds;
+        Properties.Settings.Default.breakMinutes = workMinutes;
+        Properties.Settings.Default.breakSeconds = breakSeconds;
+        Properties.Settings.Default.sessions = sessions;
         Properties.Settings.Default.Save();
     }
 
@@ -168,6 +210,9 @@ public class Controller
         musicHasBeenPause = true;
     }
 
+    //this is used the music model to tell the controller
+    //that one seconds has pass and the view should decrease
+    //the timer displayed by 1 seconds
     public void decreaseByASecond(object? sender, EventArgs e)
 	{
 		if(secondsInd == 0 && minutesInd == 0)
@@ -192,11 +237,11 @@ public class Controller
 
     public void resetTimer(object? sender, EventArgs e)
     {
-        Debug.WriteLine($"resetToken called");
         resetToken.Cancel();
     }
 
-
+    //This is used for the timer Model to tell the view that there
+    //is one mintues left
     public void enableOneMinutesWarning(object? sender, EventArgs e)
 	{
 		if(view.InvokeRequired)
@@ -212,9 +257,13 @@ public class Controller
         }
     }
 
-    
 
-	private Task runWorkTime(int workMinutes, int workSeconds, CancellationToken token)
+    // this is used to open the Form stickyNotes when there is
+    // one inutes left in the work time but to also create a
+    // task to ensure the the program doesn't continue until
+    // the timer model say that work time is over ( in other word
+    //workTimeCompletionsSource.Task is done)
+    private Task runWorkTime(int workMinutes, int workSeconds, CancellationToken token)
 	{
         if(!isFirstWorkTime)
         {
@@ -240,7 +289,10 @@ public class Controller
 		return workTimeCompletionsSource.Task;
     }
 
-	private Task runBreakTime(int breakMinutes, int breakSeconds, CancellationToken token)
+    // create a task to ensure the the program doesn't continue until
+    // the timer model say that break time is over ( in other word
+    //workTimeCompletionsSource.Task is done)
+    private Task runBreakTime(int breakMinutes, int breakSeconds, CancellationToken token)
 	{
         breakTimeCompletionsSource = new TaskCompletionSource<bool>();
         minutesInd = breakMinutes;

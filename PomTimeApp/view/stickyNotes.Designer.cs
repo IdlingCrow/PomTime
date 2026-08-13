@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            reminderDescription = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -42,15 +42,15 @@
             label1.TabIndex = 0;
             label1.Text = "Reminder";
             // 
-            // textBox1
+            // reminderDescription
             // 
-            textBox1.BackColor = Color.FromArgb(255, 255, 136);
-            textBox1.Font = new Font("Segoe UI", 12.125F);
-            textBox1.Location = new Point(1, 98);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(752, 471);
-            textBox1.TabIndex = 1;
+            reminderDescription.BackColor = Color.FromArgb(255, 255, 136);
+            reminderDescription.Font = new Font("Segoe UI", 12.125F);
+            reminderDescription.Location = new Point(1, 98);
+            reminderDescription.Multiline = true;
+            reminderDescription.Name = "reminderDescription";
+            reminderDescription.Size = new Size(752, 471);
+            reminderDescription.TabIndex = 1;
             // 
             // stickyNotes
             // 
@@ -58,7 +58,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 136);
             ClientSize = new Size(753, 570);
-            Controls.Add(textBox1);
+            Controls.Add(reminderDescription);
             Controls.Add(label1);
             Name = "stickyNotes";
             Text = "stickyNotes";
@@ -69,6 +69,6 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox reminderDescription;
     }
 }

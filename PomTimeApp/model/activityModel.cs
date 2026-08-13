@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Diagnostics;
 using System.IO;
+using System.Text;
 
 namespace PomTimeApp.model;
 public class activityModel
@@ -22,8 +23,22 @@ public class activityModel
         boxBreathingActivity = Image.FromFile(breakActivities[randomActvity.NextInt64(0, breakActivities.Length)]);
     }
 
+    public void manageActivity()
+    {
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = breakActivtiesFolder,
+            UseShellExecute = true
+        });
+    }
+    public void refreshList()
+    {
+        breakActivtiesFolder = Path.Combine(Application.StartupPath, "model", "breakActivity");
+    }
+
     public Image getBreakActivity()
     {
+        refreshList();
         return boxBreathingActivity;
     }
 }

@@ -34,5 +34,65 @@ namespace PomTimeApp.Properties {
                 this["Theme"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int breakMinutes {
+            get {
+                return ((int)(this["breakMinutes"]));
+            }
+            set {
+                this["breakMinutes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int breakSeconds {
+            get {
+                return ((int)(this["breakSeconds"]));
+            }
+            set {
+                this["breakSeconds"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("25")]
+        public int workMinutes {
+            get {
+                return ((int)(this["workMinutes"]));
+            }
+            set {
+                this["workMinutes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int workSeconds {
+            get {
+                return ((int)(this["workSeconds"]));
+            }
+            set {
+                this["workSeconds"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int sessions {
+            get {
+                return ((int)(this["sessions"]));
+            }
+            set {
+                this["sessions"] = value;
+            }
+        }
     }
 }

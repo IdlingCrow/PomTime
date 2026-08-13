@@ -31,7 +31,6 @@
             screenTitle = new Label();
             timerOnBreakScreen = new Label();
             breakTimeActivity = new PictureBox();
-            exersizeLabel = new Label();
             ResumeButton = new themeButton();
             PauseButton = new themeButton();
             ResetButton = new themeButton();
@@ -40,6 +39,7 @@
             // 
             // screenTitle
             // 
+            screenTitle.Anchor = AnchorStyles.None;
             screenTitle.AutoSize = true;
             screenTitle.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             screenTitle.ForeColor = Color.White;
@@ -51,6 +51,7 @@
             // 
             // timerOnBreakScreen
             // 
+            timerOnBreakScreen.Anchor = AnchorStyles.None;
             timerOnBreakScreen.AutoSize = true;
             timerOnBreakScreen.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             timerOnBreakScreen.ForeColor = Color.White;
@@ -62,6 +63,7 @@
             // 
             // breakTimeActivity
             // 
+            breakTimeActivity.Anchor = AnchorStyles.None;
             breakTimeActivity.Location = new Point(393, 177);
             breakTimeActivity.Name = "breakTimeActivity";
             breakTimeActivity.Size = new Size(540, 540);
@@ -69,26 +71,20 @@
             breakTimeActivity.TabIndex = 2;
             breakTimeActivity.TabStop = false;
             // 
-            // exersizeLabel
-            // 
-            exersizeLabel.AutoSize = true;
-            exersizeLabel.Location = new Point(593, 116);
-            exersizeLabel.Name = "exersizeLabel";
-            exersizeLabel.Size = new Size(156, 32);
-            exersizeLabel.TabIndex = 3;
-            exersizeLabel.Text = "boxBreathing";
-            // 
             // ResumeButton
             // 
+            ResumeButton.Anchor = AnchorStyles.None;
+            ResumeButton.AutoSize = true;
+            ResumeButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ResumeButton.BackColor = Color.White;
             ResumeButton.FlatAppearance.BorderColor = Color.White;
             ResumeButton.FlatAppearance.BorderSize = 3;
             ResumeButton.FlatStyle = FlatStyle.Flat;
             ResumeButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             ResumeButton.ForeColor = Color.FromArgb(167, 199, 231);
-            ResumeButton.Location = new Point(951, 216);
+            ResumeButton.Location = new Point(984, 216);
             ResumeButton.Name = "ResumeButton";
-            ResumeButton.Size = new Size(150, 46);
+            ResumeButton.Size = new Size(127, 53);
             ResumeButton.TabIndex = 4;
             ResumeButton.Text = "resume";
             ResumeButton.UseVisualStyleBackColor = false;
@@ -96,15 +92,18 @@
             // 
             // PauseButton
             // 
+            PauseButton.Anchor = AnchorStyles.None;
+            PauseButton.AutoSize = true;
+            PauseButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             PauseButton.BackColor = Color.White;
             PauseButton.FlatAppearance.BorderColor = Color.White;
             PauseButton.FlatAppearance.BorderSize = 3;
             PauseButton.FlatStyle = FlatStyle.Flat;
             PauseButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             PauseButton.ForeColor = Color.FromArgb(167, 199, 231);
-            PauseButton.Location = new Point(1026, 216);
+            PauseButton.Location = new Point(1068, 216);
             PauseButton.Name = "PauseButton";
-            PauseButton.Size = new Size(150, 46);
+            PauseButton.Size = new Size(108, 53);
             PauseButton.TabIndex = 5;
             PauseButton.Text = "pause";
             PauseButton.UseVisualStyleBackColor = false;
@@ -112,15 +111,18 @@
             // 
             // ResetButton
             // 
+            ResetButton.Anchor = AnchorStyles.None;
+            ResetButton.AutoSize = true;
+            ResetButton.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ResetButton.BackColor = Color.White;
             ResetButton.FlatAppearance.BorderColor = Color.White;
             ResetButton.FlatAppearance.BorderSize = 3;
             ResetButton.FlatStyle = FlatStyle.Flat;
             ResetButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             ResetButton.ForeColor = Color.FromArgb(167, 199, 231);
-            ResetButton.Location = new Point(1121, 216);
+            ResetButton.Location = new Point(1129, 216);
             ResetButton.Name = "ResetButton";
-            ResetButton.Size = new Size(150, 46);
+            ResetButton.Size = new Size(97, 53);
             ResetButton.TabIndex = 6;
             ResetButton.Text = "reset";
             ResetButton.UseVisualStyleBackColor = false;
@@ -134,7 +136,6 @@
             Controls.Add(ResetButton);
             Controls.Add(PauseButton);
             Controls.Add(ResumeButton);
-            Controls.Add(exersizeLabel);
             Controls.Add(breakTimeActivity);
             Controls.Add(timerOnBreakScreen);
             Controls.Add(screenTitle);
@@ -150,7 +151,6 @@
         private Label screenTitle;
         private Label timerOnBreakScreen;
         private PictureBox breakTimeActivity;
-        private Label exersizeLabel;
         private themeButton ResumeButton;
         private themeButton PauseButton;
         private themeButton ResetButton;

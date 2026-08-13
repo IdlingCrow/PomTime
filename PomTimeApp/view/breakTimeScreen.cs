@@ -66,7 +66,6 @@ namespace PomTimeApp.view
             ResumeButton.Show();
             PauseButton.Hide();
         }
-
         private void ResetButton_Click(object sender, EventArgs e)
         {
             UserPressedReset?.Invoke(this, EventArgs.Empty);
@@ -75,6 +74,10 @@ namespace PomTimeApp.view
             PauseButton.Show();
         }
 
+        //Input: Two Color
+        //OutPut: None
+        //Purpose: switch the theme of this userControl
+        //to that of the two inputted color
         public void setTheme(Color backgroundColor, Color foregroundColor)
         {
             this.ForeColor = foregroundColor;

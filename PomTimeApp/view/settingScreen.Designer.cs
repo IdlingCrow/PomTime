@@ -32,7 +32,6 @@
             backButton = new themeButton();
             themeLable = new Label();
             MusicManagementLabel = new Label();
-            TimePresetLabel = new Label();
             ImportBreakLabel = new Label();
             theme1Button = new themeButton();
             splitter1 = new Splitter();
@@ -40,6 +39,7 @@
             theme3Button = new themeButton();
             addCustomTheme = new themeButton();
             musicManagementButton = new themeButton();
+            ImportBreakButton = new themeButton();
             SuspendLayout();
             // 
             // titleLable
@@ -84,29 +84,18 @@
             MusicManagementLabel.AutoSize = true;
             MusicManagementLabel.FlatStyle = FlatStyle.Flat;
             MusicManagementLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            MusicManagementLabel.Location = new Point(99, 341);
+            MusicManagementLabel.Location = new Point(99, 383);
             MusicManagementLabel.Name = "MusicManagementLabel";
             MusicManagementLabel.Size = new Size(532, 72);
             MusicManagementLabel.TabIndex = 3;
             MusicManagementLabel.Text = "Music Management";
-            // 
-            // TimePresetLabel
-            // 
-            TimePresetLabel.AutoSize = true;
-            TimePresetLabel.FlatStyle = FlatStyle.Flat;
-            TimePresetLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            TimePresetLabel.Location = new Point(99, 498);
-            TimePresetLabel.Name = "TimePresetLabel";
-            TimePresetLabel.Size = new Size(327, 72);
-            TimePresetLabel.TabIndex = 4;
-            TimePresetLabel.Text = "Time Preset";
             // 
             // ImportBreakLabel
             // 
             ImportBreakLabel.AutoSize = true;
             ImportBreakLabel.FlatStyle = FlatStyle.Flat;
             ImportBreakLabel.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            ImportBreakLabel.Location = new Point(99, 660);
+            ImportBreakLabel.Location = new Point(99, 580);
             ImportBreakLabel.Name = "ImportBreakLabel";
             ImportBreakLabel.Size = new Size(574, 72);
             ImportBreakLabel.TabIndex = 6;
@@ -191,7 +180,7 @@
             musicManagementButton.FlatStyle = FlatStyle.Flat;
             musicManagementButton.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             musicManagementButton.ForeColor = Color.FromArgb(167, 199, 231);
-            musicManagementButton.Location = new Point(984, 341);
+            musicManagementButton.Location = new Point(984, 383);
             musicManagementButton.Name = "musicManagementButton";
             musicManagementButton.Size = new Size(254, 72);
             musicManagementButton.TabIndex = 12;
@@ -199,11 +188,28 @@
             musicManagementButton.UseVisualStyleBackColor = false;
             musicManagementButton.Click += musicManagementButton_Click;
             // 
+            // ImportBreakButton
+            // 
+            ImportBreakButton.BackColor = Color.White;
+            ImportBreakButton.FlatAppearance.BorderColor = Color.White;
+            ImportBreakButton.FlatAppearance.BorderSize = 3;
+            ImportBreakButton.FlatStyle = FlatStyle.Flat;
+            ImportBreakButton.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            ImportBreakButton.ForeColor = Color.FromArgb(167, 199, 231);
+            ImportBreakButton.Location = new Point(984, 590);
+            ImportBreakButton.Name = "ImportBreakButton";
+            ImportBreakButton.Size = new Size(254, 72);
+            ImportBreakButton.TabIndex = 13;
+            ImportBreakButton.Text = "Manage";
+            ImportBreakButton.UseVisualStyleBackColor = false;
+            ImportBreakButton.Click += ImportBreakButton_Click;
+            // 
             // settingScreen
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(167, 199, 231);
+            Controls.Add(ImportBreakButton);
             Controls.Add(musicManagementButton);
             Controls.Add(addCustomTheme);
             Controls.Add(theme3Button);
@@ -211,7 +217,6 @@
             Controls.Add(splitter1);
             Controls.Add(theme1Button);
             Controls.Add(ImportBreakLabel);
-            Controls.Add(TimePresetLabel);
             Controls.Add(MusicManagementLabel);
             Controls.Add(themeLable);
             Controls.Add(backButton);
@@ -229,7 +234,6 @@
         private themeButton backButton;
         private Label themeLable;
         private Label MusicManagementLabel;
-        private Label TimePresetLabel;
         private Label ImportBreakLabel;
         private themeButton theme1Button;
         private Splitter splitter1;
@@ -237,5 +241,6 @@
         private themeButton theme3Button;
         private themeButton addCustomTheme;
         private themeButton musicManagementButton;
+        private themeButton ImportBreakButton;
     }
 }

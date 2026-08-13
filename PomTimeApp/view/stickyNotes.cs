@@ -21,7 +21,7 @@ namespace PomTimeApp.view
             this.FormClosing += closeNotes;
         }
 
-
+        //Command used to pull up the notes winform
         public void openNotes()
         {
             if(WindowState == FormWindowState.Minimized)
@@ -31,6 +31,8 @@ namespace PomTimeApp.view
             Show();
         }
 
+        //used to overide the action to close the notes and instead
+        //hide to save the notes
         public void closeNotes(object? sender, FormClosingEventArgs e) 
         {
             if(e.CloseReason == CloseReason.UserClosing)
@@ -38,6 +40,13 @@ namespace PomTimeApp.view
                 e.Cancel = true;
                 Hide();
             }
+        }
+
+        //This is used for when all the sessions is done
+        public void resetNotes()
+        {
+            Hide();
+            reminderDescription.Text = string.Empty;
         }
 
     }

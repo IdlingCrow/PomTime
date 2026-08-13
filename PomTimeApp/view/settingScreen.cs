@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PomTimeApp.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace PomTimeApp.view
         public EventHandler? userPressedTheme3;
         public EventHandler? backButtonPressed;
         public EventHandler? userPressedManageMusic;
+
+        activityModel actiivityManager = new activityModel();
         public settingScreen()
         {
             InitializeComponent();
@@ -96,15 +99,16 @@ namespace PomTimeApp.view
             musicManagementButton.BackColor = ForeColor;
             musicManagementButton.FlatAppearance.BorderColor = ForeColor;
 
+            ImportBreakButton.ForeColor = BackColor;
+            ImportBreakButton.BackColor = ForeColor;
+            ImportBreakButton.FlatAppearance.BorderColor = ForeColor;
+
             //text
             themeLable.ForeColor = ForeColor;
             themeLable.BackColor = BackColor;
 
             MusicManagementLabel.ForeColor = ForeColor;
             MusicManagementLabel.BackColor = BackColor;
-
-            TimePresetLabel.ForeColor = ForeColor;
-            TimePresetLabel.BackColor = BackColor;
 
             ImportBreakLabel.ForeColor = ForeColor;
             ImportBreakLabel.BackColor = BackColor;
@@ -113,6 +117,11 @@ namespace PomTimeApp.view
         private void musicManagementButton_Click(object sender, EventArgs e)
         {
             userPressedManageMusic?.Invoke(sender, e);
+        }
+
+        private void ImportBreakButton_Click(object sender, EventArgs e)
+        {
+            actiivityManager?.manageActivity();
         }
     }
 }
