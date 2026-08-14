@@ -3,6 +3,8 @@ namespace PomTime.Tests;
 using Microsoft.Testing.Platform.Extensions.Messages;
 using PomTime;
 using PomTimeApp;
+using PomTimeApp.model;
+using PomTimeApp.view;
 using System.Diagnostics;
 
 [TestClass]
@@ -16,7 +18,9 @@ public sealed class controllerTest
         StartingUI testUI = new StartingUI();
         TimeModel testTimer = new TimeModel(0, 0, 0, 0);
         SoundModel musicModel = new SoundModel();
-        Controller testController = new Controller(testUI, testTimer, musicModel);
+        stickyNotes stickyNotes = new stickyNotes();
+        ThemeModel themeModel = new ThemeModel();
+        Controller testController = new Controller(testUI, testTimer, musicModel, stickyNotes, themeModel);
 
         testController.SessionComplete();
         Assert.AreEqual("Setting up", testUI.getBreakOrWorkTimeDispalyed(), $"function sessionComplete suppose to show 'testing complete' on UI  showed {testUI.getBreakOrWorkTimeDispalyed()}");
@@ -48,7 +52,9 @@ public sealed class controllerTest
         StartingUI testUI = new StartingUI();
         TimeModel testTimer = new TimeModel(0, 0, 0, 0);
         SoundModel musicModel = new SoundModel();
-        Controller testController = new Controller(testUI, testTimer, musicModel);
+        stickyNotes stickyNotes = new stickyNotes();
+        ThemeModel themeModel = new ThemeModel();
+        Controller testController = new Controller(testUI, testTimer, musicModel, stickyNotes, themeModel);
         Stopwatch stopWatch = new Stopwatch();
 
         testUI.performClickWithInput(0, 5, 0, 5, 1);
@@ -59,7 +65,7 @@ public sealed class controllerTest
             System.Windows.Forms.Application.DoEvents();
         }
         Assert.AreEqual("Work", testUI.getBreakOrWorkTimeDispalyed(), $"the title is {testUI.getBreakOrWorkTimeDispalyed()} instead of work");
-        while(stopWatch.ElapsedMilliseconds < 7000)
+        while(stopWatch.ElapsedMilliseconds < 8000)
         {
             System.Windows.Forms.Application.DoEvents();
         }
