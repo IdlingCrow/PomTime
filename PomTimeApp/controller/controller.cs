@@ -18,6 +18,8 @@ public class Controller
     private bool timerHasStarted;
     private CancellationTokenSource resetToken;
     private bool musicHasBeenPause;
+
+    private bool storedMusicState;
     private stickyNotes reminderNotes;
     private bool isFirstWorkTime;
 
@@ -85,7 +87,7 @@ public class Controller
 
             //this is used to keep track of whether music should
             //be playing during work time
-            bool storedMusicState = musicHasBeenPause;
+            storedMusicState = musicHasBeenPause;
 
             //This whole chunk under try is how the the the program
             //will act when you press start
@@ -105,12 +107,13 @@ public class Controller
 
                     isFirstWorkTime = false;
                     musicModel.stopMusic();
-                    storedMusicState = musicHasBeenPause;
-                    musicHasBeenPause = true;
-                    musicModel.playSound();
+                    if(i < session - 1)
+                    {
+                        musicHasBeenPause = true;
+                        musicModel.playSound();
 
-                    await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
-
+                        await runBreakTime(breakMinutes, breakSeconds, resetToken.Token);
+                    }
                     musicHasBeenPause = storedMusicState;
                 }
                 SessionComplete();
@@ -126,7 +129,9 @@ public class Controller
                 SessionComplete();
                 musicModel.stopMusic();
                 musicHasBeenPause = storedMusicState;
+                Debug.WriteLine(musicHasBeenPause);
                 disableOneMinutesWarning();
+                isFirstWorkTime = true;
             }
             reminderNotes.resetNotes();
             timerHasStarted = false;
@@ -173,7 +178,7 @@ public class Controller
     {
         Properties.Settings.Default.workMinutes = workMinutes;
         Properties.Settings.Default.workSeconds = workSeconds;
-        Properties.Settings.Default.breakMinutes = workMinutes;
+        Properties.Settings.Default.breakMinutes = BreakMinutes;
         Properties.Settings.Default.breakSeconds = breakSeconds;
         Properties.Settings.Default.sessions = sessions;
         Properties.Settings.Default.Save();
@@ -198,6 +203,7 @@ public class Controller
         if (!musicModel.isPlayingMusic()) {
             musicModel.playMusic();
         }
+        storedMusicState = false;
         musicHasBeenPause = false;
     }
 
@@ -207,6 +213,7 @@ public class Controller
         {
             musicModel.stopMusic();
         }
+        storedMusicState = true;
         musicHasBeenPause = true;
     }
 

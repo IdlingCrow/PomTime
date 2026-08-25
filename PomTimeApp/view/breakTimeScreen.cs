@@ -12,10 +12,11 @@ namespace PomTimeApp.view
     public partial class breakTimeScreen : UserControl
     {
         activityModel activityModel;
-
         public EventHandler? UserPressedPause;
         public EventHandler? UserPressedResume;
         public EventHandler? UserPressedReset;
+
+        //
         public breakTimeScreen()
         {
             InitializeComponent();

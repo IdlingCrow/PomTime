@@ -10,6 +10,8 @@ namespace PomTimeApp.view
 {
     public partial class stickyNotes : Form
     {
+        //make it so the sticky notes is somewhare around the top left
+        // of the screen when it popped up
         public stickyNotes()
         {
             int userScreenWidth = Screen.PrimaryScreen?.Bounds.Width ?? 0;
@@ -47,6 +49,12 @@ namespace PomTimeApp.view
         {
             Hide();
             reminderDescription.Text = string.Empty;
+        }
+
+        //testing only method
+        internal TextBox GetUserNotesSquare()
+        {
+            return reminderDescription;
         }
 
     }

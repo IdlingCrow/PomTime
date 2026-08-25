@@ -7,29 +7,81 @@ namespace PomTimeApp;
 // to in order to talk to the control
 public partial class StartingUI : Form
 {
+    //Used to keep track of the location
+    //for the small work screen
     Point workTimeFormLocation;
+
+    //used to keep track of where the normal
+    //size screen for the break, settingUp
+    // and setting screen is
     Point regularFormLocation;
+
+    //keep track of what page/screen
+    //the user is currently in
     screenState currScreen;
+
+    // use to store the size of if the
+    // screen cannot resize at the current moment
+    Size? pendingSize;
+
+    //use to keep track of the curren screen size
+    Size currentScreenSize;
+
+    //use to keep track of the size of all the screen
+    Dictionary<UserControl, Size> sizeOfUserControl = new();
+
+    //intilizing all the pages
     private breakTimeScreen breakTimeScreen = new breakTimeScreen();
     private WorkTimeScreen workTimeScreen = new WorkTimeScreen();
     private settingUpScreen settingUpScreen = new settingUpScreen();
     private settingScreen settingScreen = new settingScreen();
 
+    //Event for the setting up screen to talk to 
+    //controller
     public EventHandler? userPressedStart;
+
+    //Event for the work and break screen to talk to 
+    //controller
     public EventHandler? userPressedPause;
     public EventHandler? userPressedResume;
     public EventHandler? userPressedReset;
+
+    //Event exclusively for the work screen to talk to 
+    //controller
     public EventHandler? resumeMusic;
     public EventHandler? pauseMusic;
     public EventHandler? skipMusic;
     public EventHandler? playPreviousMusic;
+
+    //Event for the setting screens to talk to 
+    //controller
     public EventHandler? theme1Pressed;
     public EventHandler? theme2Pressed;
     public EventHandler? theme3Pressed;
     public EventHandler? manageMusicPressed;
     public EventHandler? manageBreakPressed;
+
+
+    //WHAT IS IT DOING?:
+    //Record all the screen size of all the pages.
+    //================================================
+    //Set the default position of the normal window 
+    //to be in the center of the screen
+    //================================================
+    //Set the work screen to be around the top right
+    //of the screen
+    //================================================
+    //Prevent the user from resizing and maximizing
+    //Wired up all of the event handler from the four
+    //screen(user control)
     public StartingUI()
     {
+        sizeOfUserControl[settingScreen] = settingScreen.Size;
+        sizeOfUserControl[settingUpScreen] = settingUpScreen.Size;
+        sizeOfUserControl[workTimeScreen] = workTimeScreen.Size;
+        sizeOfUserControl[breakTimeScreen] = breakTimeScreen.Size;
+        currentScreenSize = sizeOfUserControl[settingUpScreen];
+
         //setting the default location of the app being the center of the screen
         StartPosition = FormStartPosition.CenterScreen;
         regularFormLocation = Location;
@@ -76,24 +128,30 @@ public partial class StartingUI : Form
 
     }
 
+    //send this message to controller
     private void ManageMusicPressed(object? sender, EventArgs e) {
         manageMusicPressed?.Invoke(sender, e);
     }
+
+    //send this message to controller
     private void changeToTheme1(object? sender, EventArgs e)
     {
         theme1Pressed?.Invoke(sender, e);
     }
 
+    //send this message to controller
     private void changeToTheme2(object? sender, EventArgs e)
     {
         theme2Pressed?.Invoke(sender, e);
     }
 
+    //send this message to controller
     private void changeToTheme3(object? sender, EventArgs e)
     {
         theme3Pressed?.Invoke(sender, e);
     }
 
+    //switches the userControl to the settingUpScreen
     private void goingBackToSettingUp(object? sender, EventArgs e)
     {
         switchScreen(settingUpScreen);
@@ -117,6 +175,8 @@ public partial class StartingUI : Form
 
     }
 
+    //this mtheod is use to wired the eventhandler settingUpScreen.userPressedSetting 
+    //to switchToSettingsScreen();
     public void settingButtonClick(object? sender, EventArgs e)
     {
         switchToSettingsScreen();
@@ -132,20 +192,7 @@ public partial class StartingUI : Form
         settings
     }
 
-    public void setButtonToPauseMusic()
-    {
-        workTimeScreen.setButtonToPauseMusic();
-    }
 
-    public void handleSkipMusic(object? sender, EventArgs e)
-    {
-        skipMusic?.Invoke(this, e);
-    }
-
-    public void handlePlayPreviousMusic(object? sender, EventArgs e)
-    {
-        playPreviousMusic?.Invoke(this, e);
-    }
 
     // Input: one of the view that is classified as
     // a user control
@@ -154,46 +201,139 @@ public partial class StartingUI : Form
     // presenting to one of the other view
     private void switchScreen(UserControl control)
     {
+        Size originalSize = sizeOfUserControl[control];
+        currentScreenSize = originalSize;
+
+        //Debug.WriteLine($"[switchScreen] control={control.Name}, originalSize={originalSize}, WindowState={WindowState}");
+
         Controls.Clear();
-        ClientSize = control.Size;
         control.Dock = DockStyle.Fill;
         Controls.Add(control);
+
+        if (!IsHandleCreated || WindowState == FormWindowState.Normal)
+        {
+            ClientSize = originalSize;
+            //Debug.WriteLine($"[switchScreen] Applied immediately: ClientSize={ClientSize}");
+        }
+        else
+        {
+            pendingSize = originalSize;
+            //Debug.WriteLine($"[switchScreen] Applied immediately: ClientSize={ClientSize}");
+        }
     }
 
+    // basically make it so the window won't resize
+    // until the window is normal(ie, window is not maximize or minimize)
+    protected override void OnResize(EventArgs e)
+    {
+        base.OnResize(e);
+
+        //Debug.WriteLine($"[OnResize] WindowState={WindowState}, Location={Location}, Bounds={Bounds}, ClientSize={ClientSize}");
+
+        if (WindowState == FormWindowState.Normal)
+        {
+            if (!IsHandleCreated)
+            {
+                // No handle yet — safe to apply directly, no reentrancy risk pre-handle
+                if (pendingSize.HasValue)
+                {
+                    ClientSize = pendingSize.Value;
+                    pendingSize = null;
+                }
+                else if (ClientSize != currentScreenSize)
+                {
+                    ClientSize = currentScreenSize;
+                }
+                return;
+            }
+
+            if (pendingSize.HasValue)
+            {
+                Size size = pendingSize.Value;
+                pendingSize = null;
+                BeginInvoke(new Action(() => { ClientSize = size; }));
+            }
+            else if (ClientSize != currentScreenSize)
+            {
+                Size size = currentScreenSize;
+                BeginInvoke(new Action(() => { ClientSize = size; }));
+            }
+        }
+
+        //Debug.WriteLine($"[OnResize] AFTER: Location={Location}, Bounds={Bounds}, ClientSize={ClientSize}");
+    }
+
+    //allows the control to get the input work minutes
     public int getWorkMinutes()
     {
         int workMinutes = settingUpScreen.getWorkMinutes();
         return workMinutes;
     }
+
+    //allows the control to get the input work seconds
     public int getWorkSeconds()
     {
         int workSeconds = settingUpScreen.getWorkSeconds();
         return workSeconds;
     }
 
+    //allows the control to get the input break minutes
     public int getBreakMinutes()
     {
         int breakMinutes = settingUpScreen.getBreakMinutes();
         return breakMinutes;
     }
 
+    //allows the control to get the input break seconds
     public int getBreakSeconds()
     {
         int breakSeconds = settingUpScreen.getBreakSeconds();
         return breakSeconds;
     }
 
+    //allows the control to get the input nubmer of session
     public int getSession()
     {
         int session = settingUpScreen.getSession();
         return session;
     }
 
+    // used to allow the controller
+    // to be able to manipulate the
+    // workScreen Pause/Resume
+    // button appearance
+    public void setButtonToPauseMusic()
+    {
+        workTimeScreen.setButtonToPauseMusic();
+    }
+
+    //allows workScreen userControl to communicate
+    //to the controller that the user has pressed
+    //the skip button
+    public void handleSkipMusic(object? sender, EventArgs e)
+    {
+        skipMusic?.Invoke(this, e);
+    }
+
+    //allows workScreen userControl to communicate
+    //to the controller that the user has pressed
+    //the play previous button
+    public void handlePlayPreviousMusic(object? sender, EventArgs e)
+    {
+        playPreviousMusic?.Invoke(this, e);
+    }
+
+    //allows workScreen userControl to communicate
+    //to the controller that the user has pressed
+    //the play/pause button when the music was pause
     public void userPressedResumeMusic(object? sender, EventArgs e)
     {
         resumeMusic?.Invoke(this, EventArgs.Empty);
     }
 
+    //allows workScreen userControl to communicate
+    //to the controller that the user has pressed
+    //the play/pause button when the music was playing
     public void userPressedPauseMusic(object? sender, EventArgs e)
     {
         pauseMusic?.Invoke(this, EventArgs.Empty);
@@ -218,54 +358,88 @@ public partial class StartingUI : Form
         }
     }
 
+    //allows the controller to talk to the work
+    //screen that there is one minutes left
+    //to work time and it should make
+    //preperation like pulling up the reminder
+    //stickynotes
     public void enableOneMinutesWarning()
     {
         workTimeScreen.enableOneminutesWarning();
     }
 
+    //tell the workTime screen that work time has
+    //ended
     public void disableOneminutesWarning()
     {
         workTimeScreen.disableOneminutesWarning();
     }
 
+    //allows the the setting up screen to comunicate to the
+    //with the controller that the user want to start
+    //the session
     public void startBtn_Click(object? sender, EventArgs e)
     {
         userPressedStart?.Invoke(this, EventArgs.Empty);
     }
+
+    //allows the workscreen and the breakcreen to to communicate
+    //with the controller that the user wants to pause the time
     public void resumeButtonClick(object? sender, EventArgs e)
     {
         userPressedResume?.Invoke(this, EventArgs.Empty);
     }
+
+    //swiches to work screen set the the timer to 
+    //be on the top right or where the user put it
+    //and store the location of where the user put
+    //the normal screen
     public void switchToWorkScreen()
     {
         switchToWorkTimeFormLocation();
         switchScreen(workTimeScreen);
+        MaximizeBox = false;
         WindowState = FormWindowState.Normal;
         currScreen = screenState.workTime;
     }
 
+    //swich the break screen ask the screen to
+    //show a picture of what acitivy to do 
+    //from the break actitivy folder.
+    //maximized the screen. and store the location
+    //of where the user puts the work screen
     public void switchToBreakScreen()
     {
+        Debug.WriteLine("breakScreen");
         switchToRegularFormLocation();
         switchScreen(breakTimeScreen);
         WindowState = FormWindowState.Maximized;
         breakTimeScreen.startAnActivity();
+        MaximizeBox = true;
         currScreen = screenState.breakTime;
     }
 
+    //store the where the user puts the dead
+    //the break screen. switch to setting up screen
+    //and make the window state be normal
     public void switchToSettingUpScreen()
     {
         switchToRegularFormLocation();
         switchScreen(settingUpScreen);
         WindowState = FormWindowState.Normal;
+        MaximizeBox = false;
         currScreen = screenState.settingUp;
     }
 
+    //store the where the user puts the dead
+    //the break screen. switch to settings screen
+    //and make the window state be normal
     public void switchToSettingsScreen()
     {
         switchToRegularFormLocation();
         switchScreen(settingScreen);
         WindowState = FormWindowState.Normal;
+        MaximizeBox = false;
         currScreen = screenState.settings;
     }
 
@@ -275,12 +449,15 @@ public partial class StartingUI : Form
     //the saved location for the workTimeScreen
     private void switchToWorkTimeFormLocation()
     {
-        if(currScreen != screenState.workTime)
+        Point currentLocation = (WindowState == FormWindowState.Minimized) ? RestoreBounds.Location : Location;
+
+        if (currScreen == screenState.workTime)
         {
-            regularFormLocation = Location;
-        } else
+            workTimeFormLocation = currentLocation;
+        }
+        else if (currScreen != screenState.breakTime)
         {
-            workTimeFormLocation = Location;
+            regularFormLocation = currentLocation;
         }
         Location = workTimeFormLocation;
     }
@@ -291,16 +468,19 @@ public partial class StartingUI : Form
     //the saved location for aplication
     private void switchToRegularFormLocation()
     {
+        Point currentLocation = (WindowState == FormWindowState.Minimized) ? RestoreBounds.Location: Location;
         if (currScreen == screenState.workTime)
         {
-            workTimeFormLocation = Location;
-        } else
+            workTimeFormLocation = currentLocation;
+        } 
+        else if (currScreen != screenState.breakTime)
         {
-            regularFormLocation = Location;
+            regularFormLocation = currentLocation;
         }
         Location = regularFormLocation;
     }
 
+    //allows the controller to minimize the box
     public void deMaximizeBox()
     {
         WindowState = FormWindowState.Normal;
@@ -324,31 +504,22 @@ public partial class StartingUI : Form
         }
     }
 
-    public Color getBackColor()
-    {
-        return this.BackColor;
-    }
-
-    public void performClick()
-    {
-        startBtn_Click(this, EventArgs.Empty);
-    }
-
-    public void performClickWithInput(int workTimeMinutes, int workTimeSeconds, int breakTimeMinutes, int breakTimeSeconds, int sessions)
-    {
-        settingUpScreen.performClickWithInput(workTimeMinutes, workTimeSeconds, breakTimeMinutes, breakTimeSeconds, sessions);
-    }
-
+    //allows the break and work screen to communicate that 
+    //the user wants to pause the time
     private void pauseBtn_Click(object? sender, EventArgs e)
     {
         userPressedPause?.Invoke(this, EventArgs.Empty);
     }
 
+    //allows the break and work screen to communicate that 
+    //the user wants to reset the time and go back to the 
+    //setting up screen
     public void resetButtonClick(object? sender, EventArgs e)
     {
         userPressedReset?.Invoke(this, EventArgs.Empty);
     }
 
+    //allows the user to access this form screen state
     public string getScreenState()
     {
         if(currScreen == screenState.breakTime)
@@ -366,11 +537,8 @@ public partial class StartingUI : Form
         }
     }
 
-    public string getOneMinutesWarner()
-    {
-        return workTimeScreen.getOneMinutesWarner();
-    }
-
+    //allow people to get the displayed time
+    //in the current screen
     public string getDisplayed_timer()
     {
         if(currScreen == screenState.workTime)

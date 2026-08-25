@@ -10,6 +10,9 @@ namespace PomTimeApp.view
     {
         bool isPressed = false;
 
+        //this function makes it so the fore color and back
+        //color gets inverted whenever the button is disable
+        //or when pressed down
         protected override void OnPaint(PaintEventArgs pevent)
         {
             Color backColor = Enabled ? BackColor : ForeColor;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Text;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 
@@ -13,7 +14,10 @@ namespace PomTimeApp.view
 {
     public partial class settingUpScreen : UserControl
     {
+        //used to indicate the that the user pressed start
         public EventHandler? userPressedStart;
+
+        //used to indicate that the user pressed setting
         public EventHandler? userPressedSetting;
         Point ColonForTimerPosition;
         InputState inputState;
@@ -22,6 +26,9 @@ namespace PomTimeApp.view
         int workMinutes;
         int workSeconds;
         int session;
+
+        //get all of the time that the user have used
+        //previously before closing the program
         public settingUpScreen()
         {
             InitializeComponent();
@@ -131,66 +138,71 @@ namespace PomTimeApp.view
             Session
         }
 
+        //sending this message from here to startingUI then to controller
+        //after the user pressed the start button
         private void startBtn_Click(object sender, EventArgs e)
         {
             userPressedStart?.Invoke(this, EventArgs.Empty);
         }
 
+        //get work minutes that the user inputted
         public int getWorkMinutes()
         {
             return workMinutes;
         }
 
+        //get the work seconds the user inputted
         public int getWorkSeconds()
         {
             return workSeconds;
         }
 
+        //get the break munites that user inputted
         public int getBreakMinutes()
         {
             return breakMinutes;
         }
 
+        //get the break seconds the user inputted
         public int getBreakSeconds()
         {
             return breakSeconds;
         }
 
+        //the the number of sessions the user inputted
         public int getSession()
         {
             return session;
         }
 
+        //get what the userControl this is
         public string getTitle()
         {
             return "Setting up";
         }
 
+        //get the time that is shown in the middle of the user control
         public string getDisplayed_timer()
         {
             return $"{MinutesLabel.Text}:{secondsLabel.Text}";
         }
 
-        public void performClickWithInput(int workTimeMinutes, int workTimeSeconds, int breakTimeMinutes, int breakTimeSeconds, int sessions)
-        {
-            workSeconds = workTimeSeconds;
-            workSeconds = workTimeMinutes;
-            breakSeconds = workTimeSeconds;
-            breakMinutes = breakTimeMinutes;
-            session = sessions;
-            startBtn_Click(this, EventArgs.Empty);
-        }
-
+        //change to inputting for work time after the user pressed
+        //the work button
         private void workTimeButton_Click(object sender, EventArgs e)
         {
             inputtingWork();
         }
 
+        //change to inputting for break time after the user pressed
+        //the break button
         private void BreakTimeButton_Click(object sender, EventArgs e)
         {
             inputtingBreak();
         }
 
+        //change to inputting for nubmer of sessions after the user
+        //pressed the sessions button
         private void SessionButton_Click(object sender, EventArgs e)
         {
             inputtingSession();
@@ -265,6 +277,8 @@ namespace PomTimeApp.view
             }
         }
 
+        //allows the user to increase the number of sessions and display
+        //the change
         private void IncreaseSessionBtn_Click(object sender, EventArgs e)
         {
             session++;
@@ -289,11 +303,15 @@ namespace PomTimeApp.view
             SessionLabel.Location = new Point(Size.Width / 2 - SessionLabel.Width / 2, SessionLabel.Location.Y);
         }
 
+        //change the number of minutes displayed
+        //on the user screen
         private void changeMinutes(int minutesInd)
         {
             MinutesLabel.Text = $"{minutesInd:D2}";
         }
 
+        //change the number of seconds displayed
+        //on the user screen
         private void changeSeconds(int secondInd)
         {
             secondsLabel.Text = $"{secondInd:D2}";
@@ -362,9 +380,99 @@ namespace PomTimeApp.view
 
         }
 
+        //idnicate that the setting button has been clicked which
+        //and signal to the startingUI that is should switch to
+        //to the settingScreen usercontrol
         private void settingButton_Click(object sender, EventArgs e)
         {
             userPressedSetting?.Invoke(sender, e);
         }
+
+        //function use for testing
+        internal Label getMinutesLabel()
+        {
+            return MinutesLabel;
+        }
+
+        internal Label getSessionLabel()
+        {
+            return SessionLabel;
+        }
+
+        internal Label getSecondsLabel()
+        {
+            return secondsLabel;
+        }
+
+        internal int[] getDefaultBreakWorkAndSession()
+        {
+            return [Properties.Settings.Default.workMinutes, 
+                    Properties.Settings.Default.workSeconds,
+                    Properties.Settings.Default.breakMinutes,
+                    Properties.Settings.Default.breakSeconds,
+                    Properties.Settings.Default.sessions];
+        }
+
+        internal string getInputState()
+        {
+            if(inputState == InputState.Work)
+            {
+                return "work";
+            } 
+            else if(inputState == InputState.Break)
+            {
+                return "break";
+            }
+            else //inputState == InputState.Session
+            {
+                return "session";
+            }
+        }
+
+        internal Button getBreakInputButton()
+        {
+            return BreakTimeButton;
+        }
+
+        internal Button getWorkInputButton()
+        {
+            return workTimeButton;
+        }
+
+        internal Button getSessionInputButton()
+        {
+            return SessionButton;
+        }
+
+        internal Button getIncreaseMinutesButton()
+        {
+            return IncreaseMinutesBtn;
+        }
+
+        internal Button getDecreaseMinutesBtn()
+        {
+            return DecreaseMinutesBtn;
+        }
+
+        internal Button getIncreaseSecondsButton()
+        {
+            return IncreaseSecondsBtn;
+        }
+
+        internal Button getDecreaseSecondsButton()
+        {
+            return DecreaseSecondsBtn;
+        }
+
+        internal Button getIncreaseSessionButton()
+        {
+            return IncreaseSessionBtn;
+        }
+
+        internal Button getDecreaseSessionButton()
+        {
+            return DecreaseSessionBtn;
+        }
+
     }
 }

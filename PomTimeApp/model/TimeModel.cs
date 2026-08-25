@@ -34,6 +34,7 @@ public class TimeModel
 	{
         timer.Elapsed -= workTimer;
 		timer.Elapsed -= breakTimer;
+		oneMinAlert = false;
     }
 
 	public void pauseTime()

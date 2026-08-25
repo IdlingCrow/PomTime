@@ -288,14 +288,189 @@ for (i = 0, l = charts.length; i < l; i++) {
 
 var assemblies = [
   {
-    "name": "PomTime",
+    "name": "MSTest.Analyzers",
     "classes": [
-      { "name": "prototype.pomPrototype", "rp": "PomTime_pomPrototype.html", "cl": 23, "ucl": 44, "cal": 67, "tl": 94, "cb": 4, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.BoundedCacheWithFactory.Entry\u003CTKey, TValue\u003E", "rp": "MSTest.Analyzers_Entry_TKey__TValue_.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 71, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.BoundedCacheWithFactory\u003CTKey, TValue\u003E", "rp": "MSTest.Analyzers_BoundedCacheWithFactory_TKey__TValue_.html", "cl": 26, "ucl": 1, "cal": 27, "tl": 63, "cb": 11, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.Extensions.CompilationExtensions", "rp": "MSTest.Analyzers_CompilationExtensions.html", "cl": 2, "ucl": 0, "cal": 2, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.Extensions.DiagnosticExtensions", "rp": "MSTest.Analyzers_DiagnosticExtensions.html", "cl": 0, "ucl": 80, "cal": 80, "tl": 248, "cb": 0, "tb": 46, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.Extensions.IMethodSymbolExtensions", "rp": "MSTest.Analyzers_IMethodSymbolExtensions.html", "cl": 0, "ucl": 29, "cal": 29, "tl": 102, "cb": 0, "tb": 34, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.Extensions.ISymbolExtensions", "rp": "MSTest.Analyzers_ISymbolExtensions.html", "cl": 6, "ucl": 13, "cal": 19, "tl": 67, "cb": 9, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.Extensions.ITypeSymbolExtensions", "rp": "MSTest.Analyzers_ITypeSymbolExtensions.html", "cl": 12, "ucl": 17, "cal": 29, "tl": 94, "cb": 16, "tb": 46, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.ArrayBuilder.DebuggerProxy\u003CT\u003E", "rp": "MSTest.Analyzers_DebuggerProxy_T_.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 34, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.ArrayBuilder.Enumerator\u003CT\u003E", "rp": "MSTest.Analyzers_Enumerator_T_.html", "cl": 0, "ucl": 9, "cal": 9, "tl": 38, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.ArrayBuilder\u003CT\u003E", "rp": "MSTest.Analyzers_ArrayBuilder_T_.html", "cl": 1, "ucl": 14, "cal": 15, "tl": 317, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.ArrayBuilder\u003CT\u003E", "rp": "MSTest.Analyzers_ArrayBuilder_T_.html", "cl": 23, "ucl": 117, "cal": 140, "tl": 410, "cb": 4, "tb": 48, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.ObjectPool\u003CT\u003E", "rp": "MSTest.Analyzers_ObjectPool_T_.html", "cl": 19, "ucl": 19, "cal": 38, "tl": 281, "cb": 9, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.PooledHashSet\u003CT\u003E", "rp": "MSTest.Analyzers_PooledHashSet_T_.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 41, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.PooledObjects.PooledHashSet\u003CT\u003E", "rp": "MSTest.Analyzers_PooledHashSet_T_.html", "cl": 0, "ucl": 17, "cal": 17, "tl": 52, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Analyzer.Utilities.WellKnownTypeProvider", "rp": "MSTest.Analyzers_WellKnownTypeProvider.html", "cl": 101, "ucl": 31, "cal": 132, "tl": 280, "cb": 36, "tb": 82, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Microsoft.CodeAnalysis.ReportDiagnosticExtensions", "rp": "MSTest.Analyzers_ReportDiagnosticExtensions.html", "cl": 0, "ucl": 42, "cal": 42, "tl": 50, "cb": 0, "tb": 13, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssemblyCleanupShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_AssemblyCleanupShouldBeValidAnalyzer.html", "cl": 29, "ucl": 5, "cal": 34, "tl": 78, "cb": 7, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssemblyInitializeShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_AssemblyInitializeShouldBeValidAnalyzer.html", "cl": 31, "ucl": 3, "cal": 34, "tl": 69, "cb": 9, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessAnalyzer", "rp": "MSTest.Analyzers_AssertionArgsShouldAvoidConditionalAccessAnalyzer.html", "cl": 42, "ucl": 43, "cal": 85, "tl": 154, "cb": 0, "tb": 28, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderAnalyzer", "rp": "MSTest.Analyzers_AssertionArgsShouldBePassedInCorrectOrderAnalyzer.html", "cl": 60, "ucl": 8, "cal": 68, "tl": 148, "cb": 43, "tb": 58, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertThrowsShouldContainSingleStatementAnalyzer", "rp": "MSTest.Analyzers_AssertThrowsShouldContainSingleStatementAnalyzer.html", "cl": 12, "ucl": 35, "cal": 47, "tl": 121, "cb": 0, "tb": 36, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidAssertAreSameWithValueTypesAnalyzer", "rp": "MSTest.Analyzers_AvoidAssertAreSameWithValueTypesAnalyzer.html", "cl": 29, "ucl": 13, "cal": 42, "tl": 88, "cb": 6, "tb": 28, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidExplicitDynamicDataSourceTypeAnalyzer", "rp": "MSTest.Analyzers_AvoidExplicitDynamicDataSourceTypeAnalyzer.html", "cl": 28, "ucl": 5, "cal": 33, "tl": 75, "cb": 9, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidUsingAssertsInAsyncVoidContextAnalyzer", "rp": "MSTest.Analyzers_AvoidUsingAssertsInAsyncVoidContextAnalyzer.html", "cl": 37, "ucl": 10, "cal": 47, "tl": 105, "cb": 12, "tb": 42, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.ClassCleanupShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_ClassCleanupShouldBeValidAnalyzer.html", "cl": 36, "ucl": 3, "cal": 39, "tl": 80, "cb": 7, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.ClassInitializeShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_ClassInitializeShouldBeValidAnalyzer.html", "cl": 37, "ucl": 4, "cal": 41, "tl": 77, "cb": 6, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "cl": 59, "ucl": 126, "cal": 185, "tl": 412, "cb": 11, "tb": 139, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DoNotNegateBooleanAssertionAnalyzer", "rp": "MSTest.Analyzers_DoNotNegateBooleanAssertionAnalyzer.html", "cl": 29, "ucl": 1, "cal": 30, "tl": 70, "cb": 15, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DoNotStoreStaticTestContextAnalyzer", "rp": "MSTest.Analyzers_DoNotStoreStaticTestContextAnalyzer.html", "cl": 25, "ucl": 1, "cal": 26, "tl": 63, "cb": 11, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DoNotUseShadowingAnalyzer", "rp": "MSTest.Analyzers_DoNotUseShadowingAnalyzer.html", "cl": 43, "ucl": 14, "cal": 57, "tl": 133, "cb": 21, "tb": 54, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DoNotUseSystemDescriptionAttributeAnalyzer", "rp": "MSTest.Analyzers_DoNotUseSystemDescriptionAttributeAnalyzer.html", "cl": 34, "ucl": 3, "cal": 37, "tl": 81, "cb": 12, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DuplicateDataRowAnalyzer", "rp": "MSTest.Analyzers_DuplicateDataRowAnalyzer.html", "cl": 29, "ucl": 31, "cal": 60, "tl": 159, "cb": 7, "tb": 44, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DuplicateDataRowAnalyzer.TypedConstantArrayComparer", "rp": "MSTest.Analyzers_TypedConstantArrayComparer.html", "cl": 1, "ucl": 26, "cal": 27, "tl": 159, "cb": 0, "tb": 32, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.DynamicDataShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_DynamicDataShouldBeValidAnalyzer.html", "cl": 66, "ucl": 111, "cal": 177, "tl": 384, "cb": 16, "tb": 140, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer", "rp": "MSTest.Analyzers_FlowTestContextCancellationTokenAnalyzer.html", "cl": 12, "ucl": 95, "cal": 107, "tl": 251, "cb": 0, "tb": 104, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.GlobalTestFixtureShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_GlobalTestFixtureShouldBeValidAnalyzer.html", "cl": 32, "ucl": 1, "cal": 33, "tl": 74, "cb": 12, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.ApplicationStateGuard", "rp": "MSTest.Analyzers_ApplicationStateGuard.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 10, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.CompilationExtensions", "rp": "MSTest.Analyzers_CompilationExtensions.2.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 23, "cb": 1, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.DiagnosticDescriptorHelper", "rp": "MSTest.Analyzers_DiagnosticDescriptorHelper.html", "cl": 22, "ucl": 5, "cal": 27, "tl": 82, "cb": 13, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.FixtureUtils", "rp": "MSTest.Analyzers_FixtureUtils.html", "cl": 3, "ucl": 46, "cal": 49, "tl": 132, "cb": 3, "tb": 82, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.IMethodSymbolExtensions", "rp": "MSTest.Analyzers_IMethodSymbolExtensions.2.html", "cl": 1, "ucl": 6, "cal": 7, "tl": 27, "cb": 0, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.ISymbolExtensions", "rp": "MSTest.Analyzers_ISymbolExtensions.2.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 24, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.IgnoreStringMethodReturnValueAnalyzer", "rp": "MSTest.Analyzers_IgnoreStringMethodReturnValueAnalyzer.html", "cl": 24, "ucl": 5, "cal": 29, "tl": 77, "cb": 7, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.NonNullableReferenceNotInitializedSuppressor", "rp": "MSTest.Analyzers_NonNullableReferenceNotInitializedSuppressor.html", "cl": 3, "ucl": 16, "cal": 19, "tl": 74, "cb": 0, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferAssertFailOverAlwaysFalseConditionsAnalyzer", "rp": "MSTest.Analyzers_PreferAssertFailOverAlwaysFalseConditionsAnalyzer.html", "cl": 40, "ucl": 15, "cal": 55, "tl": 130, "cb": 26, "tb": 58, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferConstructorOverTestInitializeAnalyzer", "rp": "MSTest.Analyzers_PreferConstructorOverTestInitializeAnalyzer.html", "cl": 12, "ucl": 14, "cal": 26, "tl": 62, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferDisposeOverTestCleanupAnalyzer", "rp": "MSTest.Analyzers_PreferDisposeOverTestCleanupAnalyzer.html", "cl": 12, "ucl": 17, "cal": 29, "tl": 69, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestCleanupOverDisposeAnalyzer", "rp": "MSTest.Analyzers_PreferTestCleanupOverDisposeAnalyzer.html", "cl": 12, "ucl": 19, "cal": 31, "tl": 72, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestInitializeOverConstructorAnalyzer", "rp": "MSTest.Analyzers_PreferTestInitializeOverConstructorAnalyzer.html", "cl": 12, "ucl": 15, "cal": 27, "tl": 63, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestMethodOverDataTestMethodAnalyzer", "rp": "MSTest.Analyzers_PreferTestMethodOverDataTestMethodAnalyzer.html", "cl": 28, "ucl": 4, "cal": 32, "tl": 79, "cb": 7, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PublicMethodShouldBeTestMethodAnalyzer", "rp": "MSTest.Analyzers_PublicMethodShouldBeTestMethodAnalyzer.html", "cl": 12, "ucl": 46, "cal": 58, "tl": 120, "cb": 0, "tb": 36, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PublicTypeShouldBeTestClassAnalyzer", "rp": "MSTest.Analyzers_PublicTypeShouldBeTestClassAnalyzer.html", "cl": 12, "ucl": 20, "cal": 32, "tl": 71, "cb": 0, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Resources", "rp": "MSTest.Analyzers_Resources.html", "cl": 5, "ucl": 144, "cal": 149, "tl": 359, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.ReviewAlwaysTrueAssertConditionAnalyzer", "rp": "MSTest.Analyzers_ReviewAlwaysTrueAssertConditionAnalyzer.html", "cl": 40, "ucl": 11, "cal": 51, "tl": 120, "cb": 26, "tb": 54, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.RoslynAnalyzerHelpers.IOperationExtensions", "rp": "MSTest.Analyzers_IOperationExtensions.html", "cl": 15, "ucl": 3, "cal": 18, "tl": 39, "cb": 9, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.StringAssertToAssertAnalyzer", "rp": "MSTest.Analyzers_StringAssertToAssertAnalyzer.html", "cl": 11, "ucl": 36, "cal": 47, "tl": 130, "cb": 0, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestClassShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_TestClassShouldBeValidAnalyzer.html", "cl": 39, "ucl": 17, "cal": 56, "tl": 120, "cb": 11, "tb": 36, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestClassShouldHaveTestMethodAnalyzer", "rp": "MSTest.Analyzers_TestClassShouldHaveTestMethodAnalyzer.html", "cl": 12, "ucl": 42, "cal": 54, "tl": 115, "cb": 0, "tb": 34, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestCleanupShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_TestCleanupShouldBeValidAnalyzer.html", "cl": 30, "ucl": 3, "cal": 33, "tl": 68, "cb": 7, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestContextPropertyUsageAnalyzer", "rp": "MSTest.Analyzers_TestContextPropertyUsageAnalyzer.html", "cl": 42, "ucl": 23, "cal": 65, "tl": 128, "cb": 8, "tb": 32, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "cl": 76, "ucl": 115, "cal": 191, "tl": 308, "cb": 13, "tb": 120, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestInitializeShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_TestInitializeShouldBeValidAnalyzer.html", "cl": 30, "ucl": 3, "cal": 33, "tl": 68, "cb": 7, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationAnalyzer", "rp": "MSTest.Analyzers_TestMethodAttributeShouldPropagateSourceInformationAnalyzer.html", "cl": 29, "ucl": 15, "cal": 44, "tl": 100, "cb": 6, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodAttributeShouldSetDisplayNameCorrectlyAnalyzer", "rp": "MSTest.Analyzers_TestMethodAttributeShouldSetDisplayNameCorrectlyAnalyzer.html", "cl": 32, "ucl": 3, "cal": 35, "tl": 77, "cb": 11, "tb": 26, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodShouldBeValidAnalyzer", "rp": "MSTest.Analyzers_TestMethodShouldBeValidAnalyzer.html", "cl": 40, "ucl": 18, "cal": 58, "tl": 133, "cb": 20, "tb": 54, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodShouldNotBeIgnoredAnalyzer", "rp": "MSTest.Analyzers_TestMethodShouldNotBeIgnoredAnalyzer.html", "cl": 13, "ucl": 26, "cal": 39, "tl": 84, "cb": 0, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TypeContainingTestMethodShouldBeATestClassAnalyzer", "rp": "MSTest.Analyzers_TypeContainingTestMethodShouldBeATestClassAnalyzer.html", "cl": 35, "ucl": 15, "cal": 50, "tl": 111, "cb": 13, "tb": 32, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UnusedParameterSuppressor", "rp": "MSTest.Analyzers_UnusedParameterSuppressor.html", "cl": 3, "ucl": 22, "cal": 25, "tl": 72, "cb": 0, "tb": 26, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseAsyncSuffixTestFixtureMethodSuppressor", "rp": "MSTest.Analyzers_UseAsyncSuffixTestFixtureMethodSuppressor.html", "cl": 3, "ucl": 27, "cal": 30, "tl": 76, "cb": 0, "tb": 36, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseAsyncSuffixTestMethodSuppressor", "rp": "MSTest.Analyzers_UseAsyncSuffixTestMethodSuppressor.html", "cl": 3, "ucl": 12, "cal": 15, "tl": 60, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseAttributeOnTestMethodAnalyzer", "rp": "MSTest.Analyzers_UseAttributeOnTestMethodAnalyzer.html", "cl": 113, "ucl": 9, "cal": 122, "tl": 204, "cb": 11, "tb": 24, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseCancellationTokenPropertyAnalyzer", "rp": "MSTest.Analyzers_UseCancellationTokenPropertyAnalyzer.html", "cl": 12, "ucl": 15, "cal": 27, "tl": 63, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseConditionBaseWithTestClassAnalyzer", "rp": "MSTest.Analyzers_UseConditionBaseWithTestClassAnalyzer.html", "cl": 31, "ucl": 3, "cal": 34, "tl": 75, "cb": 10, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseCooperativeCancellationForTimeoutAnalyzer", "rp": "MSTest.Analyzers_UseCooperativeCancellationForTimeoutAnalyzer.html", "cl": 30, "ucl": 5, "cal": 35, "tl": 79, "cb": 8, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseDeploymentItemWithTestMethodOrTestClassAnalyzer", "rp": "MSTest.Analyzers_UseDeploymentItemWithTestMethodOrTestClassAnalyzer.html", "cl": 35, "ucl": 4, "cal": 39, "tl": 89, "cb": 20, "tb": 28, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseParallelizeAttributeAnalyzer", "rp": "MSTest.Analyzers_UseParallelizeAttributeAnalyzer.html", "cl": 30, "ucl": 3, "cal": 33, "tl": 84, "cb": 10, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "rp": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "cl": 149, "ucl": 259, "cal": 408, "tl": 957, "cb": 58, "tb": 417, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseRetryWithTestMethodAnalyzer", "rp": "MSTest.Analyzers_UseRetryWithTestMethodAnalyzer.html", "cl": 29, "ucl": 5, "cal": 34, "tl": 79, "cb": 8, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Roslyn.Utilities.PerformanceSensitiveAttribute", "rp": "MSTest.Analyzers_PerformanceSensitiveAttribute.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+    ]},
+  {
+    "name": "MSTest.Analyzers.CodeFixes",
+    "classes": [
+      { "name": "Analyzer.Utilities.DocumentExtensions", "rp": "MSTest.Analyzers.CodeFixes_DocumentExtensions.html", "cl": 0, "ucl": 10, "cal": 10, "tl": 27, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AddTestClassFixer", "rp": "MSTest.Analyzers.CodeFixes_AddTestClassFixer.html", "cl": 0, "ucl": 84, "cal": 84, "tl": 164, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssemblyCleanupShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_AssemblyCleanupShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssemblyInitializeShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_AssemblyInitializeShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer", "rp": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldAvoidConditionalAccessFixer.html", "cl": 0, "ucl": 111, "cal": 111, "tl": 244, "cb": 0, "tb": 50, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer.CustomFixAll", "rp": "MSTest.Analyzers.CodeFixes_CustomFixAll.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 71, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer.SingleFixCodeAction", "rp": "MSTest.Analyzers.CodeFixes_SingleFixCodeAction.html", "cl": 0, "ucl": 69, "cal": 69, "tl": 207, "cb": 0, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderFixer", "rp": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldBePassedInCorrectOrderFixer.html", "cl": 0, "ucl": 33, "cal": 33, "tl": 94, "cb": 0, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidAssertAreSameWithValueTypesFixer", "rp": "MSTest.Analyzers.CodeFixes_AvoidAssertAreSameWithValueTypesFixer.html", "cl": 0, "ucl": 25, "cal": 25, "tl": 78, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidExplicitDynamicDataSourceTypeFixer", "rp": "MSTest.Analyzers.CodeFixes_AvoidExplicitDynamicDataSourceTypeFixer.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 83, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.AvoidOutParameterOnAssertIsInstanceOfTypeFixer", "rp": "MSTest.Analyzers.CodeFixes_AvoidOutParameterOnAssertIsInstanceOfTypeFixer.html", "cl": 0, "ucl": 52, "cal": 52, "tl": 122, "cb": 0, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.ClassCleanupShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_ClassCleanupShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.ClassInitializeShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_ClassInitializeShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.CodeFixes.StringAssertToAssertFixer", "rp": "MSTest.Analyzers.CodeFixes_StringAssertToAssertFixer.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 102, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.CodeFixResources", "rp": "MSTest.Analyzers.CodeFixes_CodeFixResources.html", "cl": 0, "ucl": 32, "cal": 32, "tl": 76, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.FlowTestContextCancellationTokenFixAllProvider", "rp": "MSTest.Analyzers.CodeFixes_FlowTestContextCancellationTokenFixAllProvider.html", "cl": 0, "ucl": 37, "cal": 37, "tl": 264, "cb": 0, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.FlowTestContextCancellationTokenFixAllProvider.FixAllCodeAction", "rp": "MSTest.Analyzers.CodeFixes_FixAllCodeAction.html", "cl": 0, "ucl": 33, "cal": 33, "tl": 264, "cb": 0, "tb": 14, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.FlowTestContextCancellationTokenFixer", "rp": "MSTest.Analyzers.CodeFixes_FlowTestContextCancellationTokenFixer.html", "cl": 0, "ucl": 74, "cal": 74, "tl": 182, "cb": 0, "tb": 30, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.Helpers.FixtureMethodFixer", "rp": "MSTest.Analyzers.CodeFixes_FixtureMethodFixer.html", "cl": 0, "ucl": 38, "cal": 38, "tl": 91, "cb": 0, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferAssertFailOverAlwaysFalseConditionsFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferAssertFailOverAlwaysFalseConditionsFixer.html", "cl": 0, "ucl": 26, "cal": 26, "tl": 80, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferConstructorOverTestInitializeFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferConstructorOverTestInitializeFixer.html", "cl": 0, "ucl": 36, "cal": 36, "tl": 111, "cb": 0, "tb": 16, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferDisposeOverTestCleanupFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferDisposeOverTestCleanupFixer.html", "cl": 0, "ucl": 74, "cal": 74, "tl": 183, "cb": 0, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestCleanupOverDisposeFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferTestCleanupOverDisposeFixer.html", "cl": 0, "ucl": 40, "cal": 40, "tl": 113, "cb": 0, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestInitializeOverConstructorFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferTestInitializeOverConstructorFixer.html", "cl": 0, "ucl": 46, "cal": 46, "tl": 120, "cb": 0, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PreferTestMethodOverDataTestMethodFixer", "rp": "MSTest.Analyzers.CodeFixes_PreferTestMethodOverDataTestMethodFixer.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 63, "cb": 0, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.PublicMethodShouldBeTestMethodFixer", "rp": "MSTest.Analyzers.CodeFixes_PublicMethodShouldBeTestMethodFixer.html", "cl": 0, "ucl": 34, "cal": 34, "tl": 94, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.RemoveClassCleanupBehaviorArgumentFixer", "rp": "MSTest.Analyzers.CodeFixes_RemoveClassCleanupBehaviorArgumentFixer.html", "cl": 0, "ucl": 27, "cal": 27, "tl": 90, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestClassShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_TestClassShouldBeValidFixer.html", "cl": 0, "ucl": 30, "cal": 30, "tl": 84, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestCleanupShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_TestCleanupShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestContextPropertiesContainsKeyFixer", "rp": "MSTest.Analyzers.CodeFixes_TestContextPropertiesContainsKeyFixer.html", "cl": 0, "ucl": 36, "cal": 36, "tl": 100, "cb": 0, "tb": 28, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestContextShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_TestContextShouldBeValidFixer.html", "cl": 0, "ucl": 53, "cal": 53, "tl": 130, "cb": 0, "tb": 28, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestInitializeShouldBeValidFixer", "rp": "MSTest.Analyzers.CodeFixes_TestInitializeShouldBeValidFixer.html", "cl": 0, "ucl": 12, "cal": 12, "tl": 49, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "rp": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "cl": 0, "ucl": 109, "cal": 109, "tl": 249, "cb": 0, "tb": 74, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodAttributeShouldSetDisplayNameCorrectlyFixer", "rp": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldSetDisplayNameCorrectlyFixer.html", "cl": 0, "ucl": 50, "cal": 50, "tl": 113, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TestMethodShouldBeValidCodeFixProvider", "rp": "MSTest.Analyzers.CodeFixes_TestMethodShouldBeValidCodeFixProvider.html", "cl": 0, "ucl": 57, "cal": 57, "tl": 141, "cb": 0, "tb": 48, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.TypeSyntaxExtensions", "rp": "MSTest.Analyzers.CodeFixes_TypeSyntaxExtensions.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 146, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseAttributeOnTestMethodFixer", "rp": "MSTest.Analyzers.CodeFixes_UseAttributeOnTestMethodFixer.html", "cl": 0, "ucl": 22, "cal": 22, "tl": 77, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseCancellationTokenPropertyFixer", "rp": "MSTest.Analyzers.CodeFixes_UseCancellationTokenPropertyFixer.html", "cl": 0, "ucl": 26, "cal": 26, "tl": 71, "cb": 0, "tb": 8, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseCooperativeCancellationForTimeoutFixer", "rp": "MSTest.Analyzers.CodeFixes_UseCooperativeCancellationForTimeoutFixer.html", "cl": 0, "ucl": 45, "cal": 45, "tl": 121, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseExecuteAsyncOverrideFixer", "rp": "MSTest.Analyzers.CodeFixes_UseExecuteAsyncOverrideFixer.html", "cl": 0, "ucl": 72, "cal": 72, "tl": 180, "cb": 0, "tb": 38, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseExecuteAsyncOverrideFixer.ReturnStatementTransformer", "rp": "MSTest.Analyzers.CodeFixes_ReturnStatementTransformer.html", "cl": 0, "ucl": 15, "cal": 15, "tl": 180, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "MSTest.Analyzers.UseProperAssertMethodsFixer", "rp": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "cl": 0, "ucl": 101, "cal": 101, "tl": 265, "cb": 0, "tb": 50, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
   {
     "name": "PomTime.Tests",
     "classes": [
-      { "name": "PomTime.Tests.Test1", "rp": "PomTime.Tests_Test1.html", "cl": 13, "ucl": 0, "cal": 13, "tl": 32, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTime.Tests.settingScreenTest", "rp": "PomTime.Tests_settingScreenTest.html", "cl": 60, "ucl": 6, "cal": 66, "tl": 92, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTime.Tests.settingUpScreenTest", "rp": "PomTime.Tests_settingUpScreenTest.html", "cl": 29, "ucl": 6, "cal": 35, "tl": 57, "cb": 4, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTime.Tests.StickyNotesTest", "rp": "PomTime.Tests_StickyNotesTest.html", "cl": 32, "ucl": 0, "cal": 32, "tl": 58, "cb": 2, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+    ]},
+  {
+    "name": "PomTimeApp",
+    "classes": [
+      { "name": "ApplicationConfiguration", "rp": "PomTimeApp_ApplicationConfiguration.html", "cl": 0, "ucl": 5, "cal": 5, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.Controller", "rp": "PomTimeApp_Controller.html", "cl": 0, "ucl": 272, "cal": 272, "tl": 418, "cb": 0, "tb": 42, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.model.activityModel", "rp": "PomTimeApp_activityModel.html", "cl": 12, "ucl": 14, "cal": 26, "tl": 44, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.model.ThemeModel", "rp": "PomTimeApp_ThemeModel.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 29, "cb": 0, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.Program", "rp": "PomTimeApp_Program.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 35, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.Properties.Settings", "rp": "PomTimeApp_Settings.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 98, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.SoundModel", "rp": "PomTimeApp_SoundModel.html", "cl": 0, "ucl": 73, "cal": 73, "tl": 113, "cb": 0, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.StartingUI", "rp": "PomTimeApp_StartingUI.html", "cl": 0, "ucl": 291, "cal": 291, "tl": 611, "cb": 0, "tb": 82, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.TimeModel", "rp": "PomTimeApp_TimeModel.html", "cl": 0, "ucl": 69, "cal": 69, "tl": 112, "cb": 0, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.breakTimeScreen", "rp": "PomTimeApp_breakTimeScreen.html", "cl": 0, "ucl": 163, "cal": 163, "tl": 267, "cb": 0, "tb": 10, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.settingScreen", "rp": "PomTimeApp_settingScreen.html", "cl": 243, "ucl": 25, "cal": 268, "tl": 447, "cb": 7, "tb": 18, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.settingUpScreen", "rp": "PomTimeApp_settingUpScreen.html", "cl": 325, "ucl": 127, "cal": 452, "tl": 742, "cb": 4, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.stickyNotes", "rp": "PomTimeApp_stickyNotes.html", "cl": 60, "ucl": 7, "cal": 67, "tl": 135, "cb": 6, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.themeButton", "rp": "PomTimeApp_themeButton.html", "cl": 5, "ucl": 30, "cal": 35, "tl": 68, "cb": 0, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "PomTimeApp.view.WorkTimeScreen", "rp": "PomTimeApp_WorkTimeScreen.html", "cl": 0, "ucl": 230, "cal": 230, "tl": 393, "cb": 0, "tb": 20, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+    ]},
+  {
+    "name": "System.Windows.Forms.Analyzers",
+    "classes": [
+      { "name": "System.Windows.Forms.Analyzers.AnalyzerConfigOptionsProviderExtensions", "rp": "System.Windows.Forms.Analyzers_AnalyzerConfigOptionsProviderExtensions.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 20, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.ApplicationConfig", "rp": "System.Windows.Forms.Analyzers_ApplicationConfig.html", "cl": 5, "ucl": 11, "cal": 16, "tl": 47, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.ApplicationConfig.FontDescriptor", "rp": "System.Windows.Forms.Analyzers_FontDescriptor.html", "cl": 0, "ucl": 11, "cal": 11, "tl": 36, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.AppManifestAnalyzer", "rp": "System.Windows.Forms.Analyzers_AppManifestAnalyzer.html", "cl": 6, "ucl": 29, "cal": 35, "tl": 84, "cb": 0, "tb": 6, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.Diagnostics.DiagnosticDescriptorHelper", "rp": "System.Windows.Forms.Analyzers_DiagnosticDescriptorHelper.html", "cl": 10, "ucl": 0, "cal": 10, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.Diagnostics.SharedDiagnosticDescriptors", "rp": "System.Windows.Forms.Analyzers_SharedDiagnosticDescriptors.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.Analyzers.Resources.SR", "rp": "System.Windows.Forms.Analyzers_SR.html", "cl": 1, "ucl": 4, "cal": 5, "tl": 22, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+    ]},
+  {
+    "name": "System.Windows.Forms.Analyzers.CodeFixes.CSharp",
+    "classes": [
+      { "name": "System.Windows.Forms.Analyzers.CodeFixes.Resources.SR", "rp": "System.Windows.Forms.Analyzers.CodeFixes.CSharp_SR.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 18, "cb": 0, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.CodeFixes.AddDesignerSerializationVisibility.AddDesignerSerializationVisibilityCodeFixProvider", "rp": "System.Windows.Forms.Analyzers.CodeFixes.CSharp_AderSerializationVisibilityCodeFixProvider.html", "cl": 0, "ucl": 74, "cal": 74, "tl": 154, "cb": 0, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+    ]},
+  {
+    "name": "System.Windows.Forms.Analyzers.CSharp",
+    "classes": [
+      { "name": "System.Windows.Forms.Analyzers.CSharp.Resources.SR", "rp": "System.Windows.Forms.Analyzers.CSharp_SR.html", "cl": 1, "ucl": 20, "cal": 21, "tl": 54, "cb": 2, "tb": 2, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Analyzers.AvoidPassingTaskWithoutCancellationToken.AvoidPassingTaskWithoutCancellationTokenAnalyzer", "rp": "System.Windows.Forms.Analyzers.CSharp_AvoidPassingTaskWithoutCancellationTokenAnalyzer.html", "cl": 13, "ucl": 23, "cal": 36, "tl": 102, "cb": 7, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Analyzers.Diagnostics.CSharpDiagnosticDescriptors", "rp": "System.Windows.Forms.Analyzers.CSharp_CSharpDiagnosticDescriptors.html", "cl": 48, "ucl": 0, "cal": 48, "tl": 71, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Analyzers.ImplementITypedDataObject.ImplementITypedDataObjectAnalyzer", "rp": "System.Windows.Forms.Analyzers.CSharp_ImplementITypedDataObjectAnalyzer.html", "cl": 21, "ucl": 10, "cal": 31, "tl": 75, "cb": 16, "tb": 22, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Analyzers.MissingPropertySerializationConfiguration.MissingPropertySerializationConfigurationAnalyzer", "rp": "System.Windows.Forms.Analyzers.CSharp_MissingPropertySerializationConfigurationAnalyzer.html", "cl": 5, "ucl": 40, "cal": 45, "tl": 106, "cb": 2, "tb": 48, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator", "rp": "System.Windows.Forms.Analyzers.CSharp_ApplicationConfigurationGenerator.html", "cl": 66, "ucl": 8, "cal": 74, "tl": 129, "cb": 38, "tb": 50, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationInitializeBuilder", "rp": "System.Windows.Forms.Analyzers.CSharp_ApplicationConfigurationInitializeBuilder.html", "cl": 15, "ucl": 1, "cal": 16, "tl": 44, "cb": 7, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader", "rp": "System.Windows.Forms.Analyzers.CSharp_ProjectFileReader.html", "cl": 37, "ucl": 98, "cal": 135, "tl": 298, "cb": 16, "tb": 70, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader.FontConverter", "rp": "System.Windows.Forms.Analyzers.CSharp_FontConverter.html", "cl": 0, "ucl": 69, "cal": 69, "tl": 174, "cb": 0, "tb": 40, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
@@ -310,16 +485,958 @@ var riskHotspotMetrics = [
 
 var riskHotspots = [
   {
-    "assembly": "PomTime", "class": "prototype.pomPrototype", "reportPath": "PomTime_pomPrototype.html", "methodName": "Main(string[])", "methodShortName": "Main(...)", "fileIndex": 0, "line": 10,
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DynamicDataShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DynamicDataShouldBeValidAnalyzer.html", "methodName": "AnalyzeDataSource(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.AttributeData, Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeDataSource(...)", "fileIndex": 0, "line": 200,
+    "metrics": [
+      { "value": 4422, "exceeded": true },
+      { "value": 66, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "AnalyzeIsTrueOrIsFalseInvocation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.IOperation, bool, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeIsTrueOrIsFalseInvocation(...)", "fileIndex": 0, "line": 526,
+    "metrics": [
+      { "value": 3406, "exceeded": true },
+      { "value": 72, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "methodName": "AnalyzeAttribute(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.AttributeData, Microsoft.CodeAnalysis.IMethodSymbol)", "methodShortName": "AnalyzeAttribute(...)", "fileIndex": 0, "line": 135,
+    "metrics": [
+      { "value": 1980, "exceeded": true },
+      { "value": 44, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodShouldBeValidCodeFixProvider", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodShouldBeValidCodeFixProvider.html", "methodName": "FixTestMethodAsync()", "methodShortName": "FixTestMethodAsync()", "fileIndex": 0, "line": 64,
+    "metrics": [
+      { "value": 1806, "exceeded": true },
+      { "value": 42, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "AnalyzeAreEqualOrAreNotEqualInvocation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.IOperation, bool, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeAreEqualOrAreNotEqualInvocation(...)", "fileIndex": 0, "line": 721,
+    "metrics": [
+      { "value": 1514, "exceeded": true },
+      { "value": 54, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.DiagnosticExtensions", "reportPath": "MSTest.Analyzers_DiagnosticExtensions.html", "methodName": "GetEffectiveSeverity()", "methodShortName": "GetEffectiveSeverity()", "fileIndex": 0, "line": 185,
+    "metrics": [
+      { "value": 1332, "exceeded": true },
+      { "value": 36, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DynamicDataShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DynamicDataShouldBeValidAnalyzer.html", "methodName": "AnalyzeDisplayNameSource(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.AttributeData, Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeDisplayNameSource(...)", "fileIndex": 0, "line": 322,
+    "metrics": [
+      { "value": 1190, "exceeded": true },
+      { "value": 34, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer", "reportPath": "MSTest.Analyzers_FlowTestContextCancellationTokenAnalyzer.html", "methodName": "AnalyzeInvocation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeInvocation(...)", "fileIndex": 0, "line": 74,
+    "metrics": [
+      { "value": 1190, "exceeded": true },
+      { "value": 34, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Analyzers.MissingPropertySerializationConfiguration.MissingPropertySerializationConfigurationAnalyzer", "reportPath": "System.Windows.Forms.Analyzers.CSharp_MissingPropertySerializationConfigurationAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 28,
+    "metrics": [
+      { "value": 1190, "exceeded": true },
+      { "value": 34, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeCountCheck(Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.INamedTypeSymbol, out Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "RecognizeCountCheck(...)", "fileIndex": 0, "line": 839,
+    "metrics": [
+      { "value": 1002, "exceeded": true },
+      { "value": 96, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "methodName": "AnalyzeGenericMethod(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.IMethodSymbol, System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.TypedConstant\u003E)", "methodShortName": "AnalyzeGenericMethod(...)", "fileIndex": 0, "line": 288,
+    "metrics": [
+      { "value": 930, "exceeded": true },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestClassShouldHaveTestMethodAnalyzer", "reportPath": "MSTest.Analyzers_TestClassShouldHaveTestMethodAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 64,
+    "metrics": [
+      { "value": 930, "exceeded": true },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DoNotUseShadowingAnalyzer", "reportPath": "MSTest.Analyzers_DoNotUseShadowingAnalyzer.html", "methodName": "IsMemberShadowing(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "IsMemberShadowing(...)", "fileIndex": 0, "line": 111,
+    "metrics": [
+      { "value": 812, "exceeded": true },
+      { "value": 28, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer", "reportPath": "MSTest.Analyzers_FlowTestContextCancellationTokenAnalyzer.html", "methodName": "HasOrCouldHaveTestContextInScope(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, out string, out System.Nullable\u003CMSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer.TestContextState\u003E)", "methodShortName": "HasOrCouldHaveTestContextInScope(...)", "fileIndex": 0, "line": 172,
+    "metrics": [
+      { "value": 812, "exceeded": true },
+      { "value": 28, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.FixtureUtils", "reportPath": "MSTest.Analyzers_FixtureUtils.html", "methodName": "HasValidTestMethodSignature(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, bool)", "methodShortName": "HasValidTestMethodSignature(...)", "fileIndex": 0, "line": 54,
+    "metrics": [
+      { "value": 702, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PublicMethodShouldBeTestMethodAnalyzer", "reportPath": "MSTest.Analyzers_PublicMethodShouldBeTestMethodAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, bool)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 63,
+    "metrics": [
+      { "value": 702, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferDisposeOverTestCleanupFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferDisposeOverTestCleanupFixer.html", "methodName": "AddDisposeAndBaseClassAsync()", "methodShortName": "AddDisposeAndBaseClassAsync()", "fileIndex": 0, "line": 78,
+    "metrics": [
+      { "value": 702, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DuplicateDataRowAnalyzer", "reportPath": "MSTest.Analyzers_DuplicateDataRowAnalyzer.html", "methodName": "AreTypedConstantEquals(Microsoft.CodeAnalysis.TypedConstant, Microsoft.CodeAnalysis.TypedConstant)", "methodShortName": "AreTypedConstantEquals(...)", "fileIndex": 0, "line": 101,
+    "metrics": [
+      { "value": 600, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DuplicateDataRowAnalyzer.TypedConstantArrayComparer", "reportPath": "MSTest.Analyzers_TypedConstantArrayComparer.html", "methodName": "AreTypedConstantEquals(Microsoft.CodeAnalysis.TypedConstant, Microsoft.CodeAnalysis.TypedConstant)", "methodShortName": "AreTypedConstantEquals(...)", "fileIndex": 0, "line": 101,
+    "metrics": [
+      { "value": 600, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.FixtureUtils", "reportPath": "MSTest.Analyzers_FixtureUtils.html", "methodName": "HasValidFixtureMethodSignature(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, bool, bool, bool, MSTest.Analyzers.Helpers.FixtureParameterMode, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, bool, out bool)", "methodShortName": "HasValidFixtureMethodSignature(...)", "fileIndex": 0, "line": 20,
+    "metrics": [
+      { "value": 600, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldAvoidConditionalAccessFixer.html", "methodName": "IsNullAssertAlreadyPresent(Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax)", "methodShortName": "IsNullAssertAlreadyPresent(...)", "fileIndex": 0, "line": 212,
+    "metrics": [
+      { "value": 600, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenFixer", "reportPath": "MSTest.Analyzers.CodeFixes_FlowTestContextCancellationTokenFixer.html", "methodName": "ApplyFix(Microsoft.CodeAnalysis.Editing.DocumentEditor, Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax, string, string, string, System.Collections.Generic.HashSet\u003CMicrosoft.CodeAnalysis.ISymbol\u003E, System.Threading.CancellationToken)", "methodShortName": "ApplyFix(...)", "fileIndex": 0, "line": 79,
+    "metrics": [
+      { "value": 600, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.WellKnownTypeProvider", "reportPath": "MSTest.Analyzers_WellKnownTypeProvider.html", "methodName": "IsIdentifierPartCharacter(char)", "methodShortName": "IsIdentifierPartCharacter(...)", "fileIndex": 0, "line": 222,
+    "metrics": [
+      { "value": 578, "exceeded": true },
+      { "value": 34, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Analyzers.AvoidPassingTaskWithoutCancellationToken.AvoidPassingTaskWithoutCancellationTokenAnalyzer", "reportPath": "System.Windows.Forms.Analyzers.CSharp_AvoidPassingTaskWithoutCancellationTokenAnalyzer.html", "methodName": "AnalyzeInvocation(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext)", "methodShortName": "AnalyzeInvocation(...)", "fileIndex": 0, "line": 32,
+    "metrics": [
+      { "value": 508, "exceeded": true },
+      { "value": 36, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.NonNullableReferenceNotInitializedSuppressor", "reportPath": "MSTest.Analyzers_NonNullableReferenceNotInitializedSuppressor.html", "methodName": "ReportSuppressions(Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext)", "methodShortName": "ReportSuppressions(...)", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 506, "exceeded": true },
+      { "value": 22, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseAsyncSuffixTestFixtureMethodSuppressor", "reportPath": "MSTest.Analyzers_UseAsyncSuffixTestFixtureMethodSuppressor.html", "methodName": "ReportSuppressions(Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext)", "methodShortName": "ReportSuppressions(...)", "fileIndex": 0, "line": 35,
+    "metrics": [
+      { "value": 506, "exceeded": true },
+      { "value": 22, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestContextPropertiesContainsKeyFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestContextPropertiesContainsKeyFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 36,
+    "metrics": [
+      { "value": 506, "exceeded": true },
+      { "value": 22, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "methodName": "GetSystemType(Microsoft.CodeAnalysis.ITypeSymbol)", "methodShortName": "GetSystemType(...)", "fileIndex": 0, "line": 246,
+    "metrics": [
+      { "value": 462, "exceeded": true },
+      { "value": 21, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UnusedParameterSuppressor", "reportPath": "MSTest.Analyzers_UnusedParameterSuppressor.html", "methodName": "ReportSuppressions(Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext)", "methodShortName": "ReportSuppressions(...)", "fileIndex": 0, "line": 35,
+    "metrics": [
+      { "value": 420, "exceeded": true },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestContextShouldBeValidFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestContextShouldBeValidFixer.html", "methodName": "FixMemberDeclarationAsync()", "methodShortName": "FixMemberDeclarationAsync()", "fileIndex": 0, "line": 63,
+    "metrics": [
+      { "value": 420, "exceeded": true },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "methodName": "AddCallerInfoParametersAsync(Microsoft.CodeAnalysis.Document, Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax, Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "AddCallerInfoParametersAsync(...)", "fileIndex": 0, "line": 104,
+    "metrics": [
+      { "value": 420, "exceeded": true },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "methodName": "UpdateConstructorInitializer(Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax, bool, bool)", "methodShortName": "UpdateConstructorInitializer(...)", "fileIndex": 0, "line": 206,
+    "metrics": [
+      { "value": 420, "exceeded": true },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestClassShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestClassShouldBeValidAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, bool, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 67,
+    "metrics": [
+      { "value": 396, "exceeded": true },
+      { "value": 32, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseExecuteAsyncOverrideFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseExecuteAsyncOverrideFixer.html", "methodName": "IsExecuteMethodOverride(Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax)", "methodShortName": "IsExecuteMethodOverride(...)", "fileIndex": 0, "line": 56,
+    "metrics": [
+      { "value": 342, "exceeded": true },
+      { "value": 18, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CodeFixes.CSharp", "class": "System.Windows.Forms.CSharp.CodeFixes.AddDesignerSerializationVisibility.AddDesignerSerializationVisibilityCodeFixProvider", "reportPath": "System.Windows.Forms.Analyzers.CodeFixes.CSharp_AderSerializationVisibilityCodeFixProvider.html", "methodName": "AddDesignerSerializationAttribute()", "methodShortName": "AddDesignerSerializationAttribute()", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 342, "exceeded": true },
+      { "value": 18, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader", "reportPath": "System.Windows.Forms.Analyzers.CSharp_ProjectFileReader.html", "methodName": "ConvertFrom(string)", "methodShortName": "ConvertFrom(...)", "fileIndex": 1, "line": 21,
+    "metrics": [
+      { "value": 342, "exceeded": true },
+      { "value": 18, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader.FontConverter", "reportPath": "System.Windows.Forms.Analyzers.CSharp_FontConverter.html", "methodName": "ConvertFrom(string)", "methodShortName": "ConvertFrom(...)", "fileIndex": 0, "line": 21,
+    "metrics": [
+      { "value": 342, "exceeded": true },
+      { "value": 18, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "methodName": "IsArgumentCountMismatch(int, System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.IParameterSymbol\u003E)", "methodShortName": "IsArgumentCountMismatch(...)", "fileIndex": 0, "line": 386,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.StringAssertToAssertAnalyzer", "reportPath": "MSTest.Analyzers_StringAssertToAssertAnalyzer.html", "methodName": "AnalyzeInvocationOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeInvocationOperation(...)", "fileIndex": 0, "line": 92,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "methodName": "AssignsParameterToMember(Microsoft.CodeAnalysis.IParameterSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.IOperation)", "methodShortName": "AssignsParameterToMember(...)", "fileIndex": 0, "line": 85,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "methodName": "CollectTestContextFieldsAssignedInConstructor(Microsoft.CodeAnalysis.IParameterSymbol, Microsoft.CodeAnalysis.IOperation, System.Collections.Concurrent.ConcurrentBag\u003CMicrosoft.CodeAnalysis.IFieldSymbol\u003E)", "methodShortName": "CollectTestContextFieldsAssignedInConstructor(...)", "fileIndex": 0, "line": 133,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AvoidOutParameterOnAssertIsInstanceOfTypeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AvoidOutParameterOnAssertIsInstanceOfTypeFixer.html", "methodName": "IsAssertIsInstanceOfTypeCall(Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax)", "methodShortName": "IsAssertIsInstanceOfTypeCall(...)", "fileIndex": 0, "line": 66,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseProperAssertMethodsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "methodName": "FixAssertMethodForAddArgumentModeAsync()", "methodShortName": "FixAssertMethodForAddArgumentModeAsync()", "fileIndex": 0, "line": 132,
+    "metrics": [
+      { "value": 272, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AvoidAssertAreSameWithValueTypesAnalyzer", "reportPath": "MSTest.Analyzers_AvoidAssertAreSameWithValueTypesAnalyzer.html", "methodName": "AnalyzeOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeOperation(...)", "fileIndex": 0, "line": 61,
+    "metrics": [
+      { "value": 241, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeCollectionMethodCheck(Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.INamedTypeSymbol, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "RecognizeCollectionMethodCheck(...)", "fileIndex": 0, "line": 450,
+    "metrics": [
+      { "value": 213, "exceeded": true },
+      { "value": 22, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessAnalyzer", "reportPath": "MSTest.Analyzers_AssertionArgsShouldAvoidConditionalAccessAnalyzer.html", "methodName": "HasAnyConditionalAccessOperationChild(Microsoft.CodeAnalysis.Operations.IInvocationOperation, int, out Microsoft.CodeAnalysis.Location)", "methodShortName": "HasAnyConditionalAccessOperationChild(...)", "fileIndex": 0, "line": 116,
+    "metrics": [
+      { "value": 210, "exceeded": true },
+      { "value": 14, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertThrowsShouldContainSingleStatementAnalyzer", "reportPath": "MSTest.Analyzers_AssertThrowsShouldContainSingleStatementAnalyzer.html", "methodName": "CountStatements(Microsoft.CodeAnalysis.Operations.IBlockOperation)", "methodShortName": "CountStatements(...)", "fileIndex": 0, "line": 97,
+    "metrics": [
+      { "value": 210, "exceeded": true },
+      { "value": 14, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldAvoidConditionalAccessFixer.html", "methodName": "ApplyFix(Microsoft.CodeAnalysis.Editing.DocumentEditor)", "methodShortName": "ApplyFix(...)", "fileIndex": 0, "line": 126,
+    "metrics": [
+      { "value": 210, "exceeded": true },
+      { "value": 14, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer.SingleFixCodeAction", "reportPath": "MSTest.Analyzers.CodeFixes_SingleFixCodeAction.html", "methodName": "ApplyFix(Microsoft.CodeAnalysis.Editing.DocumentEditor)", "methodShortName": "ApplyFix(...)", "fileIndex": 0, "line": 126,
+    "metrics": [
+      { "value": 210, "exceeded": true },
+      { "value": 14, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeEqualityCheck(Microsoft.CodeAnalysis.IOperation, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.ITypeSymbol, out Microsoft.CodeAnalysis.ITypeSymbol)", "methodShortName": "RecognizeEqualityCheck(...)", "fileIndex": 0, "line": 366,
+    "metrics": [
+      { "value": 208, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeStringMethodCheck(Microsoft.CodeAnalysis.IOperation, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "RecognizeStringMethodCheck(...)", "fileIndex": 0, "line": 419,
+    "metrics": [
+      { "value": 180, "exceeded": true },
+      { "value": 24, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TypeContainingTestMethodShouldBeATestClassAnalyzer", "reportPath": "MSTest.Analyzers_TypeContainingTestMethodShouldBeATestClassAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 58,
+    "metrics": [
+      { "value": 172, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestMethodShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestMethodShouldBeValidAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, bool)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 88,
+    "metrics": [
+      { "value": 166, "exceeded": true },
+      { "value": 40, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationAnalyzer", "reportPath": "MSTest.Analyzers_TestMethodAttributeShouldPropagateSourceInformationAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 61,
+    "metrics": [
+      { "value": 159, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DynamicDataShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DynamicDataShouldBeValidAnalyzer.html", "methodName": "TryGetMemberCore()", "methodShortName": "TryGetMemberCore()", "fileIndex": 0, "line": 175,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.FixtureUtils", "reportPath": "MSTest.Analyzers_FixtureUtils.html", "methodName": "HasValidReturnType(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "HasValidReturnType(...)", "fileIndex": 0, "line": 129,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PublicTypeShouldBeTestClassAnalyzer", "reportPath": "MSTest.Analyzers_PublicTypeShouldBeTestClassAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 55,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseAsyncSuffixTestMethodSuppressor", "reportPath": "MSTest.Analyzers_UseAsyncSuffixTestMethodSuppressor.html", "methodName": "ReportSuppressions(Microsoft.CodeAnalysis.Diagnostics.SuppressionAnalysisContext)", "methodShortName": "ReportSuppressions(...)", "fileIndex": 0, "line": 35,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AvoidOutParameterOnAssertIsInstanceOfTypeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AvoidOutParameterOnAssertIsInstanceOfTypeFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferConstructorOverTestInitializeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferConstructorOverTestInitializeFixer.html", "methodName": "ReplaceTestInitializeWithConstructorAsync()", "methodShortName": "ReplaceTestInitializeWithConstructorAsync()", "fileIndex": 0, "line": 64,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferTestCleanupOverDisposeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferTestCleanupOverDisposeFixer.html", "methodName": "ReplaceDisposeWithTestCleanupAsync()", "methodShortName": "ReplaceDisposeWithTestCleanupAsync()", "fileIndex": 0, "line": 64,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseProperAssertMethodsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 40,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.StartingUI", "reportPath": "PomTimeApp_StartingUI.html", "methodName": "OnResize(System.EventArgs)", "methodShortName": "OnResize(...)", "fileIndex": 0, "line": 228,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.TimeModel", "reportPath": "PomTimeApp_TimeModel.html", "methodName": "workTimer(object, System.Timers.ElapsedEventArgs)", "methodShortName": "workTimer(...)", "fileIndex": 0, "line": 53,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.view.themeButton", "reportPath": "PomTimeApp_themeButton.html", "methodName": "OnPaint(System.Windows.Forms.PaintEventArgs)", "methodShortName": "OnPaint(...)", "fileIndex": 0, "line": 17,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader", "reportPath": "System.Windows.Forms.Analyzers.CSharp_ProjectFileReader.html", "methodName": "ParseGraphicsUnits(string)", "methodShortName": "ParseGraphicsUnits(...)", "fileIndex": 1, "line": 120,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader.FontConverter", "reportPath": "System.Windows.Forms.Analyzers.CSharp_FontConverter.html", "methodName": "ParseGraphicsUnits(string)", "methodShortName": "ParseGraphicsUnits(...)", "fileIndex": 0, "line": 120,
+    "metrics": [
+      { "value": 156, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.ITypeSymbolExtensions", "reportPath": "MSTest.Analyzers_ITypeSymbolExtensions.html", "methodName": "DerivesFrom(Microsoft.CodeAnalysis.ITypeSymbol, Microsoft.CodeAnalysis.ITypeSymbol, bool, bool)", "methodShortName": "DerivesFrom(...)", "fileIndex": 0, "line": 44,
+    "metrics": [
+      { "value": 142, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.PooledObjects.ArrayBuilder\u003CT\u003E", "reportPath": "MSTest.Analyzers_ArrayBuilder_T_.html", "methodName": "ToDictionary\u003CK\u003E(System.Func\u003CT, K\u003E, System.Collections.Generic.IEqualityComparer\u003CK\u003E)", "methodShortName": "ToDictionary\u003CK\u003E(...)", "fileIndex": 0, "line": 293,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.WellKnownTypeProvider", "reportPath": "MSTest.Analyzers_WellKnownTypeProvider.html", "methodName": "IsTaskOfType(Microsoft.CodeAnalysis.ITypeSymbol, System.Func\u003CMicrosoft.CodeAnalysis.ITypeSymbol, bool\u003E)", "methodShortName": "IsTaskOfType(...)", "fileIndex": 0, "line": 179,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertThrowsShouldContainSingleStatementAnalyzer", "reportPath": "MSTest.Analyzers_AssertThrowsShouldContainSingleStatementAnalyzer.html", "methodName": "AnalyzeInvocationOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeInvocationOperation(...)", "fileIndex": 0, "line": 59,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DataRowShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DataRowShouldBeValidAnalyzer.html", "methodName": "GetParameterType(System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.IParameterSymbol\u003E, int, int)", "methodShortName": "GetParameterType(...)", "fileIndex": 0, "line": 364,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer", "reportPath": "MSTest.Analyzers_FlowTestContextCancellationTokenAnalyzer.html", "methodName": "GetCancellationTokenParameterOfOverloadWithCancellationToken(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "GetCancellationTokenParameterOfOverloadWithCancellationToken(...)", "fileIndex": 0, "line": 144,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.ISymbolExtensions", "reportPath": "MSTest.Analyzers_ISymbolExtensions.2.html", "methodName": "GetReferencedMemberOrLocalOrParameter(Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "GetReferencedMemberOrLocalOrParameter(...)", "fileIndex": 0, "line": 10,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "methodName": "TryGetTestContextParameterIfValidConstructor(Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "TryGetTestContextParameterIfValidConstructor(...)", "fileIndex": 0, "line": 162,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestMethodShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestMethodShouldBeValidAnalyzer.html", "methodName": "IsOrHasTypeParameter(Microsoft.CodeAnalysis.ITypeSymbol, Microsoft.CodeAnalysis.ITypeParameterSymbol)", "methodShortName": "IsOrHasTypeParameter(...)", "fileIndex": 0, "line": 61,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestMethodShouldNotBeIgnoredAnalyzer", "reportPath": "MSTest.Analyzers_TestMethodShouldNotBeIgnoredAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 59,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenFixAllProvider", "reportPath": "MSTest.Analyzers.CodeFixes_FlowTestContextCancellationTokenFixAllProvider.html", "methodName": "GetChangedSolutionAsync()", "methodShortName": "GetChangedSolutionAsync()", "fileIndex": 0, "line": 213,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenFixAllProvider.FixAllCodeAction", "reportPath": "MSTest.Analyzers.CodeFixes_FixAllCodeAction.html", "methodName": "GetChangedSolutionAsync()", "methodShortName": "GetChangedSolutionAsync()", "fileIndex": 0, "line": 213,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferTestInitializeOverConstructorFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferTestInitializeOverConstructorFixer.html", "methodName": "ReplaceConstructorWithTestInitializeAsync()", "methodShortName": "ReplaceConstructorWithTestInitializeAsync()", "fileIndex": 0, "line": 64,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseCooperativeCancellationForTimeoutFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseCooperativeCancellationForTimeoutFixer.html", "methodName": "AddCooperativeCancellationAsync()", "methodShortName": "AddCooperativeCancellationAsync()", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseExecuteAsyncOverrideFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseExecuteAsyncOverrideFixer.html", "methodName": "GetRightmostName(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax)", "methodShortName": "GetRightmostName(...)", "fileIndex": 0, "line": 90,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader", "reportPath": "System.Windows.Forms.Analyzers.CSharp_ProjectFileReader.html", "methodName": "ParseSizeTokens(string, char)", "methodShortName": "ParseSizeTokens(...)", "fileIndex": 1, "line": 136,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ProjectFileReader.FontConverter", "reportPath": "System.Windows.Forms.Analyzers.CSharp_FontConverter.html", "methodName": "ParseSizeTokens(string, char)", "methodShortName": "ParseSizeTokens(...)", "fileIndex": 0, "line": 136,
+    "metrics": [
+      { "value": 110, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextPropertyUsageAnalyzer", "reportPath": "MSTest.Analyzers_TestContextPropertyUsageAnalyzer.html", "methodName": "AnalyzePropertyReference(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzePropertyReference(...)", "fileIndex": 0, "line": 83,
+    "metrics": [
+      { "value": 92, "exceeded": true },
+      { "value": 12, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PreferAssertFailOverAlwaysFalseConditionsAnalyzer", "reportPath": "MSTest.Analyzers_PreferAssertFailOverAlwaysFalseConditionsAnalyzer.html", "methodName": "IsAlwaysFalse(Microsoft.CodeAnalysis.Operations.IInvocationOperation)", "methodShortName": "IsAlwaysFalse(...)", "fileIndex": 0, "line": 90,
+    "metrics": [
+      { "value": 88, "exceeded": true },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.ReviewAlwaysTrueAssertConditionAnalyzer", "reportPath": "MSTest.Analyzers_ReviewAlwaysTrueAssertConditionAnalyzer.html", "methodName": "IsAlwaysTrue(Microsoft.CodeAnalysis.Operations.IInvocationOperation)", "methodShortName": "IsAlwaysTrue(...)", "fileIndex": 0, "line": 80,
+    "metrics": [
+      { "value": 88, "exceeded": true },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.IMethodSymbolExtensions", "reportPath": "MSTest.Analyzers_IMethodSymbolExtensions.html", "methodName": "IsImplementationOfAnyInterfaceMember\u003CTSymbol\u003E(Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "IsImplementationOfAnyInterfaceMember\u003CTSymbol\u003E(...)", "fileIndex": 0, "line": 22,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.IMethodSymbolExtensions", "reportPath": "MSTest.Analyzers_IMethodSymbolExtensions.html", "methodName": "IsImplementationOfInterfaceMethod(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.ITypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, string)", "methodShortName": "IsImplementationOfInterfaceMethod(...)", "fileIndex": 0, "line": 51,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.IMethodSymbolExtensions", "reportPath": "MSTest.Analyzers_IMethodSymbolExtensions.html", "methodName": "IsDisposeImplementation(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "IsDisposeImplementation(...)", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.IMethodSymbolExtensions", "reportPath": "MSTest.Analyzers_IMethodSymbolExtensions.html", "methodName": "IsAsyncDisposeImplementation(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "IsAsyncDisposeImplementation(...)", "fileIndex": 0, "line": 86,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.ISymbolExtensions", "reportPath": "MSTest.Analyzers_ISymbolExtensions.html", "methodName": "GetMemberType(Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "GetMemberType(...)", "fileIndex": 0, "line": 59,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertThrowsShouldContainSingleStatementAnalyzer", "reportPath": "MSTest.Analyzers_AssertThrowsShouldContainSingleStatementAnalyzer.html", "methodName": "AnalyzeActionArgument(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IInvocationOperation)", "methodShortName": "AnalyzeActionArgument(...)", "fileIndex": 0, "line": 81,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AvoidExplicitDynamicDataSourceTypeAnalyzer", "reportPath": "MSTest.Analyzers_AvoidExplicitDynamicDataSourceTypeAnalyzer.html", "methodName": "AnalyzeAttribute(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.AttributeData, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeAttribute(...)", "fileIndex": 0, "line": 69,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.FlowTestContextCancellationTokenAnalyzer", "reportPath": "MSTest.Analyzers_FlowTestContextCancellationTokenAnalyzer.html", "methodName": "GetCancellationTokenParameterIfCandidateIsValid(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "GetCancellationTokenParameterIfCandidateIsValid(...)", "fileIndex": 0, "line": 230,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextPropertyUsageAnalyzer", "reportPath": "MSTest.Analyzers_TestContextPropertyUsageAnalyzer.html", "methodName": "GetMethodType(bool, bool, bool, bool)", "methodShortName": "GetMethodType(...)", "fileIndex": 0, "line": 120,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "methodName": "TryGetReturnedField(Microsoft.CodeAnalysis.IOperation)", "methodShortName": "TryGetReturnedField(...)", "fileIndex": 0, "line": 56,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "IsBCLCollectionType(Microsoft.CodeAnalysis.ITypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "IsBCLCollectionType(...)", "fileIndex": 0, "line": 490,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AddTestClassFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AddTestClassFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 42,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldAvoidConditionalAccessFixer.html", "methodName": "FixAllAsync()", "methodShortName": "FixAllAsync()", "fileIndex": 0, "line": 42,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessFixer.CustomFixAll", "reportPath": "MSTest.Analyzers.CodeFixes_CustomFixAll.html", "methodName": "FixAllAsync()", "methodShortName": "FixAllAsync()", "fileIndex": 0, "line": 42,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldBePassedInCorrectOrderFixer.html", "methodName": "SwapArgumentsAsync(Microsoft.CodeAnalysis.Document, Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax, System.Threading.CancellationToken)", "methodShortName": "SwapArgumentsAsync(...)", "fileIndex": 0, "line": 61,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AvoidAssertAreSameWithValueTypesFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AvoidAssertAreSameWithValueTypesFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 39,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AvoidOutParameterOnAssertIsInstanceOfTypeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AvoidOutParameterOnAssertIsInstanceOfTypeFixer.html", "methodName": "ExtractVariableNameAndType(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax)", "methodShortName": "ExtractVariableNameAndType(...)", "fileIndex": 0, "line": 74,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferDisposeOverTestCleanupFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferDisposeOverTestCleanupFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 41,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "methodName": "GetCallerFilePathParameterIndex(Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax)", "methodShortName": "GetCallerFilePathParameterIndex(...)", "fileIndex": 0, "line": 175,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "methodName": "GetCallerLineNumberParameterIndex(Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax)", "methodShortName": "GetCallerLineNumberParameterIndex(...)", "fileIndex": 0, "line": 189,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseCancellationTokenPropertyFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseCancellationTokenPropertyFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseProperAssertMethodsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "methodName": "FixAssertMethodForRemoveArgumentAndReplaceArgumentModeAsync()", "methodShortName": "FixAssertMethodForRemoveArgumentAndReplaceArgumentModeAsync()", "fileIndex": 0, "line": 231,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseProperAssertMethodsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "methodName": "FixAssertMethodForRemoveArgumentModeAsync()", "methodShortName": "FixAssertMethodForRemoveArgumentModeAsync()", "fileIndex": 0, "line": 185,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.Controller", "reportPath": "PomTimeApp_Controller.html", "methodName": "decreaseByASecond(object, System.EventArgs)", "methodShortName": "decreaseByASecond(...)", "fileIndex": 0, "line": 224,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.Controller", "reportPath": "PomTimeApp_Controller.html", "methodName": "startCycleInner()", "methodShortName": "startCycleInner()", "fileIndex": 0, "line": 70,
+    "metrics": [
+      { "value": 72, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseAttributeOnTestMethodAnalyzer", "reportPath": "MSTest.Analyzers_UseAttributeOnTestMethodAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, System.Collections.Generic.IEnumerable\u003CSystem.ValueTuple\u003CMicrosoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.DiagnosticDescriptor\u003E\u003E)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 171,
+    "metrics": [
+      { "value": 60, "exceeded": true },
+      { "value": 14, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Microsoft.CodeAnalysis.ReportDiagnosticExtensions", "reportPath": "MSTest.Analyzers_ReportDiagnosticExtensions.html", "methodName": "ToDiagnosticSeverity(Microsoft.CodeAnalysis.ReportDiagnostic)", "methodShortName": "ToDiagnosticSeverity(...)", "fileIndex": 0, "line": 7,
+    "metrics": [
+      { "value": 56, "exceeded": true },
+      { "value": 7, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeComparisonCheck(Microsoft.CodeAnalysis.IOperation, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "RecognizeComparisonCheck(...)", "fileIndex": 0, "line": 501,
+    "metrics": [
+      { "value": 47, "exceeded": true },
+      { "value": 11, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderAnalyzer", "reportPath": "MSTest.Analyzers_AssertionArgsShouldBePassedInCorrectOrderAnalyzer.html", "methodName": "AnalyzeOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeOperation(...)", "fileIndex": 0, "line": 70,
+    "metrics": [
+      { "value": 46, "exceeded": true },
+      { "value": 30, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Analyzers.ImplementITypedDataObject.ImplementITypedDataObjectAnalyzer", "reportPath": "System.Windows.Forms.Analyzers.CSharp_ImplementITypedDataObjectAnalyzer.html", "methodName": "AnalyzeClassDeclaration(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext)", "methodShortName": "AnalyzeClassDeclaration(...)", "fileIndex": 0, "line": 30,
+    "metrics": [
+      { "value": 45, "exceeded": true },
+      { "value": 18, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Microsoft.CodeAnalysis.ReportDiagnosticExtensions", "reportPath": "MSTest.Analyzers_ReportDiagnosticExtensions.html", "methodName": "IsLessSevereThan(Microsoft.CodeAnalysis.ReportDiagnostic, Microsoft.CodeAnalysis.ReportDiagnostic)", "methodShortName": "IsLessSevereThan(...)", "fileIndex": 0, "line": 18,
     "metrics": [
       { "value": 42, "exceeded": true },
       { "value": 6, "exceeded": false },
     ]},
   {
-    "assembly": "PomTime", "class": "prototype.pomPrototype", "reportPath": "PomTime_pomPrototype.html", "methodName": "workTimeMethod(int, string, System.Diagnostics.Stopwatch, bool)", "methodShortName": "workTimeMethod(...)", "fileIndex": 0, "line": 43,
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AssertionArgsShouldAvoidConditionalAccessAnalyzer", "reportPath": "MSTest.Analyzers_AssertionArgsShouldAvoidConditionalAccessAnalyzer.html", "methodName": "AnalyzeOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, System.Collections.Immutable.ImmutableArray\u003CSystem.ValueTuple\u003Cstring, int\u003E\u003E)", "methodShortName": "AnalyzeOperation(...)", "fileIndex": 0, "line": 100,
     "metrics": [
       { "value": 42, "exceeded": true },
       { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DuplicateDataRowAnalyzer", "reportPath": "MSTest.Analyzers_DuplicateDataRowAnalyzer.html", "methodName": "Equals(System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.TypedConstant\u003E, System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.TypedConstant\u003E)", "methodShortName": "Equals(...)", "fileIndex": 0, "line": 82,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DuplicateDataRowAnalyzer.TypedConstantArrayComparer", "reportPath": "MSTest.Analyzers_TypedConstantArrayComparer.html", "methodName": "Equals(System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.TypedConstant\u003E, System.Collections.Immutable.ImmutableArray\u003CMicrosoft.CodeAnalysis.TypedConstant\u003E)", "methodShortName": "Equals(...)", "fileIndex": 0, "line": 82,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.DynamicDataShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_DynamicDataShouldBeValidAnalyzer.html", "methodName": "TryGetMember(Microsoft.CodeAnalysis.INamedTypeSymbol, string)", "methodShortName": "TryGetMember(...)", "fileIndex": 0, "line": 157,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.FixtureUtils", "reportPath": "MSTest.Analyzers_FixtureUtils.html", "methodName": "HasCorrectParameters(Microsoft.CodeAnalysis.IMethodSymbol, MSTest.Analyzers.Helpers.FixtureParameterMode, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "HasCorrectParameters(...)", "fileIndex": 0, "line": 113,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.IMethodSymbolExtensions", "reportPath": "MSTest.Analyzers_IMethodSymbolExtensions.2.html", "methodName": "IsPublicAndHasCorrectResultantVisibility(Microsoft.CodeAnalysis.IMethodSymbol, bool)", "methodShortName": "IsPublicAndHasCorrectResultantVisibility(...)", "fileIndex": 0, "line": 18,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PreferDisposeOverTestCleanupAnalyzer", "reportPath": "MSTest.Analyzers_PreferDisposeOverTestCleanupAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 57,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PreferTestCleanupOverDisposeAnalyzer", "reportPath": "MSTest.Analyzers_PreferTestCleanupOverDisposeAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 63,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.PreferTestInitializeOverConstructorAnalyzer", "reportPath": "MSTest.Analyzers_PreferTestInitializeOverConstructorAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 55,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestContextShouldBeValidAnalyzer", "reportPath": "MSTest.Analyzers_TestContextShouldBeValidAnalyzer.html", "methodName": "IsTestContextPropertyAutomaticallyAssigned(Microsoft.CodeAnalysis.IPropertySymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "IsTestContextPropertyAutomaticallyAssigned(...)", "fileIndex": 0, "line": 301,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldBePassedInCorrectOrderFixer.html", "methodName": "IsExpectedArgument(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax)", "methodShortName": "IsExpectedArgument(...)", "fileIndex": 0, "line": 92,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AssertionArgsShouldBePassedInCorrectOrderFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AssertionArgsShouldBePassedInCorrectOrderFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 39,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.AvoidExplicitDynamicDataSourceTypeFixer", "reportPath": "MSTest.Analyzers.CodeFixes_AvoidExplicitDynamicDataSourceTypeFixer.html", "methodName": "RemoveDynamicDataSourceTypeAsync()", "methodShortName": "RemoveDynamicDataSourceTypeAsync()", "fileIndex": 0, "line": 61,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.CodeFixes.StringAssertToAssertFixer", "reportPath": "MSTest.Analyzers.CodeFixes_StringAssertToAssertFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 38,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.Helpers.FixtureMethodFixer", "reportPath": "MSTest.Analyzers.CodeFixes_FixtureMethodFixer.html", "methodName": "GetReturnType(Microsoft.CodeAnalysis.Editing.SyntaxGenerator, Microsoft.CodeAnalysis.IMethodSymbol, Analyzer.Utilities.WellKnownTypeProvider)", "methodShortName": "GetReturnType(...)", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferAssertFailOverAlwaysFalseConditionsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferAssertFailOverAlwaysFalseConditionsFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 40,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.PreferTestMethodOverDataTestMethodFixer", "reportPath": "MSTest.Analyzers.CodeFixes_PreferTestMethodOverDataTestMethodFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 37,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.RemoveClassCleanupBehaviorArgumentFixer", "reportPath": "MSTest.Analyzers.CodeFixes_RemoveClassCleanupBehaviorArgumentFixer.html", "methodName": "RegisterCodeFixesAsync()", "methodShortName": "RegisterCodeFixesAsync()", "fileIndex": 0, "line": 36,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.RemoveClassCleanupBehaviorArgumentFixer", "reportPath": "MSTest.Analyzers.CodeFixes_RemoveClassCleanupBehaviorArgumentFixer.html", "methodName": "RemoveAttributeArgumentAsync()", "methodShortName": "RemoveAttributeArgumentAsync()", "fileIndex": 0, "line": 65,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestClassShouldBeValidFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestClassShouldBeValidFixer.html", "methodName": "FixClassDeclarationAsync()", "methodShortName": "FixClassDeclarationAsync()", "fileIndex": 0, "line": 62,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestContextPropertiesContainsKeyFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestContextPropertiesContainsKeyFixer.html", "methodName": "GetExpectedContainsMethodCandidate(Microsoft.CodeAnalysis.Compilation)", "methodShortName": "GetExpectedContainsMethodCandidate(...)", "fileIndex": 0, "line": 78,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldPropagateSourceInformationFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldPropagateSourceInformationFixer.html", "methodName": "GetNewParameter(int, string)", "methodShortName": "GetNewParameter(...)", "fileIndex": 0, "line": 70,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.TestMethodAttributeShouldSetDisplayNameCorrectlyFixer", "reportPath": "MSTest.Analyzers.CodeFixes_TestMethodAttributeShouldSetDisplayNameCorrectlyFixer.html", "methodName": "ConvertToDisplayNamePropertyAsync()", "methodShortName": "ConvertToDisplayNamePropertyAsync()", "fileIndex": 0, "line": 77,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers.CodeFixes", "class": "MSTest.Analyzers.UseProperAssertMethodsFixer", "reportPath": "MSTest.Analyzers.CodeFixes_UseProperAssertMethodsFixer.html", "methodName": "FixAssertMethodForSimpleModeAsync()", "methodShortName": "FixAssertMethodForSimpleModeAsync()", "fileIndex": 0, "line": 101,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.StartingUI", "reportPath": "PomTimeApp_StartingUI.html", "methodName": "switchToWorkTimeFormLocation()", "methodShortName": "switchToWorkTimeFormLocation()", "fileIndex": 0, "line": 451,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.StartingUI", "reportPath": "PomTimeApp_StartingUI.html", "methodName": "switchToRegularFormLocation()", "methodShortName": "switchToRegularFormLocation()", "fileIndex": 0, "line": 470,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.StartingUI", "reportPath": "PomTimeApp_StartingUI.html", "methodName": "getBreakOrWorkTimeDispalyed()", "methodShortName": "getBreakOrWorkTimeDispalyed()", "fileIndex": 0, "line": 491,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.StartingUI", "reportPath": "PomTimeApp_StartingUI.html", "methodName": "getScreenState()", "methodShortName": "getScreenState()", "fileIndex": 0, "line": 524,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.TimeModel", "reportPath": "PomTimeApp_TimeModel.html", "methodName": "breakTimer(object, System.Timers.ElapsedEventArgs)", "methodShortName": "breakTimer(...)", "fileIndex": 0, "line": 80,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "PomTimeApp", "class": "PomTimeApp.view.WorkTimeScreen", "reportPath": "PomTimeApp_WorkTimeScreen.html", "methodName": "pauseMusicButton_Click(object, System.EventArgs)", "methodShortName": "pauseMusicButton_Click(...)", "fileIndex": 0, "line": 122,
+    "metrics": [
+      { "value": 42, "exceeded": true },
+      { "value": 6, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "Analyzer.Utilities.Extensions.ISymbolExtensions", "reportPath": "MSTest.Analyzers_ISymbolExtensions.html", "methodName": "GetResultantVisibility(Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "GetResultantVisibility(...)", "fileIndex": 0, "line": 14,
+    "metrics": [
+      { "value": 40, "exceeded": true },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "RecognizeCountCheck(Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.INamedTypeSymbol, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "RecognizeCountCheck(...)", "fileIndex": 0, "line": 902,
+    "metrics": [
+      { "value": 40, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.FixtureUtils", "reportPath": "MSTest.Analyzers_FixtureUtils.html", "methodName": "IsInheritanceModeSet(Microsoft.CodeAnalysis.IMethodSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "IsInheritanceModeSet(...)", "fileIndex": 0, "line": 82,
+    "metrics": [
+      { "value": 34, "exceeded": true },
+      { "value": 10, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AvoidUsingAssertsInAsyncVoidContextAnalyzer", "reportPath": "MSTest.Analyzers_AvoidUsingAssertsInAsyncVoidContextAnalyzer.html", "methodName": "AnalyzeOperation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeOperation(...)", "fileIndex": 0, "line": 65,
+    "metrics": [
+      { "value": 33, "exceeded": true },
+      { "value": 8, "exceeded": false },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.AvoidUsingAssertsInAsyncVoidContextAnalyzer", "reportPath": "MSTest.Analyzers_AvoidUsingAssertsInAsyncVoidContextAnalyzer.html", "methodName": "IsAsyncVoidContext(Microsoft.CodeAnalysis.Operations.IInvocationOperation, Microsoft.CodeAnalysis.ISymbol)", "methodShortName": "IsAsyncVoidContext(...)", "fileIndex": 0, "line": 85,
+    "metrics": [
+      { "value": 33, "exceeded": true },
+      { "value": 26, "exceeded": true },
+    ]},
+  {
+    "assembly": "System.Windows.Forms.Analyzers.CSharp", "class": "System.Windows.Forms.CSharp.Generators.ApplicationConfiguration.ApplicationConfigurationGenerator", "reportPath": "System.Windows.Forms.Analyzers.CSharp_ApplicationConfigurationGenerator.html", "methodName": "IsSupportedSyntaxNode(Microsoft.CodeAnalysis.SyntaxNode)", "methodShortName": "IsSupportedSyntaxNode(...)", "fileIndex": 0, "line": 109,
+    "metrics": [
+      { "value": 22, "exceeded": false },
+      { "value": 22, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.TestMethodAttributeShouldSetDisplayNameCorrectlyAnalyzer", "reportPath": "MSTest.Analyzers_TestMethodAttributeShouldSetDisplayNameCorrectlyAnalyzer.html", "methodName": "AnalyzeObjectCreation(Microsoft.CodeAnalysis.Diagnostics.OperationAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeObjectCreation(...)", "fileIndex": 0, "line": 55,
+    "metrics": [
+      { "value": 20, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseDeploymentItemWithTestMethodOrTestClassAnalyzer", "reportPath": "MSTest.Analyzers_UseDeploymentItemWithTestMethodOrTestClassAnalyzer.html", "methodName": "AnalyzeSymbol(Microsoft.CodeAnalysis.Diagnostics.SymbolAnalysisContext, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamedTypeSymbol)", "methodShortName": "AnalyzeSymbol(...)", "fileIndex": 0, "line": 57,
+    "metrics": [
+      { "value": 29, "exceeded": false },
+      { "value": 20, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.Helpers.DiagnosticDescriptorHelper", "reportPath": "MSTest.Analyzers_DiagnosticDescriptorHelper.html", "methodName": "CreateCustomTags(bool, bool, bool, string[])", "methodShortName": "CreateCustomTags(...)", "fileIndex": 0, "line": 38,
+    "metrics": [
+      { "value": 17, "exceeded": false },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "IsEqualsNullBinaryOperator(Microsoft.CodeAnalysis.IOperation, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.ITypeSymbol)", "methodShortName": "IsEqualsNullBinaryOperator(...)", "fileIndex": 0, "line": 307,
+    "metrics": [
+      { "value": 25, "exceeded": false },
+      { "value": 16, "exceeded": true },
+    ]},
+  {
+    "assembly": "MSTest.Analyzers", "class": "MSTest.Analyzers.UseProperAssertMethodsAnalyzer", "reportPath": "MSTest.Analyzers_UseProperAssertMethodsAnalyzer.html", "methodName": "IsNotEqualsNullBinaryOperator(Microsoft.CodeAnalysis.IOperation, out Microsoft.CodeAnalysis.SyntaxNode, out Microsoft.CodeAnalysis.ITypeSymbol)", "methodShortName": "IsNotEqualsNullBinaryOperator(...)", "fileIndex": 0, "line": 324,
+    "metrics": [
+      { "value": 25, "exceeded": false },
+      { "value": 16, "exceeded": true },
     ]},
 ];
 
