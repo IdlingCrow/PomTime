@@ -8,3 +8,4 @@ obj/
 *.suo
 packages/
 *.nupkg
+coverage.xml
