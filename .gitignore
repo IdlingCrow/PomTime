@@ -1,6 +1,6 @@
 ﻿.vs/
-PomTime.Test/bin/
-PomTime.Test/obj/
+PomTime.Tests/bin/
+PomTime.Tests/obj/
 coveragereport/
 bin/
 obj/
