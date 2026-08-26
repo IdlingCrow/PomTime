@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// this is used to store color theme in the future it will scan a text file to get
+/// the color
+/// </summary>
 namespace PomTimeApp.model
 {
     public class ThemeModel
@@ -10,6 +14,10 @@ namespace PomTimeApp.model
         {
 
         }
+
+        //Purpose: used to store some default theme
+        //and spit out those theme after putting in
+        //a number
         public Color[] selectTheme(int colorTheme)
         {
             if(colorTheme == 1)

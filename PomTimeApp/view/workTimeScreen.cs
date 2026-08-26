@@ -133,28 +133,53 @@ namespace PomTimeApp.view
 
         }
 
+        //Set status to assume music is pause
+        //and have the pause/play button
+        //reflect that, use by controller
+        //to pause the music and have 
+        //the controller tell the startingUI
+        //which tell the work time screen
+        //to reflect that 
         public void setButtonToPlayMusic()
         {
             pauseMusicButton.Text = "⏸";
             MusicPlaying = false;
         }
 
+        //Set status to assume music is playing
+        //and have the pause/play button
+        //reflect that, use by controller
+        //to pause the music and have 
+        //the controller tell the startingUI
+        //which tell the work time screen
+        //to reflect that 
         public void setButtonToPauseMusic()
         {
             pauseMusicButton.Text = "▶";
             MusicPlaying = true;
         }
 
+        //hopefully skip to the next track by telling
+        //startingUI which will tell the controller
+        //that the user want to skip the track
         private void SkipButton_Click(object sender, EventArgs e)
         {
             SkipMusic?.Invoke(this, EventArgs.Empty);
         }
 
+        //hopefully go to the pervious track by telling
+        //startingUI which will tell the controller
+        //that the user want to go back to the
+        //previous track
         private void backButton_Click(object sender, EventArgs e)
         {
             backMusic?.Invoke(this, EventArgs.Empty);
         }
 
+        //Input: Two Color
+        //OutPut: None
+        //Purpose: switch the theme of this userControl
+        //to that of the two inputted color
         public void setTheme(Color backgroundColor, Color foregroundColor)
         {
             this.ForeColor = foregroundColor;

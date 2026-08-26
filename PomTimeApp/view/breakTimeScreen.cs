@@ -16,7 +16,8 @@ namespace PomTimeApp.view
         public EventHandler? UserPressedResume;
         public EventHandler? UserPressedReset;
 
-        //
+        //Purpose: Make it so only the pause button
+        //is visible
         public breakTimeScreen()
         {
             InitializeComponent();
@@ -27,31 +28,50 @@ namespace PomTimeApp.view
 
         }
 
+        //Input: string that is two character that are
+        //numbers
+        //Output: None
+        //Purpose: allows for startingUI which talk
+        //to the controller to change the display time
+        //to what the controller tells it to
         public void changeDisplayedTime(string time)
         {
             timerOnBreakScreen.Text = time;
         }
 
+        //Input: None
+        //Output: None
+        //Purpose: give the name if this user control
         public string getTitle()
         {
             return screenTitle.Text;
         }
 
+        //Purpose: allow user to get the displayed time
+        //on the break screen
         public string getDisplayed_timer()
         {
             return timerOnBreakScreen.Text;
         }
 
+        //Purpose: change the picture to a random picture
+        //that is in the file of break activity
         public void startAnActivity()
         {
             changeBreakActvity(activityModel.getBreakActivity());
         }
 
+        //Input: an image 
+        //Purpose: change the picture that is displayed
         private void changeBreakActvity(Image newImage)
         {
             breakTimeActivity.Image = newImage;
         }
 
+        //Purpose: use for when the user pressed the resume button
+        //hopefully talked to the controller through the startingUI
+        //with the EventHandler to resume the timer inside the controller
+        //additional make it so only the pause button is visible
         private void ResumeButton_Click(object sender, EventArgs e)
         {
             UserPressedResume?.Invoke(this, EventArgs.Empty);
@@ -60,6 +80,10 @@ namespace PomTimeApp.view
             PauseButton.Show();
         }
 
+        //Purpose: use for when the user pressed the pause button
+        //hopefully talked to the controller through the startingUI
+        //with the EventHandler to pause the timer inside the controller
+        //additional make it so only the reumse and reset button is visible
         private void PauseButton_Click(object sender, EventArgs e)
         {
             UserPressedPause?.Invoke(this, EventArgs.Empty);
@@ -67,6 +91,12 @@ namespace PomTimeApp.view
             ResumeButton.Show();
             PauseButton.Hide();
         }
+
+        //Purpose: use for when the user pressed the reset button
+        //hopefully talked to the controller through the startingUI
+        //with the EventHandler to reset the timer inside the controller
+        //and send the screen back to the setting up screen
+        //additional make it so only pause button is visible
         private void ResetButton_Click(object sender, EventArgs e)
         {
             UserPressedReset?.Invoke(this, EventArgs.Empty);
