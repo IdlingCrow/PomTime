@@ -99,13 +99,38 @@ public sealed class settingUpScreenTest
         //if input is being properly recoreded
         int workMinutes = settingUpScreen.getWorkMinutes();
         increaseMinutes.PerformClick();
-        Assert.AreEqual(workMinutes + 1, settingUpScreen.getWorkMinutes(), $"Increasing minutes button click suppose to set value to {workMinutes + 1} but instade got {settingUpScreen.getWorkMinutes()}");
-        Assert.AreEqual(workMinutes + 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "Increasing minutes button click suppose to Increase display minutes by one mintues not properly reflected");
+        Assert.AreEqual(workMinutes + 1, settingUpScreen.getWorkMinutes(), $"Increasing minutes button click suppose to set value to {workMinutes + 1} but instead got {settingUpScreen.getWorkMinutes()}");
+        Assert.AreEqual(workMinutes + 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "Increasing minutes button click suppose to Increase display minutes by one mintues not properly reflected for work minutes");
 
         workMinutes = settingUpScreen.getWorkMinutes();
         decreaseMinutes.PerformClick();
-        Assert.AreEqual(workMinutes - 1, settingUpScreen.getWorkMinutes(), $"decrease minutes button click suppose to set value to {workMinutes + 1} but instad got {settingUpScreen.getWorkMinutes()}");
-        Assert.AreEqual(workMinutes - 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "decrease minutes button click suppose to decrease display minutes by one mintues not properly reflected");
+        Assert.AreEqual(workMinutes - 1, settingUpScreen.getWorkMinutes(), $"decrease minutes button click suppose to set value to {workMinutes + 1} but instead got {settingUpScreen.getWorkMinutes()}");
+        Assert.AreEqual(workMinutes - 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "decrease minutes button click suppose to decrease display minutes by one mintues not properly reflected for work seconds");
+
+        //break input test
+        if(breakInputButton.Enabled == false)
+        {
+            breakInputButton.Enabled = true;
+        }
+        breakInputButton.PerformClick();
+        //button check only the time input should be shown
+        Assert.IsTrue(increaseMinutes.Visible, "Button increaseMinutes is not visible after pressing the Break Button");
+        Assert.IsTrue(decreaseMinutes.Visible, "Button decreaseMinutes is not visible after pressing the Break Button");
+        Assert.IsTrue(increaseSeconds.Visible, "Button increaseSeconds is not visible after pressing the Break Button");
+        Assert.IsTrue(decreaseSeconds.Visible, "Button decreaseSeconds is not visible after pressing the Break Button");
+        Assert.IsFalse(increaseSessions.Visible, "Button increaseSessions is visible after pressing the Break Button");
+        Assert.IsFalse(decreaseSession.Visible, "Button decreaseSession is visible after pressing the Break Button");
+
+        //if input is being properly recoreded
+        int breakMinutes = settingUpScreen.getBreakMinutes();
+        increaseMinutes.PerformClick();
+        Assert.AreEqual(breakMinutes + 1, settingUpScreen.getBreakMinutes(), $"Increasing minutes button click suppose to set value to {breakMinutes + 1} but instead got {settingUpScreen.getBreakMinutes()}");
+        Assert.AreEqual(breakMinutes + 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "Increasing minutes button click suppose to Increase display minutes by one mintues not properly reflected for break minutes");
+
+        breakMinutes = settingUpScreen.getBreakMinutes();
+        decreaseMinutes.PerformClick();
+        Assert.AreEqual(breakMinutes - 1, settingUpScreen.getBreakMinutes(), $"decrease minutes button click suppose to set value to {breakMinutes + 1} but instead got {settingUpScreen.getBreakMinutes()}");
+        Assert.AreEqual(breakMinutes - 1, Convert.ToInt32(settingUpScreen.getMinutesLabel().Text), "decrease minutes button click suppose to decrease display minutes by one mintues not properly reflected for for break seconds");
     }
     
 }
