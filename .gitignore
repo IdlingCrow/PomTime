@@ -1,5 +1,6 @@
 ﻿.vs/
 PomTime.Test*/
+coveragereport/
 bin/
 obj/
 *.user
