@@ -99,6 +99,7 @@ public class SoundModel
         return playingMusic;
     }
 
+    //Used to switch to the next track
     public void playNext()
     {
         refreshList();
@@ -110,13 +111,11 @@ public class SoundModel
             currSong++;
         }
         music.Open(new Uri(musics[currSong]));
-        if(playingMusic)
-        {
-            playMusic();
-        }
+        playMusic();
 
     }
 
+    //Used to switch to the previous track
     public void playPreviousMusic()
     {
         refreshList();
@@ -132,6 +131,8 @@ public class SoundModel
         playMusic();
     }
 
+    //used to look at the folder again to see if
+    //anything has changed and adjust accordingly
     public void refreshList()
     {
         musics = Directory.GetFiles(musicPath, "*.mp3");

@@ -23,8 +23,15 @@ public class Controller
     private stickyNotes reminderNotes;
     private bool isFirstWorkTime;
 
+    //Used to make the program wait for when break time or work
+    //time is done before the program go any further
     private TaskCompletionSource<bool>? workTimeCompletionsSource;
 	private TaskCompletionSource<bool>? breakTimeCompletionsSource;
+
+    //Purpose reference all the model, connect all of the listener from
+    //the view and the model. Create a cancelation token to skip the
+    //the waiting for the work time and break time to finished if the user
+    //wants to reset and set a few status
 	public Controller(StartingUI startingUI, TimeModel timerModel, SoundModel musicModel, stickyNotes reminderNotes, ThemeModel themeModel)
 	{
         this.musicModel = musicModel;
@@ -122,7 +129,7 @@ public class Controller
             } 
             //This chunk under catch is for then the user
             //press reset to exit out to the Input menu
-            //or the SettingUpScreen
+            //(the SettingUpScreen)
             catch (OperationCanceledException)
             {
                 timerModel.resetTime();
@@ -142,21 +149,28 @@ public class Controller
         }
     }
 
+    //Tell the music model to open up the msuic folder
     public void manageMusic(object? sender, EventArgs e)
     {
         musicModel.manageMusic();
     }
 
+    //Tell the startingUI to switch the theme number 1
+    //reference by the themeModel
     public void changeToTheme1(object? sender, EventArgs e)
     {
         setAndSaveTheme(1);
     }
 
+    //Tell the startingUI to switch the theme number 2
+    //reference by the themeModel
     public void changeToTheme2(object? sender, EventArgs e)
     {
         setAndSaveTheme(2);
     }
 
+    //Tell the startingUI to switch the theme number 3
+    //reference by the themeModel
     public void changeToTheme3(object? sender, EventArgs e)
     {
         setAndSaveTheme(3);
