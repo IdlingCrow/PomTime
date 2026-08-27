@@ -487,17 +487,17 @@ public partial class StartingUI : Form
     }
 
     //these function is exculsively created for test purposes
-    public string getBreakOrWorkTimeDispalyed()
+    internal string getBreakOrWorkTimeDispalyed()
     {
         if(currScreen == screenState.settingUp)
         {
-            return settingUpScreen.getTitle();
+            return "settingUp";
         } else if (currScreen == screenState.breakTime)
         {
-            return breakTimeScreen.getTitle();
+            return "break";
         } else if (currScreen == screenState.workTime)
         {
-            return workTimeScreen.getTitle();
+            return "work";
         } else
         {
             return "settings";

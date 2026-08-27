@@ -175,16 +175,16 @@ namespace PomTimeApp.view
             return session;
         }
 
-        //get what the userControl this is
-        public string getTitle()
-        {
-            return "Setting up";
-        }
-
         //get the time that is shown in the middle of the user control
         public string getDisplayed_timer()
         {
-            return $"{MinutesLabel.Text}:{secondsLabel.Text}";
+            if(inputState == InputState.Break || inputState == InputState.Work)
+            {
+                return $"{MinutesLabel.Text}{SessionLabel.Text}{secondsLabel.Text}";
+            } else
+            {
+                return $"{SessionLabel.Text}";
+            }
         }
 
         //change to inputting for work time after the user pressed
@@ -389,6 +389,11 @@ namespace PomTimeApp.view
         }
 
         //function use for testing
+        internal Color[] getBackgroundAndForeGroundTheme()
+        {
+            return [BackColor, ForeColor];
+        }
+
         internal Label getMinutesLabel()
         {
             return MinutesLabel;
@@ -427,6 +432,16 @@ namespace PomTimeApp.view
             {
                 return "session";
             }
+        }
+
+        internal Button getStartButton()
+        {
+            return startBtn;
+        }
+
+        internal Button getSettingButton()
+        {
+            return settingButton;
         }
 
         internal Button getBreakInputButton()

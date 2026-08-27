@@ -9,3 +9,4 @@ obj/
 packages/
 *.nupkg
 coverage.xml
+newIdeas.txt
