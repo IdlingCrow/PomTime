@@ -358,23 +358,6 @@ public partial class StartingUI : Form
         }
     }
 
-    //allows the controller to talk to the work
-    //screen that there is one minutes left
-    //to work time and it should make
-    //preperation like pulling up the reminder
-    //stickynotes
-    public void enableOneMinutesWarning()
-    {
-        workTimeScreen.enableOneminutesWarning();
-    }
-
-    //tell the workTime screen that work time has
-    //ended
-    public void disableOneminutesWarning()
-    {
-        workTimeScreen.disableOneminutesWarning();
-    }
-
     //allows the the setting up screen to comunicate to the
     //with the controller that the user want to start
     //the session

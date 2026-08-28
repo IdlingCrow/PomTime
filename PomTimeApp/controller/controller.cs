@@ -144,7 +144,6 @@ public class Controller
                 musicModel.stopMusic();
                 musicHasBeenPause = storedMusicState;
                 Debug.WriteLine(musicHasBeenPause);
-                disableOneMinutesWarning();
                 isFirstWorkTime = true;
             }
             reminderNotes.resetNotes();
@@ -284,12 +283,10 @@ public class Controller
 		if(view.InvokeRequired)
 		{
 			view.Invoke(() => {
-                view.enableOneMinutesWarning();
                 reminderNotes.openNotes();
             });
 		} else
 		{
-            view.enableOneMinutesWarning();
             reminderNotes.openNotes();
         }
     }
@@ -390,7 +387,6 @@ public class Controller
     //by the timer model when work time is done 
     private void workSessionTimerDone(object? sender, EventArgs e)
     {
-        disableOneMinutesWarning();
         workTimeCompletionsSource?.SetResult(true);
     }
 
@@ -406,20 +402,6 @@ public class Controller
         {
             view.changeDisplayedTime($"{minutesInd:D2}:{secondsInd:D2}");
 
-        }
-    }
-
-    //Used to to turn off the one mintues warning after the work time
-    //is done
-    public void disableOneMinutesWarning()
-    {
-        if (view.InvokeRequired)
-        {
-            view.Invoke(() => view.disableOneminutesWarning());
-        }
-        else
-        {
-            view.disableOneminutesWarning();
         }
     }
 

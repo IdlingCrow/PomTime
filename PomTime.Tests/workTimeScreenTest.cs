@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Windows.Media.Animation;
 using PomTimeApp.view;
 
@@ -114,11 +115,60 @@ public sealed class workTimeScreenTest
     {
         WorkTimeScreen screen = new WorkTimeScreen();
         bool requestToPauseMusic = false;
+        bool requestToResumeMusic = false;
         screen.PauseMusic += (sender, e) => {requestToPauseMusic = true;};
+        screen.PlayMusic += (sender, e) => {requestToResumeMusic = true;};
 
-        Button pauseButton = screen.getPauseButton();
+
+        Button pauseButton = screen.getPauseMusicButton();
     
-        pauseButton.PerformClick();
+        if(pauseButton.Text.Equals("▶"))
+        {
+            pauseButton.PerformClick();
+            Assert.AreEqual("⏸", pauseButton.Text, "User does not see ⏸ after pressing the pause music button with the symbol ▶");
+            Assert.IsTrue(requestToPauseMusic, "request to PauseMusic event handler is not called after user pressed the ▶ button");
+            pauseButton.PerformClick();
+            Assert.AreEqual("▶", pauseButton.Text, "User does not see ⏸ after pressing the pause music button with the symbol ⏸");
+            Assert.IsTrue(requestToResumeMusic, "request to PlayMusic event handler is not called after user pressed the ⏸ button");
+        } 
+        else
+        {
+            pauseButton.PerformClick();
+            Assert.AreEqual("▶", pauseButton.Text, "User does not see ⏸ after pressing the pause music button with the symbol ⏸");
+            Assert.IsTrue(requestToResumeMusic, "request to PlayMusic event handler is not called after user pressed the ⏸ button");
+            pauseButton.PerformClick();
+            Assert.AreEqual("⏸", pauseButton.Text, "User does not see ⏸ after pressing the pause music button with the symbol ▶");
+            Assert.IsTrue(requestToPauseMusic, "request to PauseMusic event handler is not called after user pressed the ▶ button");
+        }
+    }
 
+    [TestMethod]
+    public void skipMusicButtonInteractionForWorkScreen()
+    {
+        WorkTimeScreen screen = new WorkTimeScreen();
+
+        bool requestToSkipMusic = false;
+        screen.SkipMusic += (sender, e) => {requestToSkipMusic = true;};
+
+        Button skipButton = screen.getSkipButton();
+
+        skipButton.PerformClick();
+        Assert.IsTrue(requestToSkipMusic, "event handlerSkip music is not raised after skip music button is clicked");
+        
+    }
+
+    [TestMethod]
+    public void backMusicButtonInteractionForWorkScreen()
+    {
+        WorkTimeScreen screen = new WorkTimeScreen();
+
+        bool requestToPlayPreviousMusic = false;
+        screen.backMusic += (sender, e) => {requestToPlayPreviousMusic = true;};
+
+        Button backButton = screen.getPreviousTrackButton();
+
+        backButton.PerformClick();
+        Assert.IsTrue(requestToPlayPreviousMusic, "event handlerSkip music is not raised after skip music button is clicked");
+        
     }
 }

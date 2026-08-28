@@ -40,28 +40,6 @@ namespace PomTimeApp.view
             timerOnWorkScreen.Text = time;
         }
 
-        //popped the word One Minutes Warning
-        //usally used by the controller telling 
-        //the startingUI to show this
-        public void enableOneminutesWarning()
-        {
-            oneMinutesWarner.Text = "One Minutes Warning";
-        }
-
-        //hide word One Minutes Warning
-        //usally used by the controller telling 
-        //the startingUI to hide this
-        public void disableOneminutesWarning()
-        {
-            oneMinutesWarner.Text = "";
-        }
-
-        //Get what this user control is used for
-        public string getTitle()
-        {
-            return screenTitle.Text;
-        }
-
         //get the displayed time on the usercontrol
         public string getDisplayed_timer()
         {

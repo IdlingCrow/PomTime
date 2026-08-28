@@ -30,7 +30,6 @@
         {
             screenTitle = new Label();
             timerOnWorkScreen = new Label();
-            oneMinutesWarner = new Label();
             PauseButton = new themeButton();
             ResumeButton = new themeButton();
             ResetButton = new themeButton();
@@ -60,14 +59,6 @@
             timerOnWorkScreen.Size = new Size(337, 142);
             timerOnWorkScreen.TabIndex = 1;
             timerOnWorkScreen.Text = "00:00";
-            // 
-            // oneMinutesWarner
-            // 
-            oneMinutesWarner.AutoSize = true;
-            oneMinutesWarner.Location = new Point(123, 295);
-            oneMinutesWarner.Name = "oneMinutesWarner";
-            oneMinutesWarner.Size = new Size(0, 32);
-            oneMinutesWarner.TabIndex = 2;
             // 
             // PauseButton
             // 
@@ -170,7 +161,6 @@
             Controls.Add(ResetButton);
             Controls.Add(ResumeButton);
             Controls.Add(PauseButton);
-            Controls.Add(oneMinutesWarner);
             Controls.Add(timerOnWorkScreen);
             Controls.Add(screenTitle);
             Name = "WorkTimeScreen";
@@ -183,7 +173,6 @@
 
         private Label screenTitle;
         private Label timerOnWorkScreen;
-        private Label oneMinutesWarner;
         private themeButton PauseButton;
         private themeButton ResumeButton;
         private themeButton ResetButton;
