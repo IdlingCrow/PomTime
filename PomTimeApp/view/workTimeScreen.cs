@@ -220,5 +220,41 @@ namespace PomTimeApp.view
             SkipButton.FlatAppearance.BorderColor = ForeColor;
 
         }
+
+        //use for testing
+        internal Button getPauseButton()
+        {
+            return PauseButton;
+        }
+
+        internal Button getResumeButton()
+        {
+            return ResumeButton;
+        }
+
+        internal Button getResetButton()
+        {
+            return ResetButton;
+        }
+
+        internal Button getPauseMusicButton()
+        {
+            return pauseMusicButton;
+        }
+
+        internal Button getSkipButton()
+        {
+            return SkipButton;
+        }
+
+        internal Button getPreviousTrackButton()
+        {
+            return backButton;
+        }
+
+        internal Color[] getBackgroundAndForeGroundTheme()
+        {
+            return [BackColor, ForeColor];
+        }
     }
 }
