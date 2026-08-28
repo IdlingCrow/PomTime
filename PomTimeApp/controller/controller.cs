@@ -17,8 +17,15 @@ public class Controller
     private int secondsInd;
     private bool timerHasStarted;
     private CancellationTokenSource resetToken;
+    //use to tell what the current
+    //music state is 
     private bool musicHasBeenPause;
 
+    //Used to remember what the music state
+    //is during work time. Since break
+    //time and input screen will have music
+    //turn off which will be reflected in
+    //musicHasBeenPause
     private bool storedMusicState;
     private stickyNotes reminderNotes;
     private bool isFirstWorkTime;
@@ -198,6 +205,7 @@ public class Controller
         Properties.Settings.Default.Save();
     }
 
+    //Tell the refence music model to play the next track
     public void skipMusic(object? sender, EventArgs e)
     {
         musicModel.playNext();
@@ -205,6 +213,7 @@ public class Controller
         view.setButtonToPauseMusic();
     }
 
+    //Tell the refence music model to play the previous track
     public void playPreviousMusic(object? sender, EventArgs e)
     {
         musicModel.playPreviousMusic();
@@ -212,6 +221,8 @@ public class Controller
         view.setButtonToPauseMusic();
     }
 
+    //Tell the music model to resume playing music
+    //if the music is off
     public void resumeMusic(object? sender, EventArgs e)
     {
         if (!musicModel.isPlayingMusic()) {
@@ -221,6 +232,8 @@ public class Controller
         musicHasBeenPause = false;
     }
 
+    //Tell the music model to pause the music if the 
+    //music have is not pause
     public void pauseMusic(object? sender, EventArgs e)
     {
         if (musicModel.isPlayingMusic())
@@ -256,6 +269,9 @@ public class Controller
         }
     }
 
+    //Used when the user pressed reset in workScreen
+    //and breakScreen which will cancel the await
+    //task of startCycleTimer
     public void resetTimer(object? sender, EventArgs e)
     {
         resetToken.Cancel();
@@ -325,6 +341,10 @@ public class Controller
 		return breakTimeCompletionsSource.Task;
     }
 	
+    //tell the view to switch to work screen
+    //is usually called when the timer start
+    //or at the end of break time if the session
+    //is not over
 	private void WorkTimeDispalyed()
 	{
         if (view.InvokeRequired)
@@ -342,6 +362,9 @@ public class Controller
 
 	}
 
+    //tell the view to switch to break screen
+    // called when work time is over
+    //unless it is the last break time 
     private void BreakTimeDispalyed()
     {
         if (view.InvokeRequired)
@@ -356,17 +379,22 @@ public class Controller
         } 
     }
 
+    //Used to tell the await that the task is done this is called
+    //by the timer model when break time is done 
     private void breakSessionTimerDone(object? sender, EventArgs e)
 	{
         breakTimeCompletionsSource?.SetResult(true);
     }
 
+    //Used to tell the await that the task is done this is called
+    //by the timer model when work time is done 
     private void workSessionTimerDone(object? sender, EventArgs e)
     {
         disableOneMinutesWarning();
         workTimeCompletionsSource?.SetResult(true);
     }
 
+    //used to update the timer on break and work screen
     private void updateTimer()
     {
 
@@ -381,6 +409,8 @@ public class Controller
         }
     }
 
+    //Used to to turn off the one mintues warning after the work time
+    //is done
     public void disableOneMinutesWarning()
     {
         if (view.InvokeRequired)
@@ -393,6 +423,8 @@ public class Controller
         }
     }
 
+    //Used to indicate when the sessions is complete
+    //which will switch to the settingUpScreen
     public void SessionComplete()
     {
         if(view.InvokeRequired)
@@ -405,6 +437,9 @@ public class Controller
         }
     }
 
+    //Used to resume the time if the user pause it
+    //additionally play the music if the user 
+    //haven't stopped it before starting the time
     public void resumeTimer(object? sender, EventArgs e)
     {
         timerModel.startTime();
@@ -414,6 +449,7 @@ public class Controller
         }
     }
 
+    //Used to stop the timer
     public void pauseTimer(object? sender, EventArgs e)
     {
         timerModel.pauseTime();
