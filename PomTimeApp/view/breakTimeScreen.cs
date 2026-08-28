@@ -39,14 +39,6 @@ namespace PomTimeApp.view
             timerOnBreakScreen.Text = time;
         }
 
-        //Input: None
-        //Output: None
-        //Purpose: give the name if this user control
-        public string getTitle()
-        {
-            return screenTitle.Text;
-        }
-
         //Purpose: allow user to get the displayed time
         //on the break screen
         public string getDisplayed_timer()
@@ -131,9 +123,33 @@ namespace PomTimeApp.view
             ResetButton.BackColor = ForeColor;
             ResetButton.FlatAppearance.BorderColor = ForeColor;
 
-            //The timer
+            //The timer 
             timerOnBreakScreen.ForeColor = ForeColor;
             timerOnBreakScreen.BackColor = BackColor;
+        }
+
+        //for test use only
+        internal PictureBox getBreakActivityImage()
+        {
+            return breakTimeActivity;
+        }
+        internal Button getPauseButton()
+        {
+            return PauseButton;
+        }
+
+        internal Button getResetButton()
+        {
+            return ResetButton;
+        }
+
+        internal Button getResumeButton()
+        {
+            return ResumeButton;
+        }
+        internal Color[] getBackgroundAndForeGroundTheme()
+        {
+            return [BackColor, ForeColor];
         }
     }
 }
