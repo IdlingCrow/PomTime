@@ -55,4 +55,12 @@ public sealed class StickyNotesTest
         stickyNote.resetNotes();
         Assert.AreEqual(string.Empty, reminderDescription.Text, "there is still written content in stickyNotes after calling resetNotes");
     }
+
+    public void runAll()
+    {
+        IntilalizatoinOfNotesForStickyNotes();
+        OpeningNotesForStickyNotes();
+        ClosingNotesForStickyNotes();
+    }
+
 }

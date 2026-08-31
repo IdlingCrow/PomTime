@@ -171,4 +171,16 @@ public sealed class workTimeScreenTest
         Assert.IsTrue(requestToPlayPreviousMusic, "event handlerSkip music is not raised after skip music button is clicked");
         
     }
+
+    public void runAll()
+    {
+        pauseButtonInteractionForWorkScreen();
+        resetButtonInteractionForWorkScreen();
+        resumeButtonInteractionForWorkScreen();
+        changeDisplayedTimeForWorkScreen();
+        ChangeThemeForWorkScreen();
+        pauseMusicButtonInteractionForWorkScreen();
+        skipMusicButtonInteractionForWorkScreen();
+        backMusicButtonInteractionForWorkScreen();
+    }
 }

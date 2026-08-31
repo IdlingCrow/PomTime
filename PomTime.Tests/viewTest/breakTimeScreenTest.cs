@@ -114,4 +114,15 @@ public sealed class breakTimeScreenTest
         Assert.AreEqual(Color.FromArgb(0,0,0), colorOfScreen[0], "background color is not is not the same as input");
         Assert.AreEqual(Color.FromArgb(255,255,255), colorOfScreen[1], "foreground color is not is not the same as input");
     }
+
+    public void runAll()
+    {
+        IntializationTestForBreakTimeScreenTest();
+        pauseButtonInteractionForBreakTimeScreen();
+        resetButtonInteractionForBreakTimeScreen();
+        resumeButtonInteractionForBreakTimeScreen();
+        changeDisplayedTimeForBreakScreen();
+        startAnActivityForBreakScreen();
+        changeThemeForBreakScreen();
+    }
 }

@@ -89,4 +89,13 @@ public sealed class settingScreenTest
         Assert.AreEqual(Color.FromArgb(0,0,0), colorOfScreen[0], "background color is not is not the same as input");
         Assert.AreEqual(Color.FromArgb(255,255,255), colorOfScreen[1], "foreground color is not is not the same as input");
     }
+
+    public void runAll()
+    {
+        theme1ButtonPressForSettingScreen();
+        theme2ButtonPressForSettingScreen();
+        theme3ButtonPressForSettingScreen();
+        musicManagementButton_ClickForSettingScreen();
+        changeThemeForSettingScreen();
+    }
 }

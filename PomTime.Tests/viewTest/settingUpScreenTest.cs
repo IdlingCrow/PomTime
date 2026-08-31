@@ -240,4 +240,14 @@ public sealed class settingUpScreenTest
 
 
     }
+
+    public void runAll()
+    {
+        intilaizationTestForSettingUpScreen();
+        inputButtonTestForSettingUpScreen();
+        changingInputsTestForSettingUpScreen();
+        startControlForSettingUpScreen();
+        settingControlForSettingUpScreen();
+        setThemeTestForSettingUpScreen();
+    }
 }
