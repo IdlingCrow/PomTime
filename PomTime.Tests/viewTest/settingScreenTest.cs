@@ -76,7 +76,7 @@ public sealed class settingScreenTest
         Button musicManagementButton = settingScreen.getMusicManagementButton();
         settingScreen.userPressedManageMusic += (sender, e) => {MusicManagementButtonState = true;};
         musicManagementButton.PerformClick();
-        Assert.IsTrue(MusicManagementButtonState, "button hasn't dectect it has been pressed");
+        Assert.IsTrue(MusicManagementButtonState, "music manage button hasn't dectect it has been pressed");
     }
 
     [TestMethod]
@@ -90,6 +90,19 @@ public sealed class settingScreenTest
         Assert.AreEqual(Color.FromArgb(255,255,255), colorOfScreen[1], "foreground color is not is not the same as input");
     }
 
+    [TestMethod]
+    public void backButtonForSettingScreen()
+    {
+        bool BackButtonState = false;
+        settingScreen settingScreen = new settingScreen();
+        Button backButton = settingScreen.getBackButton();
+        settingScreen.backButtonPressed += (sender, e) => {BackButtonState = true;};
+        backButton.PerformClick();
+        Assert.IsTrue(BackButtonState, "back button hasn't dectect it has been pressed");
+    }
+
+    //this allows startingUI to test if every test here 
+    //is correct before running its own test
     public void runAll()
     {
         theme1ButtonPressForSettingScreen();
@@ -97,5 +110,6 @@ public sealed class settingScreenTest
         theme3ButtonPressForSettingScreen();
         musicManagementButton_ClickForSettingScreen();
         changeThemeForSettingScreen();
+        backButtonForSettingScreen();
     }
 }

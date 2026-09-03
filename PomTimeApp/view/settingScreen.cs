@@ -183,6 +183,11 @@ namespace PomTimeApp.view
             return musicManagementButton;
         }
 
+        internal Button getBackButton()
+        {
+            return backButton;
+        }
+
         internal Color[] getBackgroundAndForeGroundTheme()
         {
             return [BackColor, ForeColor];

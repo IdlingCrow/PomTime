@@ -154,7 +154,7 @@ public partial class StartingUI : Form
     //switches the userControl to the settingUpScreen
     private void goingBackToSettingUp(object? sender, EventArgs e)
     {
-        switchScreen(settingUpScreen);
+        switchToSettingUpScreen();
     }
     
     // Input: 2 Color in a array
@@ -469,24 +469,6 @@ public partial class StartingUI : Form
         WindowState = FormWindowState.Normal;
     }
 
-    //these function is exculsively created for test purposes
-    internal string getBreakOrWorkTimeDispalyed()
-    {
-        if(currScreen == screenState.settingUp)
-        {
-            return "settingUp";
-        } else if (currScreen == screenState.breakTime)
-        {
-            return "break";
-        } else if (currScreen == screenState.workTime)
-        {
-            return "work";
-        } else
-        {
-            return "settings";
-        }
-    }
-
     //allows the break and work screen to communicate that 
     //the user wants to pause the time
     private void pauseBtn_Click(object? sender, EventArgs e)
@@ -516,7 +498,7 @@ public partial class StartingUI : Form
             return "Setting up";
         } else
         {
-            return "settings";
+            return "Settings";
         }
     }
 
@@ -536,4 +518,24 @@ public partial class StartingUI : Form
         }
     }
 
+    //these function is exculsively created for test purposes
+    internal breakTimeScreen GetBreakTimeScreen()
+    {
+        return breakTimeScreen;
+    }
+
+    internal WorkTimeScreen GetWorkTimeScreen()
+    {
+        return workTimeScreen;
+    }
+
+    internal settingScreen GetSettingScreen()
+    {
+        return settingScreen;
+    }
+
+    internal settingUpScreen GetSettingUpScreen()
+    {
+        return settingUpScreen;
+    }
 }

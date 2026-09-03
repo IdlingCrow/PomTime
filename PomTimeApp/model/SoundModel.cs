@@ -8,6 +8,12 @@ namespace PomTimeApp;
 /// </summary>
 public class SoundModel
 {
+
+    private int timesRingCalledPlay;
+
+    private int timeMusicCalledPause;
+
+    private int timeMusicCalledPlay;
     SoundPlayer ring;
     MediaPlayer music;
 
@@ -55,6 +61,7 @@ public class SoundModel
     public void playSound()
     {
         ring.Play();
+        timesRingCalledPlay++;
     }
 
     //Used to start or resume the music
@@ -62,6 +69,7 @@ public class SoundModel
     {
         music.Volume = 0.5;
         music.Play();
+        timeMusicCalledPlay++;
         playingMusic = true;
     }
 
@@ -82,15 +90,16 @@ public class SoundModel
     {
         playingMusic = false;
         music.Pause();
+        timeMusicCalledPause++;
     }
 
     //Used to indicate the end of a session
     //it just plays double of the ring dound
-    public async void playDoubleSound()
+    public async Task playDoubleSound()
     {
-        ring.Play();
+        playSound();
         await Task.Delay(700);
-        ring.Play();
+        playSound();
     }
 
     //Check if music is playing
@@ -136,5 +145,31 @@ public class SoundModel
     public void refreshList()
     {
         musics = Directory.GetFiles(musicPath, "*.mp3");
+    }
+
+    //code for testPurpose
+    internal string[] getMusicList()
+    {
+        return musics;
+    }
+
+    internal string getCurrentMusic()
+    {
+        return music.Source.LocalPath;
+    }
+
+    internal int getTimesRingCalledPlay()
+    {
+        return timesRingCalledPlay;
+    }
+
+    internal int getTimeMusicCalledPlay()
+    {
+        return timeMusicCalledPlay;
+    }
+
+    internal int getTimeMusicCalledPause()
+    {
+        return timeMusicCalledPause;
     }
 }
