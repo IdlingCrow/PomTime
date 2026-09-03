@@ -39,7 +39,7 @@ namespace PomTimeApp.model
 
         public testTimer()
         {
-
+            isRunning = false;
         }
 
         public void elapseTimer(DateTime time = default)
@@ -54,6 +54,10 @@ namespace PomTimeApp.model
 
         public void Start() { isRunning = true; } 
 
+        public bool isTimerRunning ()
+        {
+            return isRunning; ;
+        }
     }
 
 

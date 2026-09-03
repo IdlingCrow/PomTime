@@ -55,7 +55,7 @@ public class TimeModel
         timer.Elapsed -= workTimer;
 		timer.Elapsed -= breakTimer;
 		oneMinAlert = false;
-        timer.Stop();
+		pauseTime();
     }
 
 	//Purpose: used to temporary pause the timer
@@ -71,7 +71,7 @@ public class TimeModel
 	{
 		timer.Elapsed += workTimer;
         seconds = workTime;
-        timer.Start();
+        startTime();
 	}
 
     //Pupose: used by timer during work time this will trigger everysecond. When the timer
