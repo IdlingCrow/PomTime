@@ -10,7 +10,11 @@ public class activityModel
 {
     string breakActivtiesFolder;
     string[] breakActivities;
+
+    string currImage;
     Image activity;
+
+    private Random randomActvity;
 
     //Used to get all the image from the break activity folder
     public activityModel()
@@ -22,8 +26,9 @@ public class activityModel
         {
             breakActivities = breakActivities.Concat(Directory.GetFiles(breakActivtiesFolder, $"*{imageFormat[i]}")).ToArray();
         }
-        Random randomActvity = new Random();
-        activity = Image.FromFile(breakActivities[randomActvity.NextInt64(0, breakActivities.Length)]);
+        randomActvity = new Random();
+        currImage = breakActivities[randomActvity.NextInt64(0, breakActivities.Length)];
+        activity = Image.FromFile(currImage);
     }
 
     //lead the user to the folder and have the user
@@ -53,8 +58,21 @@ public class activityModel
     public Image getBreakActivity()
     {
         refreshList();
-        Random randomActvity = new Random();
-        activity = Image.FromFile(breakActivities[randomActvity.NextInt64(0, breakActivities.Length)]);
+        currImage = breakActivities[randomActvity.NextInt64(0, breakActivities.Length)];
+        activity = Image.FromFile(currImage);
         return activity;
     }
+
+    //internal for test
+    internal string[] getBreakActivities()
+    {
+        return breakActivities;
+    }
+
+    internal string getCurrImageName()
+    {
+        return currImage;
+    }
+
+
 }

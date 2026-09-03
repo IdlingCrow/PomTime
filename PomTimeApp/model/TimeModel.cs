@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PomTimeApp.model;
+using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Timers;
@@ -10,7 +11,7 @@ namespace PomTimeApp;
 /// </summary>
 public class TimeModel
 {
-	System.Timers.Timer timer;
+    timerInterface timer;
     int workTime;
 	int breakTime;
 	int seconds;
@@ -34,11 +35,11 @@ public class TimeModel
 
 	//Purpose: convert workMinutes into work seconds and store it, and do the same for break minutes
 	//then create a timer that tick every one seconds
-    public TimeModel(int workMinutes, int workSeconds, int breakMinutes, int breakSeconds) 
+    public TimeModel(int workMinutes, int workSeconds, int breakMinutes, int breakSeconds, timerInterface? inputtedTimer = null) 
 	{
         workTime = (workMinutes * 60) + workSeconds;
 		breakTime = breakMinutes * 60 + breakSeconds;
-		timer = new System.Timers.Timer(1000);
+		timer = inputtedTimer ?? new realTimer(1000);
 		oneMinAlert = false;
 	}
 
