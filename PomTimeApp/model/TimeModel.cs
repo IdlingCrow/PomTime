@@ -14,8 +14,8 @@ public class TimeModel
     timerInterface timer;
     int workTime;
 	int breakTime;
-	int seconds;
-	bool oneMinAlert;
+	private int seconds;
+	private bool oneMinAlert;
 
 	//use to talk to the controller that
 	//one second has passed
@@ -83,14 +83,13 @@ public class TimeModel
     //time is done through workSessionDone
     private void workTimer(object? sender, ElapsedEventArgs e)
 	{
-		
-		if(seconds > 0)
+        if (seconds > 1)
 		{
-			if(seconds <= 60 && !oneMinAlert) {
+            seconds--;
+            if (seconds <= 60 && !oneMinAlert) {
 				sendOneMinutesAlert?.Invoke(this, EventArgs.Empty);
 				oneMinAlert = true;
 			}
-            seconds--;
             decreaseByASecond?.Invoke(this, EventArgs.Empty);
         } else
 		{
@@ -120,7 +119,7 @@ public class TimeModel
 	//tell the controller that the timer is done
     private void breakTimer(object? sender, ElapsedEventArgs e)
 	{
-		if(seconds > 0)
+        if (seconds > 1)
 		{
             seconds--;
             decreaseByASecond?.Invoke(this, EventArgs.Empty);
@@ -154,6 +153,15 @@ public class TimeModel
 		return breakTime;
 	}
 
+	internal bool getOneMinAlert()
+	{
+		return oneMinAlert;
+	}
+
+	internal int getSeconds()
+	{
+		return seconds;
+	}
 
 
 }

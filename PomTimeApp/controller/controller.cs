@@ -131,7 +131,7 @@ public class Controller
                     musicHasBeenPause = storedMusicState;
                 }
                 SessionComplete();
-                musicModel.playDoubleSound();
+                await musicModel.playDoubleSound();
 
             } 
             //This chunk under catch is for then the user

@@ -58,6 +58,11 @@ namespace PomTimeApp.model
         {
             return isRunning; ;
         }
+
+        public int getNumerOfListener()
+        {
+            return Elapsed?.GetInvocationList().Length ?? 0;
+        }
     }
 
 
