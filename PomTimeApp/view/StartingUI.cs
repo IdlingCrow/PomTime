@@ -1,3 +1,4 @@
+using PomTimeApp.model;
 using PomTimeApp.view;
 using System.Diagnostics;
 
@@ -59,8 +60,8 @@ public partial class StartingUI : Form
     public EventHandler? theme2Pressed;
     public EventHandler? theme3Pressed;
     public EventHandler? manageMusicPressed;
-    public EventHandler? manageBreakPressed;
 
+    private Color[] formTheme;
 
     //WHAT IS IT DOING?:
     //Record all the screen size of all the pages.
@@ -76,6 +77,9 @@ public partial class StartingUI : Form
     //screen(user control)
     public StartingUI()
     {
+        ThemeModel themeModel = new ThemeModel();
+
+        formTheme = themeModel.selectTheme(Properties.Settings.Default.Theme);
         sizeOfUserControl[settingScreen] = settingScreen.Size;
         sizeOfUserControl[settingUpScreen] = settingUpScreen.Size;
         sizeOfUserControl[workTimeScreen] = workTimeScreen.Size;
@@ -164,10 +168,11 @@ public partial class StartingUI : Form
     // color theme
     public void setTheme(Color[] themeColor)
     {
-        if(themeColor.Length != 2)
+        if (themeColor.Length != 2)
         {
             throw new ArgumentException("setTheme needed array with two colors");
         }
+        formTheme = themeColor;
         workTimeScreen.setTheme(themeColor[0], themeColor[1]);
         breakTimeScreen.setTheme(themeColor[0], themeColor[1]);
         settingUpScreen.setTheme(themeColor[0], themeColor[1]);
@@ -500,6 +505,11 @@ public partial class StartingUI : Form
         {
             return "Settings";
         }
+    }
+
+    public Color[] getFormTheme()
+    {
+        return formTheme;
     }
 
     //allow people to get the displayed time

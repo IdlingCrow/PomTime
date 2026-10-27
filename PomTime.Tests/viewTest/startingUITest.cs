@@ -96,6 +96,7 @@ public sealed class startingUITest
     }
 
     [TestMethod]
+    [DoNotParallelize]
     public void settingScreenButtonInteractionForStartingUI()
     {
         StartingUI view = new StartingUI();
@@ -121,8 +122,20 @@ public sealed class startingUITest
         view.theme3Pressed += (sender,e) => {theme3Pressed = true;};
         view.manageMusicPressed += (sender,e) => {manageMusicClicked = true;};
 
+        if(!theme1_Btn.Enabled)
+        {
+            theme1_Btn.Enabled = true;
+        }
         theme1_Btn.PerformClick();
+        if(!theme2_Btn.Enabled)
+        {
+            theme2_Btn.Enabled = true;
+        }
         theme2_Btn.PerformClick();
+        if(!theme3_Btn.Enabled)
+        {
+            theme3_Btn.Enabled = true;
+        }
         theme3_Btn.PerformClick();
         manageMusic.PerformClick();
         
@@ -259,6 +272,9 @@ public sealed class startingUITest
         Color[] colorOfSettingScreen = settingScreen.getBackgroundAndForeGroundTheme();
         Color[] colorOfSettingUpScreen = settingUpScreen.getBackgroundAndForeGroundTheme();
 
+        Assert.AreEqual(Color.FromArgb(0,0,0), view.getFormTheme()[0], "does not return the form theme color for background that is inputted in for setTheme");
+        Assert.AreEqual(Color.FromArgb(255,255,255), view.getFormTheme()[1], "does not return the form theme color for foreGround that is inputted in for setTheme");
+
         Assert.AreEqual(Color.FromArgb(0,0,0), colorOfBreakTimeScreen[0], "background color for breakTimeScreen is not is not the same as input");
         Assert.AreEqual(Color.FromArgb(255,255,255), colorOfBreakTimeScreen[1], "foreground color for breakTimeScreen is not is not the same as input");
         
@@ -348,5 +364,20 @@ public sealed class startingUITest
     public void checkIfEventHandlerHaveListener(EventHandler? targetEvent, string EventHandlerName)
     {
         Assert.IsGreaterThan(0, targetEvent?.GetInvocationList().Length ?? 0, EventHandlerName + " does not have any listener in startingUi");
+    }
+
+    public void RunAll()
+    {
+        intilaizationForStartingUI();
+        switchingBetweenScreenForStartingUI();
+        SettingUpScreenStartButtonTestForStartingUI();
+        SettingUpScreenSettingButtonForStartingUI();
+        settingScreenButtonInteractionForStartingUI();
+        WorkTimerControlForStartingUI();
+        changeThemeForStartingUI();
+        GetInputTestForStartingUI();
+        setButtonToPauseMusicForStartingUI();
+        changingAndGettingTimeFunctionForStartingUI();
+        deMaximizeBoxTestForStartingUI();
     }
 }

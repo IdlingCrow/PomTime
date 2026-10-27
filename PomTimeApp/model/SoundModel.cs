@@ -2,6 +2,7 @@
 using System.Media;
 using System.Diagnostics;
 using System.IO;
+using PomTimeApp.model;
 namespace PomTimeApp;
 /// <summary>
 /// Used to control music and any sound effect
@@ -14,7 +15,7 @@ public class SoundModel
     private int timeMusicCalledPause;
 
     private int timeMusicCalledPlay;
-    SoundPlayer ring;
+    SoundInterface ring;
     MediaPlayer music;
 
     //Used to store a path to the music folder
@@ -33,9 +34,9 @@ public class SoundModel
     //Put a name to the commonly used sound effect, create a path to the music
     //folder, parse the audio file from that folder, Open a song and set
     //up what to do when the audio file reaches its ends
-    public SoundModel()
+    public SoundModel(SoundInterface? soundEffectTest = null)
     {
-        ring = new SoundPlayer(Properties.Resources.ring);
+        ring = soundEffectTest ?? new SoundWrapper();
         musicPath = System.IO.Path.Combine(Application.StartupPath, "model", "music");
         musics = System.IO.Directory.GetFiles(musicPath, "*.mp3");
         music = new MediaPlayer();
@@ -98,7 +99,7 @@ public class SoundModel
     public async Task playDoubleSound()
     {
         playSound();
-        await Task.Delay(700);
+        await Task.Delay(700).ConfigureAwait(false);
         playSound();
     }
 

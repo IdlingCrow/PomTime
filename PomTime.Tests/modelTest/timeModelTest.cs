@@ -105,4 +105,14 @@ public sealed class timeModelTest
         Assert.IsLessThanOrEqualTo(0, testTimer.getNumerOfListener(), "there should be no listener after calling resetTime");
     }
 
+    public void testAll()
+    {
+        intilizationTestFortimeModel();
+        startTimeMethodTestForTimeModel();
+        changeTimeForTimeModel();
+        workTimeTestForTimeModel();
+        breakTimeTestForTimeModel();
+        resetTimeTestForTimeModel();
+    }
+
 }

@@ -30,6 +30,8 @@ public class Controller
     private stickyNotes reminderNotes;
     private bool isFirstWorkTime;
 
+    private bool lastWorkTime;
+
     //Used to make the program wait for when break time or work
     //time is done before the program go any further
     private TaskCompletionSource<bool>? workTimeCompletionsSource;
@@ -117,6 +119,14 @@ public class Controller
                         musicModel.playMusic();
                     }
 
+                    if(i >= session - 1)
+                    {
+                        lastWorkTime = true;
+                    } else
+                    {
+                        lastWorkTime = false;
+                    }
+
                     await runWorkTime(workMinutes, workSeconds, resetToken.Token);
 
                     isFirstWorkTime = false;
@@ -156,28 +166,28 @@ public class Controller
     }
 
     //Tell the music model to open up the msuic folder
-    public void manageMusic(object? sender, EventArgs e)
+    private void manageMusic(object? sender, EventArgs e)
     {
         musicModel.manageMusic();
     }
 
     //Tell the startingUI to switch the theme number 1
     //reference by the themeModel
-    public void changeToTheme1(object? sender, EventArgs e)
+    private void changeToTheme1(object? sender, EventArgs e)
     {
         setAndSaveTheme(1);
     }
 
     //Tell the startingUI to switch the theme number 2
     //reference by the themeModel
-    public void changeToTheme2(object? sender, EventArgs e)
+    private void changeToTheme2(object? sender, EventArgs e)
     {
         setAndSaveTheme(2);
     }
 
     //Tell the startingUI to switch the theme number 3
     //reference by the themeModel
-    public void changeToTheme3(object? sender, EventArgs e)
+    private void changeToTheme3(object? sender, EventArgs e)
     {
         setAndSaveTheme(3);
     }
@@ -205,7 +215,7 @@ public class Controller
     }
 
     //Tell the refence music model to play the next track
-    public void skipMusic(object? sender, EventArgs e)
+    private void skipMusic(object? sender, EventArgs e)
     {
         musicModel.playNext();
         musicHasBeenPause = false;
@@ -213,7 +223,7 @@ public class Controller
     }
 
     //Tell the refence music model to play the previous track
-    public void playPreviousMusic(object? sender, EventArgs e)
+    private void playPreviousMusic(object? sender, EventArgs e)
     {
         musicModel.playPreviousMusic();
         musicHasBeenPause = false;
@@ -222,7 +232,7 @@ public class Controller
 
     //Tell the music model to resume playing music
     //if the music is off
-    public void resumeMusic(object? sender, EventArgs e)
+    private void resumeMusic(object? sender, EventArgs e)
     {
         if (!musicModel.isPlayingMusic()) {
             musicModel.playMusic();
@@ -233,7 +243,7 @@ public class Controller
 
     //Tell the music model to pause the music if the 
     //music have is not pause
-    public void pauseMusic(object? sender, EventArgs e)
+    private void pauseMusic(object? sender, EventArgs e)
     {
         if (musicModel.isPlayingMusic())
         {
@@ -246,7 +256,7 @@ public class Controller
     //this is used the music model to tell the controller
     //that one seconds has pass and the view should decrease
     //the timer displayed by 1 seconds
-    public void decreaseByASecond(object? sender, EventArgs e)
+    private void decreaseByASecond(object? sender, EventArgs e)
 	{
 		if(secondsInd == 0 && minutesInd == 0)
 		{
@@ -271,23 +281,27 @@ public class Controller
     //Used when the user pressed reset in workScreen
     //and breakScreen which will cancel the await
     //task of startCycleTimer
-    public void resetTimer(object? sender, EventArgs e)
+    private void resetTimer(object? sender, EventArgs e)
     {
         resetToken.Cancel();
     }
 
     //This is used for the timer Model to tell the view that there
     //is one mintues left
-    public void enableOneMinutesWarning(object? sender, EventArgs e)
+    private void enableOneMinutesWarning(object? sender, EventArgs e)
 	{
-		if(view.InvokeRequired)
-		{
-			view.Invoke(() => {
+        if(!lastWorkTime)
+        {
+            if (view.InvokeRequired)
+            {
+                view.Invoke(() => {
+                    reminderNotes.openNotes();
+                });
+            }
+            else
+            {
                 reminderNotes.openNotes();
-            });
-		} else
-		{
-            reminderNotes.openNotes();
+            }
         }
     }
 
@@ -407,7 +421,7 @@ public class Controller
 
     //Used to indicate when the sessions is complete
     //which will switch to the settingUpScreen
-    public void SessionComplete()
+    private void SessionComplete()
     {
         if(view.InvokeRequired)
         {
@@ -432,19 +446,33 @@ public class Controller
     }
 
     //Used to stop the timer
-    public void pauseTimer(object? sender, EventArgs e)
+    private void pauseTimer(object? sender, EventArgs e)
     {
         timerModel.pauseTime();
         musicModel.stopMusic();
     }
 
     //for test purposes
-    public void changeBreakTime(int minutes, int seconds)
+    
+    //set the save time preset to 25 min work and 5 min break and 4 session
+    internal void saveStandardTimePreset()
     {
-        minutesInd = minutes;
-        secondsInd = seconds;
+        saveTimePreset(25, 0, 5, 0, 4);
     }
-    
-    
+
+    internal int getDefaultTheme()
+    {
+        return Properties.Settings.Default.Theme;
+    }
+
+    internal int[] getTimePreset()
+    {
+        int[] ret = { Properties.Settings.Default.workMinutes,
+                        Properties.Settings.Default.workSeconds,
+                        Properties.Settings.Default.breakMinutes,
+                        Properties.Settings.Default.breakSeconds,
+                        Properties.Settings.Default.sessions };
+        return ret;
+    }
 
 }

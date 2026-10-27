@@ -1,4 +1,5 @@
 using PomTimeApp;
+using PomTimeApp.model;
 
 namespace PomTime.Tests;
 
@@ -9,18 +10,20 @@ public sealed class musicModelTest
     [TestMethod]
     public void playSoundTestForMusicModel()
     {
-        SoundModel soundModel = new SoundModel();
+        SoundTest soundTest = new SoundTest();
+        SoundModel soundModel = new SoundModel(soundTest);
         soundModel.playSound();
 
-        Assert.AreEqual(1,soundModel.getTimesRingCalledPlay(), "ring should only play exactly once after calling playSound");
+        Assert.AreEqual(1, soundTest.GetPlayCount() , "ring should only play exactly once after calling playSound");
     }
 
     [TestMethod]
     public async Task playDoubleSoundTestForMusicModel()
     {
-        SoundModel soundModel = new SoundModel();
+        SoundTest soundTest = new SoundTest();
+        SoundModel soundModel = new SoundModel(soundTest);
         await soundModel.playDoubleSound();
-        Assert.AreEqual(2,soundModel.getTimesRingCalledPlay(), "ring should only play twice after calling playDoubleSound");
+        Assert.AreEqual(2, soundTest.GetPlayCount(), "ring should only play twice after calling playDoubleSound");
     }
 
     [TestMethod]
@@ -62,5 +65,12 @@ public sealed class musicModelTest
         Assert.AreEqual(musicList[0], soundModel.getCurrentMusic(), "Music track did not loop back from the last music to the first after calling playNext on the last song of the list");
     }
 
-    
+    public async Task testAll()
+    {
+        playSoundTestForMusicModel();
+        await playDoubleSoundTestForMusicModel();
+        playMusicTestForMusicModel();
+        stopMusicTestForMusicModel();
+        musicSkipAndPlayPreviousForMusicModel();
+    }
 }

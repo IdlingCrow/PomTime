@@ -57,5 +57,9 @@ namespace PomTimeApp.view
             return reminderDescription;
         }
 
+        internal bool isStickyNotesHidden()
+        {
+            return this.Visible;
+        }
     }
 }
