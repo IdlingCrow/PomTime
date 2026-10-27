@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="PomTime.Tests/PomTime.Tests.csproj" />
-  <Project Path="PomTimeApp/PomTimeApp.csproj" />
+  <Project Path="PomTimeApp/PomTimeApp.csproj">
+    <BuildType Project="Release" />
+  </Project>
 </Solution>
